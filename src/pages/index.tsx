@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { MdOutlineWorkOutline } from "react-icons/md";
 
 import { trpc } from "../utils/trpc";
 
@@ -18,34 +19,45 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-[#FDFBF6]">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-[#FDFBF6] text-center">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[3rem]">
-            Find your dream job with{" "}
-            <span className="text-[hsl(280,100%,70%)]">Hirica</span>
+            Find talents and jobs with{" "}
+            <span className="rounded-xl bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 p-1 text-[#FDFBF5]">
+              Hirica.
+            </span>
           </h1>
-          <h2>Discover 999+ open positions</h2>
-          <div className="flex w-1/6 flex-col gap-3">
-            <h3 className="text-sm">Are you looking for: </h3>
-            <div className="rounded-full bg-[#D7D0FE]">
-              <Link
-                className="flex p-5 hover:bg-white/20"
-                href="https://create.t3.gg/en/usage/first-steps"
-              >
-                <div className="text-lg">A job</div>
-              </Link>
-            </div>
-            <div className="rounded-full bg-[#D7D0FE]">
-              <Link
-                className="flex p-5 hover:bg-white/20"
-                href="https://create.t3.gg/en/introduction"
-              >
-                <div className="text-lg">A talent</div>
-              </Link>
-            </div>
+          <h2 className="text-xl font-light text-gray-600">
+            Discover 999+ open positions and candidates
+          </h2>
+          <div className="rounded-xl bg-black text-white">
+            <Link className="flex p-5 hover:bg-white/20" href="/sign-in">
+              <div className="flex items-center justify-center gap-2 text-lg">
+                <MdOutlineWorkOutline /> Start
+              </div>
+            </Link>
           </div>
         </div>
       </main>
+      <section className="flex min-h-screen flex-row items-center justify-center gap-5">
+        <h1 className="p-10 text-center text-5xl">How it works?</h1>
+        <div className="flex flex-col gap-5">
+          <div className="min-h-fit max-w-md rounded-xl bg-[#FDFBF6] p-16">
+            <p className="text-left">
+              Sign up <span className="underline">for free</span>. Fill your
+              profile and set your expected compensation. Don&apos;t share your
+              data directly. It&apos;s a rule.
+            </p>
+          </div>
+          <div className="max-w-md rounded-xl bg-[#FDFBF6] p-16">
+            <p className="text-left">
+              Choose those recruiters, whom you want to reveal yourself.
+              Recruiters compensate Hirica 25% of your expected salary for
+              shared talent. You never pay anything.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
@@ -62,7 +74,7 @@ const AuthShowcase: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-center text-2xl">
+      <p className="text-center text-xl">
         {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
         {secretMessage && <span> - {secretMessage}</span>}
       </p>
