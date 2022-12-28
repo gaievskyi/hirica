@@ -20,7 +20,7 @@ const SignIn: NextPage = () => {
               required
               type="email"
               name="email"
-              className="rounded-xl border-2 border-black p-4"
+              className="rounded-full border-2 border-black p-4"
               placeholder="john.doe@email.com"
             />
           </div>
@@ -30,26 +30,29 @@ const SignIn: NextPage = () => {
               required
               type="password"
               name="password"
-              className="rounded-xl border-2  border-black p-4"
+              className="rounded-full border-2  border-black p-4"
               placeholder="***"
             />
           </div>
-          <div className="flex flex-col gap-2">
+          {/* <div className="flex flex-col gap-2">
             <label htmlFor="password">Repeat password</label>
             <input
               required
               type="password"
               name="password"
-              className="rounded-xl border-2  border-black p-4"
+              className="rounded-full border-2  border-black p-4"
               placeholder="***"
             />
-          </div>
+          </div> */}
           <button
             type="submit"
-            className="m-10 rounded-xl bg-black p-4 text-white hover:bg-black/80"
+            className="m-10 rounded-full bg-black p-4 text-white hover:bg-black/80"
           >
             Next
           </button>
+          <span className="cursor-pointer underline">
+            Already have an account?
+          </span>
         </form>
       </main>
     </>
