@@ -13,7 +13,7 @@ const SignIn: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-[#FDFBF6] text-left ">
-        <form className="flex flex-col gap-8">
+        <form className="flex flex-col gap-10">
           <div className="flex flex-col gap-2">
             <label htmlFor="email">E-mail</label>
             <input
@@ -44,19 +44,31 @@ const SignIn: NextPage = () => {
               placeholder="***"
             />
           </div> */}
-          <div className="flex">
+          <div className="flex items-center justify-center gap-3">
             <button
               type="submit"
-              className="m-10 rounded-full bg-black p-4 text-white hover:bg-black/80"
+              className="rounded-full bg-black p-4 text-white hover:bg-black/80 "
             >
               Next
             </button>
             <span>or continue with</span>
             <button
               type="submit"
-              className="m-10 rounded-full bg-black p-4 text-white hover:bg-black/80"
+              className="rounded-full bg-black p-4 text-white hover:bg-black/80"
             >
               Web 3.0
+            </button>
+            <button
+              type="submit"
+              className="rounded-full bg-black p-4 text-white hover:bg-black/80"
+            >
+              LinkedIn
+            </button>
+            <button
+              type="submit"
+              className="rounded-full bg-black p-4 text-white hover:bg-black/80"
+            >
+              GitHub
             </button>
           </div>
           <span className="cursor-pointer underline">

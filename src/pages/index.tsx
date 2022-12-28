@@ -21,7 +21,6 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      trpc query result: {hello.data?.greeting}
       <Navigation />
       <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden text-center">
         <Parallax speed={-50}>
@@ -40,6 +39,7 @@ const Home: NextPage = () => {
             <h2 className="text-xl font-light text-gray-600">
               Discover 10 999+ open positions and candidates.
             </h2>
+            <h3>from Backend: {hello.data?.greeting}</h3>
             <div className="rounded-full bg-black text-white">
               <Link className="flex p-5 hover:bg-white/20" href="/sign-in">
                 <div className="flex items-center justify-center gap-2 text-lg">
