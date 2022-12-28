@@ -39,13 +39,15 @@ const Home: NextPage = () => {
             <h2 className="text-xl font-light text-gray-600">
               Discover 10 999+ open positions and candidates.
             </h2>
-            <h3>from Backend: {hello.data?.greeting}</h3>
             <div className="rounded-full bg-black text-white">
               <Link className="flex p-5 hover:bg-white/20" href="/sign-in">
                 <div className="flex items-center justify-center gap-2 text-lg">
                   <MdOutlineWorkOutline /> Start
                 </div>
               </Link>
+            </div>
+            <div className="min-w-max border-2 border-black bg-green-200 p-5">
+              <h3 className="">from server: {hello.data?.greeting}</h3>
             </div>
           </div>
         </Parallax>

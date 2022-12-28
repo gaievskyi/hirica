@@ -13,9 +13,11 @@ export const Navigation: React.FC = () => {
         <div className="flex text-xs uppercase">
           <div>Hirica</div>
         </div>
+      </div>
+      {/* <div className="flex items-center justify-between gap-4 rounded-full border-2 border-[white] bg-gray-300 px-5 py-2 text-white">
         <BiNotification />
         <BiUser />
-      </div>
+      </div> */}
       <div className="flex items-center justify-between rounded-full border-2 border-[white] bg-black px-5 py-2 text-white">
         <div className="flex gap-16 text-xs uppercase">
           <div>Candidates</div>
