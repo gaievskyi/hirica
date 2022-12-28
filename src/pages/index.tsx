@@ -9,7 +9,7 @@ import { Navigation } from "../components";
 import { Parallax } from "react-scroll-parallax";
 
 const Home: NextPage = () => {
-  // const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
+  const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   return (
     <>
@@ -21,6 +21,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      trpc query result: {hello.data?.greeting}
       <Navigation />
       <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden text-center">
         <Parallax speed={-50}>
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
             }}
           >
             <h1 className="text-5xl font-extrabold tracking-tight sm:text-[3rem]">
-              Find talents and jobs with{" "}
+              Find talents and jobs with Web 3.0{" "}
               <span className="rounded-full bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 p-2 text-[#FDFBF5]">
                 Hirica
               </span>
