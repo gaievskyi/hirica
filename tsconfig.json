@@ -4,7 +4,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,6 +20,7 @@
     "incremental": true,
     "noUncheckedIndexedAccess": true
   },
+  "types": ["node", "jest", "@testing-library/jest-dom"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -28,6 +29,7 @@
     "**/*.mjs"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "*.config.[ts,js]"
   ]
 }

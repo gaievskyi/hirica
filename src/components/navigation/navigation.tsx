@@ -5,7 +5,8 @@ export const Navigation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
+    <nav
+      data-testid="navigation"
       ref={containerRef}
       className="sticky top-0 left-0 flex justify-center gap-2 p-2"
     >
@@ -28,6 +29,6 @@ export const Navigation: React.FC = () => {
       <div className="flex items-center justify-between gap-4 rounded-full border-2 border-[white] bg-black px-5 py-2 text-white">
         <BiSearch />
       </div>
-    </div>
+    </nav>
   );
 };
