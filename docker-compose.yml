@@ -1,0 +1,10 @@
+version: "3.8.0"
+
+services:
+  app:
+    build: .
+    command: pnpm run dev
+    ports:
+      - 80:80
+    volumes:
+      - "./:/app"
