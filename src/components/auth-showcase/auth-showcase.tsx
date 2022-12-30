@@ -1,5 +1,6 @@
-import { trpc } from "../../utils/trpc";
 import { useSession, signOut, signIn } from "next-auth/react";
+
+import { trpc } from "../../utils/trpc";
 
 export const AuthShowcase: React.FC = () => {
   const { data: sessionData } = useSession();

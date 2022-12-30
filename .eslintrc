@@ -28,7 +28,8 @@
     "no-underscore-dangle": 0
   },
   "ignorePatterns": [
-    "*.config.js"
+    "*.config.js",
+    "*.setup.js"
   ],
   "settings": {
     "react": {

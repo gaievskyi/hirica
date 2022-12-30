@@ -1,6 +1,6 @@
 import { render } from "../../render";
+
 import { Show } from "./show";
-import "@testing-library/jest-dom";
 
 describe("Show", () => {
   it("renders without console errors", () => {
@@ -10,7 +10,7 @@ describe("Show", () => {
         <div data-testid="mock-child" />
       </Show>
     );
-    return expect(spy).not.toHaveBeenCalled();
+    expect(spy).not.toHaveBeenCalled();
   });
 
   it("renders correctly", () => {
@@ -22,7 +22,7 @@ describe("Show", () => {
       </Show>
     );
 
-    return expect(view.queryByTestId("mock-child")).toBeVisible();
+    expect(view.queryByTestId("mock-child")).toBeVisible();
   });
 
   it("renders empty without fallback given", () => {
@@ -31,7 +31,7 @@ describe("Show", () => {
         <div data-testid="mock-child" />
       </Show>
     );
-    return expect(view.queryByTestId("mock-child")).toBeNull();
+    expect(view.queryByTestId("mock-child")).toBeNull();
   });
 
   it("renders fallback during async operation", async () => {

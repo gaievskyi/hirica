@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev --port 80",
+    "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start",
@@ -48,6 +48,7 @@
     "eslint-plugin-jest": "^27.1.7",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
+    "next-router-mock": "^0.8.0",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
