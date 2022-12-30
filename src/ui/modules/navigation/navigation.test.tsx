@@ -1,8 +1,8 @@
 import Router from "next/router";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 
-import { fireEvent, render } from "../../render";
-import { mockRouter } from "../../test-utils";
+import { fireEvent, render } from "../../../render";
+import { mockRouter } from "../../../test-utils";
 
 import { Navigation } from "./navigation";
 
