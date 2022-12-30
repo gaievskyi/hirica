@@ -3,7 +3,7 @@ import { render } from "../../render";
 import { Show } from "./show";
 
 describe("Show", () => {
-  it("renders without console errors", () => {
+  it("does not provoke browser console errors", () => {
     const spy = jest.spyOn(global.console, "error");
     render(
       <Show when={true} fallback="Loading..">
@@ -34,7 +34,7 @@ describe("Show", () => {
     expect(view.queryByTestId("mock-child")).toBeNull();
   });
 
-  it("renders fallback during async operation", async () => {
+  it("renders fallback during given condition", async () => {
     const isLoaded = false;
 
     const Loader = () => <div data-testid="loader" />;

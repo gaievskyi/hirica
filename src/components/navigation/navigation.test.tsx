@@ -9,15 +9,10 @@ import { Navigation } from "./navigation";
 describe("Navigation", () => {
   const router = mockRouter(Router);
 
-  it("renders without console errors", () => {
+  it("does not provoke browser console errors", () => {
     const spy = jest.spyOn(global.console, "error");
     render(<Navigation />);
     expect(spy).not.toHaveBeenCalled();
-  });
-
-  it("renders correctly", () => {
-    const view = render(<Navigation />);
-    expect(view.queryByTestId("navigation")).toBeVisible();
   });
 
   it("is available and clickable", () => {
@@ -35,7 +30,7 @@ describe("Navigation", () => {
     expect(navigation).toHaveTextContent("Statistics");
   });
 
-  it("navigates to the /candidates route, if Candidates clicked", () => {
+  it("navigates to the '/candidates', if Candidates clicked", () => {
     const { getByText } = render(
       <RouterContext.Provider value={router}>
         <Navigation />
@@ -49,7 +44,7 @@ describe("Navigation", () => {
     });
   });
 
-  it("navigates to the /jobs route, if Jobs clicked", () => {
+  it("navigates to the '/jobs', if Jobs clicked", () => {
     const { getByText } = render(
       <RouterContext.Provider value={router}>
         <Navigation />
@@ -63,7 +58,7 @@ describe("Navigation", () => {
     });
   });
 
-  it("navigates to the /statistics route, if Statistics clicked", () => {
+  it("navigates to the '/statistics', if Statistics clicked", () => {
     const { getByText } = render(
       <RouterContext.Provider value={router}>
         <Navigation />
