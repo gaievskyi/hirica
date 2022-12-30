@@ -2,7 +2,7 @@ import Head from "next/head";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import { trpc } from "../utils/trpc";
-import { Navigation, Welcome, Details, Banner } from "../components";
+import { Navigation, Welcome, Details, Banner } from "../ui";
 
 import { type NextPage } from "next";
 
