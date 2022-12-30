@@ -1,4 +1,4 @@
-import { render } from "../../../render";
+import { render } from "../../../utils/render";
 
 import { Show } from "./show";
 
