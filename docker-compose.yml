@@ -1,9 +1,9 @@
-version: "3.8.0"
+version: "3.8"
 
 services:
   app:
     build: .
-    command: pnpm run dev
+    command: pnpm run dev --port 80
     ports:
       - 80:80
     volumes:

@@ -1,4 +1,4 @@
-FROM node:lts AS development
+FROM node:lts
 
 WORKDIR /app
 COPY . /app
