@@ -1,16 +1,18 @@
 import { render } from "../../../utils/render";
-
 import { Show } from "./show";
 
 describe("Show", () => {
   it("does not provoke browser console errors", () => {
-    const spy = jest.spyOn(global.console, "error");
+    const consoleErrorMock = jest.spyOn(console, "error");
+
     render(
-      <Show when={true} fallback="Loading..">
+      <Show when={true}>
         <div data-testid="mock-child" />
       </Show>
     );
-    expect(spy).not.toHaveBeenCalled();
+
+    expect(consoleErrorMock).not.toHaveBeenCalled();
+    consoleErrorMock.mockRestore();
   });
 
   it("renders correctly", () => {
@@ -26,11 +28,14 @@ describe("Show", () => {
   });
 
   it("renders empty without fallback given", () => {
+    const isLoaded = false;
+
     const view = render(
-      <Show when={false}>
+      <Show when={isLoaded}>
         <div data-testid="mock-child" />
       </Show>
     );
+
     expect(view.queryByTestId("mock-child")).toBeNull();
   });
 

@@ -20,7 +20,11 @@
     "incremental": true,
     "noUncheckedIndexedAccess": true
   },
-  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "types": [
+    "node",
+    "jest",
+    "@testing-library/jest-dom"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -30,6 +34,7 @@
   ],
   "exclude": [
     "node_modules",
-    "*.config.[ts,js]"
+    "*.config.[ts,js]",
+    "*.setup.[ts,js]"
   ]
 }

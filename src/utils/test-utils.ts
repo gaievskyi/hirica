@@ -1,6 +1,6 @@
 import type { NextRouter } from "next/router";
 
-export const mockRouter = (router: NextRouter): NextRouter => ({
+export const createMockRouter = (router: NextRouter): NextRouter => ({
   ...router,
   basePath: "",
   pathname: "/",
