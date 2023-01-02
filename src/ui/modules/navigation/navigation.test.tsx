@@ -25,6 +25,16 @@ describe("Navigation", () => {
     expect(navigation).toHaveTextContent("Statistics");
   });
 
+  it("navigates to the '/', if Hirica clicked", () => {
+    const { getByText } = render(<Navigation />);
+    fireEvent.click(getByText("Hirica"));
+    expect(router.push).toHaveBeenCalledWith("/", "/", {
+      locale: undefined,
+      scroll: undefined,
+      shallow: undefined,
+    });
+  });
+
   it("navigates to the '/candidates', if Candidates clicked", () => {
     const { getByText } = render(<Navigation />);
     fireEvent.click(getByText("Candidates"));

@@ -2,81 +2,50 @@ import Head from "next/head";
 
 import { type NextPage } from "next";
 
-const SignIn: NextPage = () => (
+const Jobs: NextPage = () => (
   <>
     <Head>
-      <title>Hirica</title>
+      <title>Hirica jobs</title>
       <meta
         name="description"
         content="Hirica is a pretty job search platform."
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#FDFBF6] text-left ">
-      <form className="flex flex-col gap-10">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="email">E-mail</label>
-          <input
-            required
-            type="email"
-            name="email"
-            className="rounded-full border-2 border-black p-4"
-            placeholder="john.doe@email.com"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="password">Password</label>
-          <input
-            required
-            type="password"
-            name="password"
-            className="rounded-full border-2  border-black p-4"
-            placeholder="***"
-          />
-        </div>
-        {/* <div className="flex flex-col gap-2">
-            <label htmlFor="password">Repeat password</label>
-            <input
-              required
-              type="password"
-              name="password"
-              className="rounded-full border-2  border-black p-4"
-              placeholder="***"
-            />
-          </div> */}
-        <div className="flex items-center justify-center gap-3">
-          <button
-            type="submit"
-            className="rounded-full bg-black p-4 text-white hover:bg-black/80 "
-          >
-            Next
-          </button>
-          <span>or continue with</span>
-          <button
-            type="submit"
-            className="rounded-full bg-black p-4 text-white hover:bg-black/80"
-          >
-            Web 3.0
-          </button>
-          <button
-            type="submit"
-            className="rounded-full bg-black p-4 text-white hover:bg-black/80"
-          >
-            LinkedIn
-          </button>
-          <button
-            type="submit"
-            className="rounded-full bg-black p-4 text-white hover:bg-black/80"
-          >
-            GitHub
-          </button>
-        </div>
-        <span className="cursor-pointer underline">
-          Already have an account?
-        </span>
-      </form>
+    <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left ">
+      <h1>Jobs (building)</h1>
+
+      <p className="text-lg">Find your dream job in the IT industry.</p>
+
+      <p className="text-lg">
+        <a
+          href="
+https://www.linkedin.com/jobs/search/?f_C=160&f_E=2&f_I=1&keywords=it%20jobs&location=Worldwide&sortBy=R"
+          className="text-blue-600 hover:underline"
+        >
+          LinkedIn
+        </a>
+      </p>
+
+      <p className="text-lg">
+        <a
+          href="https://www.indeed.com/jobs?q=it%20jobs&l=Worldwide"
+          className="text-blue-600 hover:underline"
+        >
+          Indeed
+        </a>
+      </p>
+
+      <p className="text-lg">
+        <a
+          href="https://www.monster.com/jobs/search/?q=it-jobs&where=Worldwide"
+          className="text-blue-600 hover:underline"
+        >
+          Monster
+        </a>
+      </p>
     </main>
   </>
 );
 
-export default SignIn;
+export default Jobs;

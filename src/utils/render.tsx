@@ -3,7 +3,6 @@ import { Suspense } from "react";
 
 import { render } from "@testing-library/react";
 import { SessionProvider } from "next-auth/react";
-import { ParallaxProvider } from "react-scroll-parallax";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 
 import type { RenderOptions } from "@testing-library/react";
@@ -23,9 +22,7 @@ const mockRouter = createMockRouter(Router);
 const MockApp: FC<MockProps> = ({ children }) => (
   <Suspense>
     <RouterContext.Provider value={mockRouter}>
-      <SessionProvider session={mockSession}>
-        <ParallaxProvider>{children}</ParallaxProvider>
-      </SessionProvider>
+      <SessionProvider session={mockSession}>{children}</SessionProvider>
     </RouterContext.Provider>
   </Suspense>
 );
