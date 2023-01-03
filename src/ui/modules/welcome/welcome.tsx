@@ -22,7 +22,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ greeting }) => (
       </h1>
       <p className="text-2xl ">Hirica is a Web 3.0 job search platform.</p>
       <div className="rounded-full bg-black text-white">
-        <Link className="flex p-5 hover:bg-white/20" href="/authentication">
+        <Link className="flex p-5 hover:bg-white/20" href="/start">
           <div className="text-md flex items-center justify-center gap-2">
             <MdOutlineWorkOutline /> Start
           </div>

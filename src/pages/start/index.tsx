@@ -5,7 +5,7 @@ import { AuthForm } from "../../ui";
 
 import { type NextPage } from "next";
 
-const Authentication: NextPage = () => {
+const Start: NextPage = () => {
   const { data: sessionData } = useSession();
 
   return (
@@ -68,4 +68,4 @@ const Authentication: NextPage = () => {
   );
 };
 
-export default Authentication;
+export default Start;

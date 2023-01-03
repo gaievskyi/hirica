@@ -16,12 +16,12 @@ describe("Welcome", () => {
     expect(welcome).toBeEnabled();
   });
 
-  it("navigates to the '/authentication', if Start clicked", () => {
+  it("navigates to the '/start', if Start clicked", () => {
     const { getByText } = render(<Welcome />);
     fireEvent.click(getByText("Start"));
     expect(router.push).toHaveBeenCalledWith(
-      "/authentication",
-      "/authentication",
+      "/start",
+      "/start",
       {
         locale: undefined,
         scroll: undefined,

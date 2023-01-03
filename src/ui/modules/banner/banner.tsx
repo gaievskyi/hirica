@@ -7,7 +7,7 @@ export const Banner: React.FC = () => (
     <div className="m-10">
       <Link
         className="flex rounded-full border-2 border-white bg-black p-5 text-white hover:bg-white/20"
-        href="/authentication"
+        href="/start"
       >
         <div className="flex items-center justify-center gap-2 text-lg">
           Find developers
