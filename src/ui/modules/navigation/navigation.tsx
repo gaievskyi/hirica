@@ -6,7 +6,6 @@ import { useSession, signOut } from "next-auth/react";
 import {
   BiNotification,
   BiSearch,
-  BiUser,
   BiAward,
   BiCertification,
 } from "react-icons/bi";
@@ -23,7 +22,7 @@ export const Navigation: React.FC = () => {
         <div className="flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-5 text-center text-xs">
           <p>
             We are currently in <span className="font-semibold">Beta</span>. If
-            you find any problem, please report them{" "}
+            you find any problem, please report them by sending a report to{" "}
             <a href="mailto:hirica@proton.me" className="text-black underline">
               hirica@proton.me
             </a>

@@ -27,7 +27,15 @@ const Home: NextPage = () => {
       <section>
         <Banner />
       </section>
-      {/* <footer className="h-96 w-full bg-black">Footer</footer> */}
+      <section>
+        <Details />
+      </section>
+      <footer className="flex h-96 w-full items-center justify-center bg-black text-white">
+        &copy; 2023
+        <a href="mailto:hirica@proton.me" className="ml-2 ">
+          hirica@proton.me
+        </a>
+      </footer>
     </>
   );
 };
