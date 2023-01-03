@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export const SignUpForm: React.FC = () => (
+type SignUpFormProps = {
+  action: () => void;
+};
+
+export const SignUpForm: React.FC<SignUpFormProps> = ({ action }) => (
   <form className="flex flex-col gap-10">
     <Link href="/" className="text-2xl font-semibold">
       Hirica • Hire and find job anonymously
@@ -17,6 +21,7 @@ export const SignUpForm: React.FC = () => (
     </div>
     <div className="flex items-center justify-center gap-3">
       <button
+        onClick={action}
         type="submit"
         className="rounded-full bg-black p-4 text-white hover:bg-black/80 "
       >
