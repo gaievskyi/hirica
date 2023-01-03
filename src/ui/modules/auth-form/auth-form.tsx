@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-type SignUpFormProps = {
+type AuthFormProps = {
   action: () => void;
 };
 
-export const SignUpForm: React.FC<SignUpFormProps> = ({ action }) => (
+export const AuthForm: React.FC<AuthFormProps> = ({ action }) => (
   <form className="flex flex-col gap-10">
     <Link href="/" className="text-2xl font-semibold">
       Hirica • Hire and find job anonymously

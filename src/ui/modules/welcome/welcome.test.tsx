@@ -16,14 +16,18 @@ describe("Welcome", () => {
     expect(welcome).toBeEnabled();
   });
 
-  it("navigates to the '/sign-up', if Start clicked", () => {
+  it("navigates to the '/authentication', if Start clicked", () => {
     const { getByText } = render(<Welcome />);
     fireEvent.click(getByText("Start"));
-    expect(router.push).toHaveBeenCalledWith("/sign-up", "/sign-up", {
-      locale: undefined,
-      scroll: undefined,
-      shallow: undefined,
-    });
+    expect(router.push).toHaveBeenCalledWith(
+      "/authentication",
+      "/authentication",
+      {
+        locale: undefined,
+        scroll: undefined,
+        shallow: undefined,
+      }
+    );
   });
 
   it("navigates to the '/candidates', if signed in and Start clicked", () => {

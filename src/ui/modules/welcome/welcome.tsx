@@ -26,7 +26,7 @@ export const Welcome: React.FC<WelcomeProps> = ({ greeting }) => (
         Discover 10 999+ open positions and candidates.
       </h2>
       <div className="rounded-full bg-black text-white">
-        <Link className="flex p-5 hover:bg-white/20" href="/sign-up">
+        <Link className="flex p-5 hover:bg-white/20" href="/authentication">
           <div className="flex items-center justify-center gap-2 text-lg">
             <MdOutlineWorkOutline /> Start
           </div>
