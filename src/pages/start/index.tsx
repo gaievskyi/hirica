@@ -54,7 +54,7 @@ const Start: NextPage = () => {
               </div>
             </div>
             <button
-              className="rounded-full bg-black p-3 text-white hover:bg-black/80"
+              className="rounded-full bg-black px-5 py-3 text-white hover:bg-black/80"
               onClick={() => null}
             >
               Save

@@ -3,10 +3,10 @@
 exports[`Sign up form renders correctly 1`] = `
 <div>
   <form
-    class="flex flex-col gap-10"
+    class="flex flex-col gap-12"
   >
     <a
-      class="text-2xl font-semibold"
+      class="text-3xl font-semibold"
       href="/"
     >
       Hirica • Hire and find job anonymously
@@ -20,7 +20,7 @@ exports[`Sign up form renders correctly 1`] = `
         E-mail
       </label>
       <input
-        class="rounded-full border-2 border-black p-4"
+        class="rounded-xl border-2 border-black p-4 text-sm"
         name="email"
         placeholder="john.doe@email.com"
         required=""
@@ -31,7 +31,7 @@ exports[`Sign up form renders correctly 1`] = `
       class="flex items-center justify-center gap-3"
     >
       <button
-        class="rounded-full bg-black p-4 text-white hover:bg-black/80 "
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80 "
         type="submit"
       >
         Next
@@ -40,19 +40,19 @@ exports[`Sign up form renders correctly 1`] = `
         or continue with
       </span>
       <button
-        class="rounded-full bg-black p-4 text-white hover:bg-black/80"
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         type="submit"
       >
         Web 3.0
       </button>
       <button
-        class="rounded-full bg-black p-4 text-white hover:bg-black/80"
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         type="submit"
       >
         LinkedIn
       </button>
       <button
-        class="rounded-full bg-black p-4 text-white hover:bg-black/80"
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         type="submit"
       >
         GitHub
