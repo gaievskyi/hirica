@@ -15,7 +15,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ action }) => (
         required
         type="email"
         name="email"
-        className="rounded-xl border-2 border-black p-4 text-sm"
+        className="border-b-2 border-black bg-transparent py-3 text-sm"
         placeholder="john.doe@email.com"
       />
     </div>

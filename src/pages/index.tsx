@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         <Details />
       </section>
       <footer className="flex h-96 w-full items-center justify-center bg-black text-white">
-        &copy; 2023
+        &copy; {new Date().getFullYear()}
         <a href="mailto:hirica@proton.me" className="ml-2 ">
           hirica@proton.me
         </a>

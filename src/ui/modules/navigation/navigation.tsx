@@ -20,13 +20,10 @@ export const Navigation: React.FC = () => {
     <>
       {showBanner && (
         <div className="flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-5 text-center text-xs">
-          <p>
-            We are currently in <span className="font-semibold">Beta</span>. If
-            you find any problem, please report them by sending a report to{" "}
-            <a href="mailto:hirica@proton.me" className="text-black underline">
-              hirica@proton.me
-            </a>
-          </p>
+          <h1>
+            Hirica is a Web 3.0 job share platform. Anonymous and free. Fast and
+            simple.
+          </h1>
           <IoCloseOutline
             fontSize={24}
             className="absolute right-5 cursor-pointer"
