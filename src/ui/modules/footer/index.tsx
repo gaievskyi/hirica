@@ -4,7 +4,9 @@ export const Footer: React.FC = () => (
   <footer className="flex w-full items-center justify-center bg-black py-16 ">
     <div className="flex w-full flex-col px-4 text-white md:w-2/3">
       <div className="w-full text-7xl font-bold">
-        <h1 className="w-full md:w-2/3">How can we help you get in touch</h1>
+        <h1 className="w-full md:w-2/3">
+          Be in touch with our development team
+        </h1>
       </div>
       <div className="mt-8 flex flex-col md:flex-row md:justify-between">
         <p className="w-full text-gray-400 md:w-2/3">
@@ -39,32 +41,7 @@ export const Footer: React.FC = () => (
             Statistics
           </Link>
           <div className="flex flex-row items-center justify-between space-x-8">
-            <a>
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 13 13"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12.9999 0.999999H0.999939V13H12.9999V0.999999Z"
-                  fill="#0077B5"
-                />
-                <path
-                  d="M4.99994 4.99999H2.99994V10.9999H4.99994V4.99999Z"
-                  fill="white"
-                />
-                <path
-                  d="M6.99994 4.99999H8.99994V10.9999H6.99994V4.99999Z"
-                  fill="white"
-                />
-                <path
-                  d="M10.9999 4.99999H8.99994V10.9999H10.9999V4.99999Z"
-                  fill="white"
-                />
-              </svg>
-            </a>
+            <a href="https://linked.in/co/hirica"></a>
             <a href="https://www.youtube.com/channel/UCjtCbnkIaiCJgj13sEZ9iqw">
               <svg
                 width="13"
@@ -83,7 +60,7 @@ export const Footer: React.FC = () => (
         </div>
         <hr className="border-gray-600" />
         <p className="my-12 w-full text-center text-gray-600">
-          Hirica &copy; {new Date().getFullYear()} - All rights reserved
+          Hirica &copy; {new Date().getFullYear()} All rights reserved
         </p>
       </div>
     </div>

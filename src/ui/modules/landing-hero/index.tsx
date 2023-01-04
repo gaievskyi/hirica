@@ -3,7 +3,7 @@ import { Dialog } from '@headlessui/react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-export const Hero: React.FC = () => {
+export const LandingHero: React.FC = () => {
   const { data: sessionData } = useSession()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -104,9 +104,9 @@ export const Hero: React.FC = () => {
                   Find talents and jobs with Hirica
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat fugiat aliqua.
+                  Hirica is a platform that connects people and companies
+                  through a unique matching system. It is anonymous,
+                  decentralized and free to use.
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
                   <Link

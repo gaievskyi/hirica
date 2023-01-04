@@ -32,11 +32,11 @@ export const Navigation: React.FC = () => {
       )}
       <nav
         data-testid="navigation"
-        className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 p-1"
+        className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 py-2"
       >
         <Link
           href="/"
-          className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+          className={`flex items-center justify-between gap-4 rounded-full  border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
           ${
             pathname === '/' &&
             'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
@@ -48,7 +48,7 @@ export const Navigation: React.FC = () => {
           <>
             <Link
               href="/profile"
-              className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+              className={`flex items-center justify-between gap-4 rounded-full  border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
               ${
                 pathname === '/profile' &&
                 'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
@@ -64,7 +64,7 @@ export const Navigation: React.FC = () => {
                 Sign out
               </button>
             </Link>
-            <div className="flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black/20 px-5 py-2 text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110">
+            <div className="flex items-center justify-between gap-4 rounded-full  border-white bg-black/20 px-5 py-2 text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110">
               <BiNotification />
               <BiAward />
               <BiCertification />
@@ -73,7 +73,7 @@ export const Navigation: React.FC = () => {
         )}
 
         <div
-          className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+          className={`flex items-center justify-between gap-4 rounded-full  border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
           ${
             (pathname === '/candidates' ||
               pathname === '/jobs' ||
@@ -102,7 +102,7 @@ export const Navigation: React.FC = () => {
             </Link>
           </div>
         </div>
-        <button className="flex items-center justify-between gap-5 rounded-full border-2 border-white bg-black px-5 py-2 text-xs text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110">
+        <button className="flex items-center justify-between gap-5 rounded-full  border-white bg-black px-5 py-2 text-xs text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110">
           <BiSearch />
         </button>
       </nav>

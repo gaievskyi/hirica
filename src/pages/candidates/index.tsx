@@ -15,69 +15,11 @@ const Candidates: NextPage = () => (
     </Head>
     <div className="flex flex-col gap-5">
       <main className="flex flex-col items-center justify-center bg-[#FDFBF6] px-64 pb-10">
-        <div className="flex min-w-full flex-col items-center justify-center gap-5 rounded-full ">
-          <div className="flex items-center justify-center gap-7">
-            <div className="flex min-w-full gap-5 rounded-xl bg-black p-5 text-white">
-              <p className="flex min-w-[20%] font-semibold">Vue.js engineer</p>
-              <div className="flex flex-col gap-5">
-                <p className="text-xl font-thin">
-                  A software engineer and the creator of Vue.js, an open source
-                  JavaScript framework for building user interfaces.
-                </p>
-                <p className="text-sm">
-                  I achieved my dream of becoming a software engineer by
-                  learning programming on my own. I hope to inspire others to do
-                  the same. What I love about programming is that it&apos;s a
-                  creative process. You can build anything you can imagine. I
-                  also love that it&apos;s a collaborative process. I&apos;ve
-                  learned so much from my colleagues and friends in the
-                  community.
-                </p>
-                <div>
-                  Skills
-                  <ul>
-                    <li>Vue.js</li>
-                    <li>Rust</li>
-                    <li>Typescript</li>
-                  </ul>
-                </div>
-              </div>
-              <button className="">More</button>
-            </div>
-            <div>
-              <FcLike fontSize={32} />
-            </div>
-          </div>
+        <h2 className="text-2xl">
+          +199000 active candidates. Find your next IT job.
+        </h2>
 
-          <div className="flex min-w-full flex-col items-center justify-center gap-5 rounded-full ">
-            <div className="flex items-center justify-center gap-7">
-              <div className="flex min-w-full gap-5 rounded-xl bg-black p-5 text-white">
-                <p className="flex min-w-[20%] font-semibold">
-                  WebAssembly engineer
-                </p>
-                <div className="flex flex-col gap-5">
-                  <p className="text-xl font-thin">
-                    A software engineer at Mozilla, works on WebAssembly and the
-                    Rust programming language.
-                  </p>
-                  <p className="text-sm">
-                    What is WebAssembly? WebAssembly is a new type of code that
-                    can be run in modern web browsers — it is a low-level
-                    assembly-like language with a compact binary format that
-                    runs with near-native performance and provides languages
-                    such as C/C++ and Rust with a compilation target so that
-                    they can run on the web. Also, this is a thing, which I am
-                    working on right now.
-                  </p>
-                </div>
-                <button className="">More</button>
-              </div>
-              <div>
-                <FcLikePlaceholder fontSize={32} />
-              </div>
-            </div>
-          </div>
-        </div>
+        <div></div>
       </main>
     </div>
   </>

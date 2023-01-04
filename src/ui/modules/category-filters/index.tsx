@@ -1,5 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
+import { HiOutlineChevronDown, HiSortDescending } from 'react-icons/hi'
+import { BiSortAlt2 } from 'react-icons/bi'
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -149,17 +151,7 @@ export const CategoryFilters: React.FC = () => {
                                   {section.name}
                                 </span>
                                 <span className="ml-6 flex items-center">
-                                  {open
-                                    ? // <MinusIcon
-                                      //   className="h-5 w-5"
-                                      //   aria-hidden="true"
-                                      // />
-                                      '-'
-                                    : // <PlusIcon
-                                      //   className="h-5 w-5"
-                                      //   aria-hidden="true"
-                                      // />
-                                      '+'}
+                                  {open ? '-' : '+'}
                                 </span>
                               </Disclosure.Button>
                             </h3>
@@ -210,11 +202,10 @@ export const CategoryFilters: React.FC = () => {
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
-                    {/* <ChevronDownIcon
-                      className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                    <HiOutlineChevronDown
+                      className="mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
-                    /> */}
-                    ^
+                    />
                   </Menu.Button>
                 </div>
 
@@ -266,6 +257,7 @@ export const CategoryFilters: React.FC = () => {
               >
                 <span className="sr-only">Filters</span>
                 {/* <FunnelIcon className="h-5 w-5" aria-hidden="true" /> */}
+                <HiSortDescending className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -304,17 +296,7 @@ export const CategoryFilters: React.FC = () => {
                               {section.name}
                             </span>
                             <span className="ml-6 flex items-center">
-                              {open
-                                ? // <MinusIcon
-                                  //   className="h-5 w-5"
-                                  //   aria-hidden="true"
-                                  // />
-                                  '-'
-                                : // <PlusIcon
-                                  //   className="h-5 w-5"
-                                  //   aria-hidden="true"
-                                  // />
-                                  '+'}
+                              {open ? '-' : '+'}
                             </span>
                           </Disclosure.Button>
                         </h3>
