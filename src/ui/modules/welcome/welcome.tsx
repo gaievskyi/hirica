@@ -1,25 +1,25 @@
-import { useSession } from "next-auth/react";
-import Link from "next/link";
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 
-import { MdOutlineWorkOutline } from "react-icons/md";
+import { MdOutlineWorkOutline } from 'react-icons/md'
 
 type WelcomeProps = {
-  greeting?: string;
-};
+  greeting?: string
+}
 
 export const Welcome: React.FC<WelcomeProps> = () => {
-  const { data: sessionData } = useSession();
+  const { data: sessionData } = useSession()
 
   return (
     <main className="flex flex-col items-center justify-center overflow-hidden py-32 text-center">
       <div
         className="container flex flex-col items-center justify-center gap-8"
         style={{
-          transition: "1s ease all",
+          transition: '1s ease all',
         }}
       >
         <h1 className="text-5xl font-black">
-          Find talents and jobs with{" "}
+          Find talents and jobs with{' '}
           <span className="rounded-full bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 p-2 text-[#FDFBF5]">
             Hirica
           </span>
@@ -28,7 +28,7 @@ export const Welcome: React.FC<WelcomeProps> = () => {
         <div className="rounded-full bg-black text-white">
           <Link
             className="flex px-6 py-4 hover:bg-white/20"
-            href={sessionData ? "/profile" : "/start"}
+            href={sessionData ? '/profile' : '/start'}
           >
             <div className="text-md flex items-center justify-center gap-2">
               <MdOutlineWorkOutline /> Start
@@ -37,5 +37,5 @@ export const Welcome: React.FC<WelcomeProps> = () => {
         </div>
       </div>
     </main>
-  );
-};
+  )
+}

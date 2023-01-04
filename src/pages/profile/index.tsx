@@ -1,17 +1,17 @@
-import Head from "next/head";
-import { useSession } from "next-auth/react";
+import Head from 'next/head'
+import { useSession } from 'next-auth/react'
 
-import { trpc } from "../../utils/trpc";
+import { trpc } from '../../utils/trpc'
 
-import { type NextPage } from "next";
+import { type NextPage } from 'next'
 
 const Profile: NextPage = () => {
-  const { data: sessionData } = useSession();
+  const { data: sessionData } = useSession()
 
   const { data } = trpc.auth.getProfile.useQuery(
     undefined, // no input
     { enabled: sessionData?.user !== undefined }
-  );
+  )
 
   return (
     <>
@@ -32,7 +32,7 @@ const Profile: NextPage = () => {
                 name="email"
                 type="email"
                 className="border-b-2 border-black bg-transparent py-2"
-                defaultValue={sessionData?.user?.email || ""}
+                defaultValue={sessionData?.user?.email || ''}
               />
             </div>
             <div className="flex flex-col">
@@ -42,7 +42,7 @@ const Profile: NextPage = () => {
                 type="text"
                 className="border-b-2 border-black bg-transparent py-2"
                 disabled={sessionData?.user?.name !== undefined}
-                defaultValue={sessionData?.user?.name || ""}
+                defaultValue={sessionData?.user?.name || ''}
               />
             </div>
             <div className="flex flex-col">
@@ -101,7 +101,7 @@ const Profile: NextPage = () => {
         <p className="text-center">You are not signed in to view this page.</p>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile

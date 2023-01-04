@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import { type NextPage } from "next";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { type NextPage } from 'next'
+import { FcLike, FcLikePlaceholder } from 'react-icons/fc'
 
 const Candidates: NextPage = () => (
   <>
@@ -81,6 +81,6 @@ const Candidates: NextPage = () => (
       </main>
     </div>
   </>
-);
+)
 
-export default Candidates;
+export default Candidates

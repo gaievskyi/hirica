@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import { type NextPage } from "next";
+import { type NextPage } from 'next'
 
 const Jobs: NextPage = () => (
   <>
@@ -46,6 +46,6 @@ https://www.linkedin.com/jobs/search/?f_C=160&f_E=2&f_I=1&keywords=it%20jobs&loc
       </p>
     </main>
   </>
-);
+)
 
-export default Jobs;
+export default Jobs

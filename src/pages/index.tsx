@@ -1,12 +1,12 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import { trpc } from "../utils/trpc";
-import { Welcome, Details, Banner } from "../ui";
+import { trpc } from '../utils/trpc'
+import { Welcome, Details, Banner } from '../ui'
 
-import { type NextPage } from "next";
+import { type NextPage } from 'next'
 
 const Home: NextPage = () => {
-  const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
+  const hello = trpc.example.hello.useQuery({ text: 'from tRPC' })
 
   return (
     <>
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

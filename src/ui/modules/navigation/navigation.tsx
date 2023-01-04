@@ -1,20 +1,20 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import { useSession, signOut } from "next-auth/react";
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { useSession, signOut } from 'next-auth/react'
 
 import {
   BiNotification,
   BiSearch,
   BiAward,
   BiCertification,
-} from "react-icons/bi";
-import { IoCloseOutline } from "react-icons/io5";
+} from 'react-icons/bi'
+import { IoCloseOutline } from 'react-icons/io5'
 
 export const Navigation: React.FC = () => {
-  const { data: sessionData } = useSession();
-  const { pathname } = useRouter();
-  const [showBanner, setShowBanner] = useState(true);
+  const { data: sessionData } = useSession()
+  const { pathname } = useRouter()
+  const [showBanner, setShowBanner] = useState(true)
 
   return (
     <>
@@ -28,7 +28,7 @@ export const Navigation: React.FC = () => {
             fontSize={24}
             className="absolute right-5 cursor-pointer"
             onClick={() => {
-              setShowBanner(false);
+              setShowBanner(false)
             }}
           />
         </div>
@@ -39,10 +39,11 @@ export const Navigation: React.FC = () => {
       >
         <Link
           href="/"
-          className={`${
-            pathname === "/" &&
-            "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
-          } flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110`}
+          className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+          ${
+            pathname === '/' &&
+            'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
+          } `}
         >
           Hirica
         </Link>
@@ -61,10 +62,11 @@ export const Navigation: React.FC = () => {
             </div>
             <Link
               href="/profile"
-              className={`${
-                pathname === "/profile" &&
-                "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
-              } flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110`}
+              className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+              ${
+                pathname === '/profile' &&
+                'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
+              } `}
             >
               <BiNotification />
               <BiAward />
@@ -74,29 +76,30 @@ export const Navigation: React.FC = () => {
         )}
 
         <div
-          className={`${
-            (pathname === "/candidates" ||
-              pathname === "/jobs" ||
-              pathname === "/statistics") &&
-            "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
-          } flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110`}
+          className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+          ${
+            (pathname === '/candidates' ||
+              pathname === '/jobs' ||
+              pathname === '/statistics') &&
+            'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
+          }`}
         >
           <div className="flex gap-16 text-xs uppercase">
             <Link
               href="/candidates"
-              className={`${pathname === "/candidates" && "text-black"}`}
+              className={`${pathname === '/candidates' && 'text-black'}`}
             >
               Candidates
             </Link>
             <Link
               href="/jobs"
-              className={`${pathname === "/jobs" && "text-black"}`}
+              className={`${pathname === '/jobs' && 'text-black'}`}
             >
               Jobs
             </Link>
             <Link
               href="/statistics"
-              className={`${pathname === "/statistics" && "text-black"}`}
+              className={`${pathname === '/statistics' && 'text-black'}`}
             >
               Statistics
             </Link>
@@ -107,5 +110,5 @@ export const Navigation: React.FC = () => {
         </button>
       </nav>
     </>
-  );
-};
+  )
+}

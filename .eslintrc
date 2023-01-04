@@ -13,10 +13,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "jest"
-  ],
+  "plugins": ["@typescript-eslint", "jest"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
@@ -27,10 +24,7 @@
     "@typescript-eslint/consistent-type-imports": "warn",
     "no-underscore-dangle": 0
   },
-  "ignorePatterns": [
-    "*.config.js",
-    "*.setup.js"
-  ],
+  "ignorePatterns": ["*.config.js", "*.setup.js"],
   "settings": {
     "react": {
       "version": "detect"

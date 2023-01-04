@@ -1,12 +1,12 @@
-import type { NextRouter } from "next/router";
+import type { NextRouter } from 'next/router'
 
 export const createMockRouter = (router: NextRouter): NextRouter => ({
   ...router,
-  basePath: "",
-  pathname: "/",
-  route: "/",
+  basePath: '',
+  pathname: '/',
+  route: '/',
   query: {},
-  asPath: "/",
+  asPath: '/',
   back: jest.fn(),
   beforePopState: jest.fn(),
   prefetch: jest.fn(),
@@ -21,7 +21,7 @@ export const createMockRouter = (router: NextRouter): NextRouter => ({
   isFallback: false,
   isLocaleDomain: false,
   isReady: true,
-  defaultLocale: "en",
+  defaultLocale: 'en',
   domainLocales: [],
   isPreview: false,
-});
+})

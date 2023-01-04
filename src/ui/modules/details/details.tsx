@@ -18,4 +18,4 @@ export const Details: React.FC = () => (
       </div>
     </div>
   </div>
-);
+)

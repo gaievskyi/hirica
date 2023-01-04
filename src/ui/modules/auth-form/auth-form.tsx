@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 type AuthFormProps = {
-  action: () => void;
-};
+  action: () => void
+}
 
 export const AuthForm: React.FC<AuthFormProps> = ({ action }) => (
   <form className="flex flex-col gap-12">
@@ -48,4 +48,4 @@ export const AuthForm: React.FC<AuthFormProps> = ({ action }) => (
       </button>
     </div>
   </form>
-);
+)

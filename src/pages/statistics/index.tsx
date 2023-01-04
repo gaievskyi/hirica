@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import { type NextPage } from "next";
+import { type NextPage } from 'next'
 
 const Statistics: NextPage = () => (
   <>
@@ -32,6 +32,6 @@ const Statistics: NextPage = () => (
       </p>
     </main>
   </>
-);
+)
 
-export default Statistics;
+export default Statistics

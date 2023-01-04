@@ -1,22 +1,22 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { signIn, useSession } from "next-auth/react";
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { signIn, useSession } from 'next-auth/react'
 
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
-import { AuthForm } from "../../ui";
+import { AuthForm } from '../../ui'
 
-import { type NextPage } from "next";
+import { type NextPage } from 'next'
 
 const Start: NextPage = () => {
-  const { data: sessionData } = useSession();
-  const router = useRouter();
+  const { data: sessionData } = useSession()
+  const router = useRouter()
 
   useEffect(() => {
     if (sessionData) {
-      router.push("/profile");
+      router.push('/profile')
     }
-  }, [router, sessionData]);
+  }, [router, sessionData])
 
   return (
     <>
@@ -31,12 +31,12 @@ const Start: NextPage = () => {
       <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left">
         <AuthForm
           action={() => {
-            signIn();
+            signIn()
           }}
         />
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Start;
+export default Start

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export const Banner: React.FC = () => (
   <div className="flex flex-col items-center justify-center bg-black py-10 text-white">
@@ -15,4 +15,4 @@ export const Banner: React.FC = () => (
       </Link>
     </div>
   </div>
-);
+)
