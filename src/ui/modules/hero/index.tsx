@@ -1,12 +1,14 @@
-/* This example requires Tailwind CSS v3.0+ */
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 export const Hero: React.FC = () => {
+  const { data: sessionData } = useSession()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="isolate bg-white">
+    <div className="isolate bg-[#fdfbf6]">
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
         <svg
           className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -86,17 +88,20 @@ export const Hero: React.FC = () => {
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   <span className="text-gray-600">
-                    Announcing our next round of funding.{' '}
-                    <a href="#" className="font-semibold text-indigo-600">
+                    Discover our strategy of redefining the recruiting system{' '}
+                    <Link
+                      href="/statistics"
+                      className="font-semibold text-indigo-600"
+                    >
                       <span className="absolute inset-0" aria-hidden="true" />
                       Read more <span aria-hidden="true">&rarr;</span>
-                    </a>
+                    </Link>
                   </span>
                 </div>
               </div>
               <div>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                  Data to enrich your online business
+                  Find talents and jobs with Hirica
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
@@ -104,24 +109,24 @@ export const Hero: React.FC = () => {
                   occaecat fugiat aliqua.
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
+                  <Link
+                    href={sessionData ? '/profile' : '/start'}
+                    className="hover:black/80 inline-flex gap-2 rounded-md bg-black px-4 py-3 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-black hover:bg-black/80"
                   >
                     Get started{' '}
                     <span className="text-indigo-200" aria-hidden="true">
                       &rarr;
                     </span>
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+                  </Link>
+                  <Link
+                    href="/jobs"
+                    className="inline-flex gap-2 rounded-md px-4 py-3 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                   >
-                    Live demo{' '}
+                    Explore jobs
                     <span className="text-gray-400" aria-hidden="true">
                       &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">

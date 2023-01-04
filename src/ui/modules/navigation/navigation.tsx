@@ -20,10 +20,7 @@ export const Navigation: React.FC = () => {
     <>
       {showBanner && (
         <div className="flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-5 text-center text-xs">
-          <h1>
-            Hirica is a Web 3.0 job share platform. Anonymous and free. Fast and
-            simple.
-          </h1>
+          <h1>Hirica is a Web 3.0 job share platform. Anonymous and free.</h1>
           <IoCloseOutline
             fontSize={24}
             className="absolute right-5 cursor-pointer"
@@ -60,7 +57,10 @@ export const Navigation: React.FC = () => {
               {sessionData?.user?.name && (
                 <p className="text-xs uppercase">{sessionData.user.name}</p>
               )}
-              <button className=" text-white" onClick={() => signOut()}>
+              <button
+                className=" text-white underline-offset-4 hover:underline"
+                onClick={() => signOut()}
+              >
                 Sign out
               </button>
             </Link>

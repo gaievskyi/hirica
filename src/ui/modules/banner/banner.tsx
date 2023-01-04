@@ -6,7 +6,7 @@ export const Banner: React.FC = () => (
     <h2>We charge 25% of candidate’s one-month salary.</h2>
     <div className="m-10">
       <Link
-        className="flex rounded-full border-2 border-white bg-black px-6 py-4 text-white hover:bg-black/80"
+        className="flex rounded-lg border-2 border-white bg-black px-6 py-4 text-white hover:bg-black/80"
         href="/start"
       >
         <div className="flex items-center justify-center gap-2 text-lg">

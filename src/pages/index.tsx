@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { trpc } from '../utils/trpc'
-import { Welcome, Details, Banner, Features, AreYouReady, Hero } from '../ui'
+import { Welcome, Banner, Features, AreYouReady, Hero, Footer } from '../ui'
 
 import { type NextPage } from 'next'
 
@@ -22,10 +22,7 @@ const Home: NextPage = () => {
         <Hero />
       </section>
       <section>
-        <Welcome greeting={hello?.data?.greeting} />
-      </section>
-      <section className="bg-white">
-        <Details />
+        <Features />
       </section>
       <section>
         <Banner />
@@ -36,12 +33,7 @@ const Home: NextPage = () => {
       <section>
         <AreYouReady />
       </section>
-      <footer className="flex h-96 w-full items-center justify-center bg-black text-white">
-        &copy; {new Date().getFullYear()}
-        <a href="mailto:hirica@proton.me" className="ml-2 ">
-          hirica@proton.me
-        </a>
-      </footer>
+      <Footer />
     </>
   )
 }

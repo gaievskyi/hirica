@@ -26,9 +26,9 @@ const Profile: NextPage = () => {
       </Head>
 
       {data ? (
-        <div className="px-96 pb-16">
+        <div className="px-96">
           <ProfileHead />
-          <div>
+          <>
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
                 <div className="px-4 sm:px-0">
@@ -179,7 +179,7 @@ const Profile: NextPage = () => {
                 </form>
               </div>
             </div>
-          </div>
+          </>
 
           <div className="hidden sm:block" aria-hidden="true">
             <div className="py-5">

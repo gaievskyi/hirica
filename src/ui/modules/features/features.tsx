@@ -26,7 +26,7 @@ export const Features: React.FC = () => (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="sm:text-center">
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          A better way to send money
+          A better way to hire
         </p>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
           Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
