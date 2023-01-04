@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { trpc } from '../utils/trpc'
-import { Welcome, Details, Banner } from '../ui'
+import { Welcome, Details, Banner, Features, AreYouReady } from '../ui'
 
 import { type NextPage } from 'next'
 
@@ -28,7 +28,10 @@ const Home: NextPage = () => {
         <Banner />
       </section>
       <section>
-        <Details />
+        <Features />
+      </section>
+      <section>
+        <AreYouReady />
       </section>
       <footer className="flex h-96 w-full items-center justify-center bg-black text-white">
         &copy; {new Date().getFullYear()}

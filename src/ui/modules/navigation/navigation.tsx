@@ -49,29 +49,26 @@ export const Navigation: React.FC = () => {
         </Link>
         {sessionData && (
           <>
-            <div className="flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110">
-              {sessionData?.user?.name && (
-                <p className="text-xs uppercase">{sessionData.user.name}</p>
-              )}
-              <button
-                className="rounded-full bg-black text-white hover:bg-black/80"
-                onClick={() => signOut()}
-              >
-                Sign out
-              </button>
-            </div>
             <Link
               href="/profile"
-              className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+              className={`flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
               ${
                 pathname === '/profile' &&
                 'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
               } `}
             >
+              {sessionData?.user?.name && (
+                <p className="text-xs uppercase">{sessionData.user.name}</p>
+              )}
+              <button className=" text-white" onClick={() => signOut()}>
+                Sign out
+              </button>
+            </Link>
+            <div className="flex items-center justify-between gap-4 rounded-full border-2 border-white bg-black/20 px-5 py-2 text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110">
               <BiNotification />
               <BiAward />
               <BiCertification />
-            </Link>
+            </div>
           </>
         )}
 

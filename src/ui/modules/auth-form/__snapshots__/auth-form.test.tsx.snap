@@ -20,7 +20,7 @@ exports[`Sign up form renders correctly 1`] = `
         E-mail
       </label>
       <input
-        class="border-b-2 border-black bg-transparent py-3 text-sm"
+        class="border-0 border-b-2 border-black bg-transparent py-3 px-0 text-sm"
         name="email"
         placeholder="john.doe@email.com"
         required=""

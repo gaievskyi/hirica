@@ -21,7 +21,7 @@ export const authOptions: NextAuthOptions = {
   providers: [
     EmailProvider({
       server: env.MAIL_SERVER,
-      from: '<no-reply@hirica.com>',
+      from: '<no-reply@hirica.io>',
     }),
     GithubProvider({
       clientId: env.GITHUB_ID,
