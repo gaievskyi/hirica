@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { trpc } from '../utils/trpc'
-import { Welcome, Details, Banner, Features, AreYouReady } from '../ui'
+import { Welcome, Details, Banner, Features, AreYouReady, Hero } from '../ui'
 
 import { type NextPage } from 'next'
 
@@ -18,6 +18,9 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <section>
+        <Hero />
+      </section>
       <section>
         <Welcome greeting={hello?.data?.greeting} />
       </section>
