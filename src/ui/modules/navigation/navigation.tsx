@@ -30,10 +30,7 @@ export const Navigation: React.FC = () => {
           />
         </div>
       )}
-      <nav
-        data-testid="navigation"
-        className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 py-2"
-      >
+      <nav className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 py-2">
         <Link
           href="/"
           className={`flex items-center justify-between gap-4 rounded-full  border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110

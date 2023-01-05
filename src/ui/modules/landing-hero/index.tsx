@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 

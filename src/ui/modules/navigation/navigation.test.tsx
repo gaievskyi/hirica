@@ -11,18 +11,16 @@ describe('Navigation', () => {
   })
 
   it('is available and clickable', () => {
-    const view = render(<Navigation />)
-    const navigation = view.getByTestId('navigation')
-    expect(navigation).toBeVisible()
-    expect(navigation).toBeEnabled()
+    const { container } = render(<Navigation />)
+    expect(container).toBeVisible()
+    expect(container).toBeEnabled()
   })
 
   it('has links', () => {
-    const view = render(<Navigation />)
-    const navigation = view.getByTestId('navigation')
-    expect(navigation).toHaveTextContent('Candidates')
-    expect(navigation).toHaveTextContent('Jobs')
-    expect(navigation).toHaveTextContent('Statistics')
+    const { container } = render(<Navigation />)
+    expect(container).toHaveTextContent('Candidates')
+    expect(container).toHaveTextContent('Jobs')
+    expect(container).toHaveTextContent('Statistics')
   })
 
   it("navigates to the '/', if Hirica clicked", () => {

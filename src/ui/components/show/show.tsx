@@ -6,5 +6,5 @@ type Props = PropsWithChildren & {
 }
 
 export const Show: FC<Props> = ({ children, when: ready, fallback }) => (
-  <>{ready ? children : fallback || <></>}</>
+  <>{ready ? children : fallback ?? <></>}</>
 )

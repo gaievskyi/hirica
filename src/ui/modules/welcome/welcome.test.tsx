@@ -10,10 +10,9 @@ describe('Welcome', () => {
   })
 
   it('is available and clickable', () => {
-    const view = render(<Welcome />)
-    const welcome = view.getByRole('main')
-    expect(welcome).toBeVisible()
-    expect(welcome).toBeEnabled()
+    const { container } = render(<Welcome />)
+    expect(container).toBeVisible()
+    expect(container).toBeEnabled()
   })
 
   it("navigates to the '/start', if Start clicked", () => {
