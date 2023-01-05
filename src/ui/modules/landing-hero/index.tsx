@@ -104,9 +104,9 @@ export const LandingHero: React.FC = () => {
                   Find talents and jobs with Hirica
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
-                  Hirica is a platform that connects people and companies
-                  through a unique matching system. It is anonymous,
-                  decentralized and free to use.
+                  Hirica connects people and companies through a unique matching
+                  system. It is an anonymous, decentralized and free app for
+                  sharing talents of IT industry.
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
                   <Link

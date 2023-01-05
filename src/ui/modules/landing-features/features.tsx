@@ -12,13 +12,13 @@ const features = [
   {
     name: 'Anonymous',
     description:
-      'Only you can choose who you want to reveal your contact information to and dive into recruitment process. We do not share your information with anyone.',
+      'Only you can choose who you want to reveal your contact information to and dive into the recruitment process. We do not share your information with anyone.',
     icon: <GiNinjaMask className="h-5 w-5" />,
   },
   {
     name: 'Web 3.0',
     description:
-      'Hirica is a Web 3.0 job search platform. We use the latest technologies to make your experience better. Hirica is decentralized and anonymous.',
+      'Hirica is a Web 3.0 job search platform. It is decentralized and anonymous, we use the latest technologies to make your experience better.',
     icon: <GiCobweb className="h-5 w-5" />,
   },
   {
@@ -48,7 +48,7 @@ export const Features: React.FC = () => (
               key={feature.name}
               className="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-black text-white sm:shrink-0">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black text-white sm:shrink-0">
                 {feature.icon}
               </div>
               <div className="sm:min-w-0 sm:flex-1">
