@@ -1,4 +1,4 @@
-import { render } from '../../../utils/render'
+import { render } from 'utils/render'
 import { Banner } from './banner'
 
 describe('Banner', () => {

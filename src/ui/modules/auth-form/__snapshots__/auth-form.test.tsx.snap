@@ -61,3 +61,65 @@ exports[`Sign up form renders correctly 1`] = `
   </form>
 </div>
 `;
+
+exports[`Sign up form renders correctly and  1`] = `
+<div>
+  <form
+    class="flex flex-col gap-12"
+  >
+    <a
+      class="text-3xl font-semibold"
+      href="/"
+    >
+      Hirica • Hire and find job anonymously
+    </a>
+    <div
+      class="flex flex-col gap-2"
+    >
+      <label
+        for="email"
+      >
+        E-mail
+      </label>
+      <input
+        class="border-0 border-b-2 border-black bg-transparent py-3 px-0 text-sm"
+        name="email"
+        placeholder="john.doe@email.com"
+        required=""
+        type="email"
+      />
+    </div>
+    <div
+      class="flex items-center justify-center gap-3"
+    >
+      <button
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80 "
+        type="submit"
+      >
+        Next
+      </button>
+      <span>
+        or continue with
+      </span>
+      <button
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+        type="submit"
+      >
+        Web 3.0
+      </button>
+      <button
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+        type="submit"
+      >
+        LinkedIn
+      </button>
+      <button
+        class="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+        type="submit"
+      >
+        GitHub
+      </button>
+    </div>
+  </form>
+</div>
+`;

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Banner, Features, Offer, Hero, Footer } from '../ui'
+import { Banner, Features, Offer, Hero, Footer } from 'ui'
 
 import { type NextPage } from 'next'
 

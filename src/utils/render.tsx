@@ -1,3 +1,4 @@
+import type { NextRouter } from 'next/router'
 import Router from 'next/router'
 import { Suspense } from 'react'
 
@@ -9,9 +10,33 @@ import type { RenderOptions } from '@testing-library/react'
 import type { Session } from 'next-auth'
 import type { FC, PropsWithChildren, ReactElement } from 'react'
 
-import { createMockRouter } from './test-utils'
-
 type MockProps = PropsWithChildren & unknown
+
+export const createMockRouter = (router: NextRouter): NextRouter => ({
+  ...router,
+  basePath: '',
+  pathname: '/',
+  route: '/',
+  query: {},
+  asPath: '/',
+  back: jest.fn(),
+  beforePopState: jest.fn(),
+  prefetch: jest.fn(),
+  push: jest.fn(),
+  reload: jest.fn(),
+  replace: jest.fn(),
+  events: {
+    on: jest.fn(),
+    off: jest.fn(),
+    emit: jest.fn(),
+  },
+  isFallback: false,
+  isLocaleDomain: false,
+  isReady: true,
+  defaultLocale: 'en',
+  domainLocales: [],
+  isPreview: false,
+})
 
 const mockSession: Session = {
   expires: `${Date.now() * 100}`,

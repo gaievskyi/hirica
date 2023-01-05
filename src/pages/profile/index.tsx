@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useSession } from 'next-auth/react'
 
-import { trpc } from '../../utils/trpc'
+import { trpc } from 'utils/trpc'
 
 import {
   Divider,
@@ -10,7 +10,7 @@ import {
   NotificationSettings,
   ProfilePublic,
   ResponseSettings,
-} from '../../ui'
+} from 'ui'
 
 import { type NextPage } from 'next'
 

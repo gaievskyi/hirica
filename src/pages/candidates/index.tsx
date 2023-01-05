@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { type NextPage } from 'next'
-import { FcLike, FcLikePlaceholder } from 'react-icons/fc'
+// import { FcLike, FcLikePlaceholder } from 'react-icons/fc'
 
 const Candidates: NextPage = () => (
   <>

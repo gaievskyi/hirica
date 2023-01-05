@@ -1,6 +1,5 @@
-import { fireEvent, render, router } from '../../../utils/render'
-
-import { Navigation } from './navigation'
+import { fireEvent, render, router } from 'utils/render'
+import { Navigation } from '@ui/modules'
 
 describe('Navigation', () => {
   it('does not provoke browser console errors', () => {

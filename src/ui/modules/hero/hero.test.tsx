@@ -1,5 +1,5 @@
-import { render } from '../../../utils/render'
-import { Hero } from './'
+import { render } from 'utils/render'
+import { Hero } from 'ui'
 
 describe('Hero', () => {
   it('does not provoke browser console errors', () => {
