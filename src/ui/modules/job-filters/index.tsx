@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { HiOutlineChevronDown, HiSortDescending } from 'react-icons/hi'
-import { BiSortAlt2 } from 'react-icons/bi'
+
+const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ')
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -66,11 +67,7 @@ const filters = [
   },
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export const CategoryFilters: React.FC = () => {
+export const JobFilters: React.FC = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (

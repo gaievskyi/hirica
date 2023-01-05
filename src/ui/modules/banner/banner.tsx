@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export const Banner: React.FC = () => (
-  <div className="flex flex-col items-center justify-center py-16 ">
+  <section className="flex flex-col items-center justify-center py-16 ">
     <h1 className="p-5 text-center text-5xl">Pay for hires only</h1>
     <h2>We charge once 25% of candidate’s one-month salary.</h2>
     <div className="m-10">
@@ -14,5 +14,5 @@ export const Banner: React.FC = () => (
         </div>
       </Link>
     </div>
-  </div>
+  </section>
 )

@@ -29,11 +29,7 @@ const Start: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left">
-        <AuthForm
-          action={() => {
-            signIn()
-          }}
-        />
+        <AuthForm action={() => signIn()} />
       </main>
     </>
   )

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { type NextPage } from 'next'
-import { CategoryFilters } from '../../ui'
+import { JobFilters } from '../../ui'
 
 const Jobs: NextPage = () => (
   <>
@@ -13,7 +13,7 @@ const Jobs: NextPage = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <CategoryFilters />
+    <JobFilters />
   </>
 )
 
