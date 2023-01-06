@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                    Find talents and jobs with Hirica
+                    Find talents and jobs with Hirica Web 3.0
                   </h1>
                   <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
                     Hirica connects people and companies through a unique
