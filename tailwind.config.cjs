@@ -7,6 +7,9 @@ module.exports = {
         sans: ['Century Gothic', 'sans-serif'],
       },
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [require('@tailwindcss/forms')],
 }

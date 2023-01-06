@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Banner, Features, Offer, Hero, Footer } from 'ui'
+import { Banner, Features, Footer, Hero, Offer, Statistics } from 'ui'
 
 import { type NextPage } from 'next'
 
@@ -17,7 +17,7 @@ const Home: NextPage = () => (
     <Hero />
     <Features />
     <Banner />
-    <Features />
+    <Statistics />
     <Offer />
     <Footer />
   </>
