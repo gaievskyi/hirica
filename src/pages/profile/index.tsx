@@ -13,14 +13,23 @@ import {
 } from 'ui'
 
 import { type NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const Profile: NextPage = () => {
   const { data: sessionData } = useSession()
+  const router = useRouter()
 
   const { data: profileData } = trpc.auth.getProfile.useQuery(
     undefined, // no input
     { enabled: sessionData?.user !== undefined }
   )
+
+  useEffect(() => {
+    if (!sessionData) {
+      router.push('/start')
+    }
+  }, [router, sessionData])
 
   return (
     <>
@@ -32,18 +41,14 @@ const Profile: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {profileData ? (
-        <ProfileContainer>
-          <ProfileHead />
-          <ProfilePublic />
-          <Divider />
-          <ResponseSettings />
-          <Divider />
-          <NotificationSettings />
-        </ProfileContainer>
-      ) : (
-        <p className="text-center">You are not signed in to view this page.</p>
-      )}
+      <ProfileContainer>
+        <ProfileHead />
+        <ProfilePublic />
+        <Divider />
+        <ResponseSettings />
+        <Divider />
+        <NotificationSettings />
+      </ProfileContainer>
     </>
   )
 }
