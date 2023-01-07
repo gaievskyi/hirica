@@ -7,7 +7,7 @@ type NavigationBannerProps = {
 export const NavigationBanner: React.FC<NavigationBannerProps> = ({
   action,
 }) => (
-  <div className="flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-5 text-center text-xs">
+  <div className="flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-7 text-center text-xs">
     <h1>Hirica is a Web 3.0 job share platform. Anonymous and free.</h1>
     <IoCloseOutline
       fontSize={24}
