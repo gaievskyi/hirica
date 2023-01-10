@@ -1,3 +1,9 @@
+import {
+  HiricaLogo,
+  HiricaLogoDark,
+  HiricaLogoInverted,
+  HiricaLogoLight,
+} from '@ui/components'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 

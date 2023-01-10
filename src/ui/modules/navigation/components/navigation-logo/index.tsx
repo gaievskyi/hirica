@@ -1,3 +1,4 @@
+import { HiricaLogo, HiricaSymbolLogo } from '@ui/components'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -14,6 +15,7 @@ export const NavigationLogo: React.FC<NavigationLogoProps> = ({
 
   return (
     <Link
+      data-testid="navigation-logo"
       onClick={(e) => {
         if (minimized) {
           e.preventDefault()
@@ -21,7 +23,7 @@ export const NavigationLogo: React.FC<NavigationLogoProps> = ({
         }
       }}
       href="/"
-      className={`flex items-center justify-between gap-4 rounded-full  border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
+      className={`flex items-center justify-between gap-4 rounded-full border-white  bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-3 hover:scale-110
           ${
             pathname === '/' &&
             'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'

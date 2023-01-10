@@ -1,0 +1,5 @@
+export * from './hirica'
+export * from './hirica-dark'
+export * from './hirica-light'
+export * from './hirica-inverted'
+export * from './hirica-symbol'

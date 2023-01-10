@@ -23,8 +23,8 @@ describe('Navigation', () => {
   })
 
   it("navigates to the '/', if Hirica clicked", () => {
-    const { getByText } = render(<Navigation />)
-    fireEvent.click(getByText('Hirica'))
+    const { getByTestId } = render(<Navigation />)
+    fireEvent.click(getByTestId('navigation-logo'))
     expect(router.push).toHaveBeenCalledWith('/', '/', {
       locale: undefined,
       scroll: undefined,
