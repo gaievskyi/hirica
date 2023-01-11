@@ -36,7 +36,7 @@ export const Navigation: React.FC = () => {
   return (
     <>
       {showBanner && <NavigationBanner action={closeBanner} />}
-      <nav className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 py-2 px-24">
+      <nav className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 py-2 px-8">
         <NavigationLogo minimized={minimized} />
         {!minimized && sessionData && <NavigationSession />}
         {!minimized && <NavigationLinks />}
