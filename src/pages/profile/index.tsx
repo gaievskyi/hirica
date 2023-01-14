@@ -34,7 +34,11 @@ const Profile: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Hirica {sessionData?.user?.name ?? ''} profile</title>
+        <title>
+          {sessionData
+            ? `Hirica ${sessionData?.user?.name ?? ''} profile`
+            : 'Hirica profile'}
+        </title>
         <meta
           name="description"
           content="Hirica is a pretty job search platform."
@@ -45,7 +49,11 @@ const Profile: NextPage = () => {
         <ProfileHead />
         <ProfilePublic />
         <Divider />
-        <ResponseSettings />
+        <ResponseSettings
+          name={profileData?.name}
+          email={profileData?.email}
+          image={profileData?.image}
+        />
         <Divider />
         <NotificationSettings />
       </ProfileContainer>
