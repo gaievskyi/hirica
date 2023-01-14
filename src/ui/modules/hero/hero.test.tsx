@@ -15,11 +15,11 @@ describe('Hero', () => {
     expect(container).toBeEnabled()
   })
 
-  it("navigates to the '/start', if Start clicked", () => {
-    // render(<Hero />)
-  })
-
-  it("navigates to the '/candidates', if signed in and Start clicked", () => {
-    // render(<Hero />)
+  it("navigates to the '/profile', if signed in and Start clicked", () => {
+    const { getByText } = render(<Hero />)
+    const startButton = getByText('Get started')
+    expect(startButton).toBeVisible()
+    expect(startButton).toBeEnabled()
+    expect(startButton).toHaveAttribute('href', '/profile')
   })
 })

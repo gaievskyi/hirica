@@ -5,10 +5,10 @@ export const Footer: React.FC = () => (
   <footer aria-label="Site Footer" className="bg-white lg:grid lg:grid-cols-5">
     <div className="relative block h-32 lg:col-span-2 lg:h-full">
       <Image
-        src="https://images.unsplash.com/photo-1642370324100-324b21fab3a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
+        src="/footer-bg.gif"
         width={1548}
         height={1024}
-        alt=""
+        alt="abstract background"
         className="absolute inset-0 h-full w-full object-cover"
       />
     </div>
@@ -18,21 +18,16 @@ export const Footer: React.FC = () => (
         <div>
           <p>
             <span className="text-xs uppercase tracking-wide text-gray-500">
-              Call us
+              Send us an email
             </span>
 
             <a
-              href="#"
+              href="mailto:hirica@proton.me"
               className="block text-2xl font-medium text-gray-900 hover:opacity-75 sm:text-3xl"
             >
-              0123456789
+              hirica@proton.me
             </a>
           </p>
-
-          <ul className="mt-8 space-y-1 text-sm text-gray-700">
-            <li>Monday to Friday: 10am - 5pm</li>
-            <li>Weekend: 10am - 3pm</li>
-          </ul>
 
           <ul className="mt-8 flex gap-6">
             <li>
@@ -160,48 +155,39 @@ export const Footer: React.FC = () => (
             <nav aria-label="Footer Navigation - Services" className="mt-6">
               <ul className="space-y-4 text-sm">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/candidates"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                    1on1 Coaching
-                  </a>
+                    Candidates
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/jobs"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                    Company Review
-                  </a>
+                    Jobs
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/statistics"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                    Accounts Review
-                  </a>
+                    Statistics
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/start"
                     className="text-gray-700 transition hover:opacity-75"
                   >
-                    HR Consulting
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    SEO Optimisation
-                  </a>
+                    My Account
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -227,15 +213,6 @@ export const Footer: React.FC = () => (
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     Meet the Team
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    Accounts Review
                   </a>
                 </li>
               </ul>

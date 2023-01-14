@@ -1,7 +1,8 @@
 import { Divider } from '@ui/components'
-import { GiCobweb, GiNinjaMask } from 'react-icons/gi'
+import { GiCobweb, GiNinjaMask, GiAchievement } from 'react-icons/gi'
 import { MdMoneyOff } from 'react-icons/md'
 import { SiSuperuser } from 'react-icons/si'
+import { AiOutlineSmile } from 'react-icons/ai'
 
 const features = [
   {
@@ -27,6 +28,18 @@ const features = [
     description:
       'We are working constantly on making Hirica as user friendly as possible. We create tools for recruiters and candidates to make the process of hiring and finding a job easier for both sides.',
     icon: <SiSuperuser className="h-4 w-4" />,
+  },
+  {
+    name: 'Truth',
+    description:
+      'We created an algorithm which moderates our content. We do not allow any fake information to be posted on our platform, so that you can be sure that you are talking to a real person.',
+    icon: <AiOutlineSmile className="h-4 w-4" />,
+  },
+  {
+    name: 'Achievements',
+    description:
+      'Consider your profile as a game. The more achievements you get, the more you will be noticed by recruiters. Both employees and employers can receive profile badges for their interactions with Hirica.',
+    icon: <GiAchievement className="h-4 w-4" />,
   },
 ] as const
 
