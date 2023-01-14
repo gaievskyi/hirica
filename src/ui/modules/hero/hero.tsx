@@ -4,7 +4,7 @@ import {
   HiricaLogoInverted,
   HiricaLogoLight,
 } from '@ui/components'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 export const Hero: React.FC = () => {
@@ -68,15 +68,15 @@ export const Hero: React.FC = () => {
                     app for sharing talents of IT industry.
                   </p>
                   <div className="mt-8 flex gap-x-4 sm:justify-center">
-                    <Link
-                      href={sessionData ? '/profile' : '/start'}
+                    <button
+                      onClick={() => signIn()}
                       className="hover:black/80 inline-flex gap-2 rounded-md bg-black px-4 py-3 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-black hover:bg-black/80"
                     >
-                      Get started{' '}
+                      Get started
                       <span className="text-indigo-200" aria-hidden="true">
                         &rarr;
                       </span>
-                    </Link>
+                    </button>
                     <Link
                       href="/jobs"
                       className="inline-flex gap-2 rounded-md px-4 py-3 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"

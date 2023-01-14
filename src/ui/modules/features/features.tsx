@@ -53,12 +53,7 @@ export const Features: React.FC = () => (
         No fees, no middlemen. Just you and the person you need.
       </p>
     </div>
-    <div
-      style={{
-        boxShadow: '50px 50px 100px #c8c8c8, 50px -50px 100px #ffffff',
-      }}
-      className="mx-auto max-w-7xl rounded-xl bg-white px-12 py-16 lg:px-24"
-    >
+    <div className="mx-auto max-w-7xl rounded-xl bg-white px-12 py-16 lg:px-24">
       <div className="max-w-lg sm:mx-auto md:max-w-none">
         <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
           {features.map((feature) => (

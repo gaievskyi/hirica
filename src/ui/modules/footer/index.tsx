@@ -2,14 +2,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const Footer: React.FC = () => (
-  <footer aria-label="Site Footer" className="bg-white lg:grid lg:grid-cols-5">
+  <footer
+    aria-label="Site Footer"
+    className="bg-[#fdfbf6] lg:grid lg:grid-cols-5"
+  >
     <div className="relative block h-32 lg:col-span-2 lg:h-full">
       <Image
         src="/footer-bg.gif"
         width={1548}
         height={1024}
         alt="abstract background"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full rounded-tr-3xl object-cover"
       />
     </div>
 
@@ -255,7 +258,16 @@ export const Footer: React.FC = () => (
           </nav>
 
           <p className="mt-8 text-xs text-gray-500 sm:mt-0">
-            &copy; {new Date().getFullYear()}. Hirica. All rights reserved.
+            &copy; {new Date().getFullYear()}. Hirica by{' '}
+            <a
+              href="https://www.linkedin.com/in/gaievskyi/"
+              className="cursor-pointer border-b-2 border-black"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gaievskyi
+            </a>
+            . All rights reserved.
           </p>
         </div>
       </div>

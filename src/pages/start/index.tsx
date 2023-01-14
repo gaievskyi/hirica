@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { signIn } from 'next-auth/react'
 
 import { AuthForm } from 'ui'
 
@@ -16,7 +15,7 @@ const Start: NextPage = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left">
-      <AuthForm action={() => signIn()} />
+      <AuthForm />
     </main>
   </>
 )

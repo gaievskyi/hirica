@@ -18,6 +18,9 @@ export const authOptions: NextAuthOptions = {
       return session
     },
   },
+  pages: {
+    signIn: '/start',
+  },
   adapter: PrismaAdapter(prisma),
   providers: [
     EmailProvider({

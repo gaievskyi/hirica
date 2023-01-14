@@ -2,13 +2,12 @@ import { useEffect } from 'react'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 
-type AuthFormProps = {
-  action: () => void
-}
+import { FcGoogle } from 'react-icons/fc'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-export const AuthForm: React.FC<AuthFormProps> = ({ action }) => {
+export const AuthForm: React.FC = () => {
   const { data: sessionData } = useSession()
   const router = useRouter()
 
@@ -30,35 +29,38 @@ export const AuthForm: React.FC<AuthFormProps> = ({ action }) => {
           type="email"
           name="email"
           className="border-0 border-b-2 border-black bg-transparent py-3 px-0 text-sm"
-          placeholder="john.doe@email.com"
+          placeholder="Enter your e-mail address here."
         />
       </div>
       <div className="flex items-center justify-center gap-3">
         <button
-          onClick={action}
+          onClick={() => signIn('email')}
           type="submit"
           className="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80 "
         >
-          Next
+          Login
         </button>
         <span>or continue with</span>
         <button
+          onClick={() => signIn('google')}
           type="submit"
-          className="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+          className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         >
-          Web 3.0
+          <FcGoogle /> Google
         </button>
         <button
+          onClick={() => signIn('linkedin')}
           type="submit"
-          className="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+          className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         >
-          LinkedIn
+          <FaLinkedin color="0A66C2" className="rounded-sm bg-white" /> LinkedIn
         </button>
         <button
+          onClick={() => signIn('github')}
           type="submit"
-          className="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+          className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         >
-          GitHub
+          <FaGithub /> GitHub
         </button>
       </div>
     </form>

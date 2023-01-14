@@ -60,7 +60,7 @@ export const ProfilePublic: React.FC = () => (
                   name="about"
                   rows={3}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                  placeholder="you@example.com"
+                  placeholder="Use this space to tell everyone about your experience, achievements or career goals."
                   defaultValue={''}
                 />
               </div>
@@ -82,8 +82,7 @@ export const ProfilePublic: React.FC = () => (
                   name="about"
                   rows={3}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                  placeholder="JavaScript, Nest.js, Agile"
-                  defaultValue={''}
+                  placeholder="Example: JavaScript, Nest.js, Agile"
                 />
               </div>
               <p className="mt-2 text-sm text-gray-500">

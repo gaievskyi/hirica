@@ -3,7 +3,7 @@ import { AuthForm } from './auth-form'
 
 describe('Sign up form', () => {
   it('renders correctly', () => {
-    const { container } = render(<AuthForm action={() => null} />)
+    const { container } = render(<AuthForm />)
     expect(container).toBeVisible()
     expect(container).toMatchSnapshot()
   })

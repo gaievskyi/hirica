@@ -5,3 +5,7 @@
 body {
   background-color: #fdfbf6;
 }
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
