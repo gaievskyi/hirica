@@ -1,4 +1,3 @@
-import { HiricaLogo, HiricaSymbolLogo } from '@ui/components'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
