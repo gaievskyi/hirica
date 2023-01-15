@@ -7,14 +7,14 @@ import { type NextPage } from 'next'
 const Start: NextPage = () => (
   <>
     <Head>
-      <title>Sign up Hirica</title>
+      <title>Authorize your Hirica</title>
       <meta
         name="description"
         content="Hirica is a web 3.0 IT job search platform"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left">
+    <main className="flex min-h-[80vh] w-full items-center justify-center bg-[#FDFBF6]">
       <AuthForm />
     </main>
   </>

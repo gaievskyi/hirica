@@ -3,16 +3,16 @@ import Image from 'next/image'
 
 export const Footer: React.FC = () => (
   <footer
-    aria-label="Site Footer"
-    className="bg-[#fdfbf6] lg:grid lg:grid-cols-5"
+    aria-label="Hirica footer"
+    className="bg-white lg:grid lg:grid-cols-5"
   >
     <div className="relative block h-32 lg:col-span-2 lg:h-full">
       <Image
         src="/footer-bg.gif"
-        width={1548}
-        height={1024}
+        width={800}
+        height={540}
         alt="abstract background"
-        className="absolute inset-0 h-full w-full rounded-tr-3xl object-cover"
+        className="absolute inset-0 top-0 left-0 right-0 h-full w-full"
       />
     </div>
 
@@ -261,7 +261,7 @@ export const Footer: React.FC = () => (
             &copy; {new Date().getFullYear()}. Hirica by{' '}
             <a
               href="https://www.linkedin.com/in/gaievskyi/"
-              className="cursor-pointer border-b-2 border-black"
+              className="cursor-pointer underline underline-offset-8"
               target="_blank"
               rel="noopener noreferrer"
             >

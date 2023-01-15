@@ -6,6 +6,7 @@ import { signIn, useSession } from 'next-auth/react'
 
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { SiApple } from 'react-icons/si'
 
 export const AuthForm: React.FC = () => {
   const { data: sessionData } = useSession()
@@ -34,9 +35,10 @@ export const AuthForm: React.FC = () => {
       </div>
       <div className="flex items-center justify-center gap-3">
         <button
+          disabled
           onClick={() => signIn('email')}
           type="submit"
-          className="rounded-full bg-black px-6 py-3 text-white hover:bg-black/80 "
+          className="flex cursor-not-allowed items-center gap-2 rounded-full bg-black px-6 py-3 text-white opacity-50"
         >
           Login
         </button>
@@ -49,9 +51,10 @@ export const AuthForm: React.FC = () => {
           <FcGoogle /> Google
         </button>
         <button
+          disabled
           onClick={() => signIn('linkedin')}
           type="submit"
-          className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
+          className="flex cursor-not-allowed items-center gap-2 rounded-full bg-black px-6 py-3 text-white opacity-50"
         >
           <FaLinkedin color="0A66C2" className="rounded-sm bg-white" /> LinkedIn
         </button>
@@ -61,6 +64,14 @@ export const AuthForm: React.FC = () => {
           className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         >
           <FaGithub /> GitHub
+        </button>
+        <button
+          disabled
+          onClick={() => signIn('apple')}
+          type="submit"
+          className="flex cursor-not-allowed items-center gap-2 rounded-full bg-black px-6 py-3 text-white opacity-50"
+        >
+          <SiApple /> Apple
         </button>
       </div>
     </form>
