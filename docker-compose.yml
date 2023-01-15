@@ -3,8 +3,10 @@ version: '3.8'
 services:
   app:
     build: .
-    command: pnpm run dev --port 80
+    command: pnpm dev
+    env_file:
+      - .env
     ports:
-      - 80:80
+      - 3000:3000
     volumes:
       - './:/app'

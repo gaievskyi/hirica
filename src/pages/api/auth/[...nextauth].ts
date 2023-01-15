@@ -24,8 +24,8 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     EmailProvider({
-      server: env.MAIL_SERVER,
-      from: '<no-reply@hirica.io>',
+      server: env.EMAIL_SERVER,
+      from: env.EMAIL_FROM,
     }),
     GithubProvider({
       clientId: env.GITHUB_ID,

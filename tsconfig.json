@@ -29,6 +29,6 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "jest.config.js", "jest.setup.js"  ],
   "exclude": ["node_modules", "*.config.[ts,js]", "*.setup.[ts,js]"]
 }

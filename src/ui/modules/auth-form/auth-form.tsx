@@ -35,10 +35,9 @@ export const AuthForm: React.FC = () => {
       </div>
       <div className="flex items-center justify-center gap-3">
         <button
-          disabled
           onClick={() => signIn('email')}
           type="submit"
-          className="flex cursor-not-allowed items-center gap-2 rounded-full bg-black px-6 py-3 text-white opacity-50"
+          className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white hover:bg-black/80"
         >
           Login
         </button>
