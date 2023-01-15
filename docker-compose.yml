@@ -1,12 +1,23 @@
-version: '3.8'
-
+version: '3.9'
 services:
   app:
-    build: .
-    command: pnpm dev
-    env_file:
-      - .env
+    platform: 'linux/amd64'
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_CLIENTVAR: 'clientvar'
+    working_dir: /app
     ports:
-      - 3000:3000
-    volumes:
-      - './:/app'
+      - '3000:3000'
+    image: hirica
+    environment:
+      - DATABASE_URL=file:./db.sqlite
+      - NEXTAUTH_SECRET=iamdeadinside
+      - NEXTAUTH_URL=http://localhost:3000
+      - GITHUB_ID=Iv1.b8610eecbb7ce4d2
+      - GITHUB_SECRET=41ebe85d3f3c3a6ffda1a0ff01b475664672fdde
+      - GOOGLE_ID=804049940287-m5jf6q6shd8qrg2fre8hokr86ki00rnr.apps.googleusercontent.com
+      - GOOGLE_SECRET=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
+      - EMAIL_SERVER=smtp://username:password@smtp.example.com:587
+      - EMAIL_FROM=noreply@example.com
