@@ -7,11 +7,11 @@ export const ProfileHead: React.FC = () => (
       <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <svg
-            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
+            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
           >
             <path
               fillRule="evenodd"
@@ -24,11 +24,11 @@ export const ProfileHead: React.FC = () => (
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <svg
-            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
+            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
           >
             <path
               fillRule="evenodd"
@@ -40,11 +40,11 @@ export const ProfileHead: React.FC = () => (
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <svg
-            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
+            className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"
           >
             <path d="M10.75 10.818v2.614A3.13 3.13 0 0011.888 13c.482-.315.612-.648.612-.875 0-.227-.13-.56-.612-.875a3.13 3.13 0 00-1.138-.432zM8.33 8.62c.053.055.115.11.184.164.208.16.46.284.736.363V6.603a2.45 2.45 0 00-.35.13c-.14.065-.27.143-.386.233-.377.292-.514.627-.514.909 0 .184.058.39.202.592.037.051.08.102.128.152z" />
             <path
@@ -64,11 +64,11 @@ export const ProfileHead: React.FC = () => (
           className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
         >
           <svg
-            className="-ml-1 mr-2 h-5 w-5 text-gray-500"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
+            className="-ml-1 mr-2 h-5 w-5 text-gray-500"
           >
             <path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
             <path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
@@ -83,11 +83,11 @@ export const ProfileHead: React.FC = () => (
           className="inline-flex items-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
         >
           <svg
-            className="-ml-1 mr-2 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
+            className="-ml-1 mr-2 h-5 w-5"
           >
             <path
               fillRule="evenodd"
@@ -109,11 +109,11 @@ export const ProfileHead: React.FC = () => (
         >
           More
           <svg
-            className="-mr-1 ml-2 h-5 w-5 text-gray-500"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
+            className="-mr-1 ml-2 h-5 w-5 text-gray-500"
           >
             <path
               fillRule="evenodd"
@@ -124,24 +124,24 @@ export const ProfileHead: React.FC = () => (
         </button>
 
         <div
-          className="absolute right-0 z-10 mt-2 -mr-1 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="mobile-menu-button"
+          className="absolute right-0 z-10 mt-2 -mr-1 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           <a
             href="#"
-            className="block px-4 py-2 text-sm text-gray-700"
             role="menuitem"
             id="mobile-menu-item-0"
+            className="block px-4 py-2 text-sm text-gray-700"
           >
             Edit
           </a>
           <a
             href="#"
-            className="block px-4 py-2 text-sm text-gray-700"
             role="menuitem"
             id="mobile-menu-item-1"
+            className="block px-4 py-2 text-sm text-gray-700"
           >
             View
           </a>

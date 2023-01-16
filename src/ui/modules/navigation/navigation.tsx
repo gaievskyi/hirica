@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 
 import {
-  NavigationBanner,
+  // NavigationBanner,
   NavigationLinks,
   NavigationLogo,
   NavigationSearch,
@@ -12,20 +12,20 @@ import {
 export const Navigation: React.FC = () => {
   const { data: sessionData } = useSession()
   const [minimized, setMinimized] = useState(false)
-  const [showBanner, setShowBanner] = useState(true)
+  // const [showBanner, setShowBanner] = useState(true)
 
-  const closeBanner = () => {
-    setShowBanner(false)
-  }
+  // const closeBanner = () => {
+  //   setShowBanner(false)
+  // }
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setMinimized(true)
-        setShowBanner(false)
+        // setShowBanner(false)
       } else {
         setMinimized(false)
-        setShowBanner(true)
+        // setShowBanner(true)
       }
     }
 
