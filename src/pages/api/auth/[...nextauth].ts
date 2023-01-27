@@ -9,7 +9,6 @@ import { prisma } from 'server/db/client'
 import NextAuth, { type NextAuthOptions } from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
-  // Include user.id on session
   callbacks: {
     session({ session, user }) {
       if (session.user) {

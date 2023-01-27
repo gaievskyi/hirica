@@ -1,9 +1,10 @@
 import { type NextPage } from 'next'
+
 import Head from 'next/head'
 
 import { JobFilters } from 'ui'
 
-const Jobs: NextPage = () => (
+const JobsPage: NextPage = () => (
   <>
     <Head>
       <title>Hirica jobs</title>
@@ -17,4 +18,4 @@ const Jobs: NextPage = () => (
   </>
 )
 
-export default Jobs
+export default JobsPage

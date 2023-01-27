@@ -1,9 +1,8 @@
+import { type NextPage } from 'next'
+
 import Head from 'next/head'
 
-import { type NextPage } from 'next'
-// import { FcLike, FcLikePlaceholder } from 'react-icons/fc'
-
-const Candidates: NextPage = () => (
+const CandidatesPage: NextPage = () => (
   <>
     <Head>
       <title>Hirica candidates</title>
@@ -25,4 +24,4 @@ const Candidates: NextPage = () => (
   </>
 )
 
-export default Candidates
+export default CandidatesPage

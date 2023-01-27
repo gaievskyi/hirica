@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { type NextPage } from 'next'
 
-const Statistics: NextPage = () => (
+const StatisticsPage: NextPage = () => (
   <>
     <Head>
       <title>Hirica statistics</title>
@@ -34,4 +34,4 @@ const Statistics: NextPage = () => (
   </>
 )
 
-export default Statistics
+export default StatisticsPage

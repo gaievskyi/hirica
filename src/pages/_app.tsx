@@ -1,5 +1,6 @@
 import { type AppType } from 'next/app'
 import { type Session } from 'next-auth'
+
 import { SessionProvider } from 'next-auth/react'
 
 import { trpc } from 'utils/trpc'
@@ -8,7 +9,7 @@ import { Layout } from 'ui'
 
 import 'styles/globals.css'
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const Hirica: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
@@ -21,4 +22,4 @@ const MyApp: AppType<{ session: Session | null }> = ({
   )
 }
 
-export default trpc.withTRPC(MyApp)
+export default trpc.withTRPC(Hirica)

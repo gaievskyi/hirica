@@ -4,7 +4,7 @@ import { AuthForm } from 'ui'
 
 import { type NextPage } from 'next'
 
-const Start: NextPage = () => (
+const StartPage: NextPage = () => (
   <>
     <Head>
       <title>Authorize your Hirica</title>
@@ -20,4 +20,4 @@ const Start: NextPage = () => (
   </>
 )
 
-export default Start
+export default StartPage

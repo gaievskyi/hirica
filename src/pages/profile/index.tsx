@@ -1,3 +1,5 @@
+import { type NextPage } from 'next'
+
 import Head from 'next/head'
 import { useSession } from 'next-auth/react'
 
@@ -12,11 +14,10 @@ import {
   ResponseSettings,
 } from 'ui'
 
-import { type NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-const Profile: NextPage = () => {
+const ProfilePage: NextPage = () => {
   const { data: sessionData } = useSession()
   const router = useRouter()
 
@@ -49,11 +50,7 @@ const Profile: NextPage = () => {
         <ProfileHead />
         <ProfilePublic />
         <Divider />
-        <ResponseSettings
-          name={profileData?.name}
-          email={profileData?.email}
-          image={profileData?.image}
-        />
+        <ResponseSettings {...profileData} />
         <Divider />
         <NotificationSettings />
       </ProfileContainer>
@@ -61,4 +58,4 @@ const Profile: NextPage = () => {
   )
 }
 
-export default Profile
+export default ProfilePage

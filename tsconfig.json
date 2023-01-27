@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,18 +21,32 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": "./src/",
     "paths": {
-      "@ui/*": ["ui/*"],
-      "@trpc/*": ["server/trpc/*"]
+      "@ui/*": [
+        "ui/*"
+      ],
+      "@trpc/*": [
+        "server/trpc/*"
+      ]
     }
   },
-  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "types": [
+    "node",
+    "jest",
+    "@testing-library/jest-dom"
+  ],
   "include": [
     "./src/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
-    "**/*.mjs"
-, "jest.config.js", "jest.setup.js"  ],
-  "exclude": ["node_modules", "*.config.[ts,js]", "*.setup.[ts,js]"]
+    "**/*.mjs",
+    "jest.config.js",
+    "jest.setup.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "*.config.[ts,js]",
+    "*.setup.[ts,js]"
+  ]
 }
