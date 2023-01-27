@@ -1,4 +1,4 @@
-import { NotFound } from '@ui/components'
+import { NotFound } from 'ui/components'
 import type { NextPage } from 'next'
 
 const NotFoundPage: NextPage = () => (

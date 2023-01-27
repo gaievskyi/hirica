@@ -1,11 +1,5 @@
-import {
-  HiricaLogo,
-  HiricaLogoDark,
-  HiricaLogoInverted,
-  HiricaLogoLight,
-} from '@ui/components'
-import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { signIn, useSession } from 'next-auth/react'
 
 export const Hero: React.FC = () => {
   const { data: sessionData } = useSession()

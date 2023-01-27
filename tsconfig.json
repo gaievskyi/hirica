@@ -21,9 +21,6 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": "./src/",
     "paths": {
-      "@ui/*": [
-        "ui/*"
-      ],
       "@trpc/*": [
         "server/trpc/*"
       ]

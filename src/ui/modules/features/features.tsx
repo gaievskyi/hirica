@@ -1,8 +1,9 @@
-import { Divider } from '@ui/components'
 import { GiCobweb, GiNinjaMask, GiAchievement } from 'react-icons/gi'
 import { MdMoneyOff } from 'react-icons/md'
 import { SiSuperuser } from 'react-icons/si'
 import { AiOutlineSmile } from 'react-icons/ai'
+
+import { Divider } from 'ui/components'
 
 const features = [
   {
