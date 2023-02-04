@@ -4,6 +4,10 @@ const Document = () => (
   <Html>
     <Head>
       <link
+        href="https://fonts.cdnfonts.com/css/century-gothic"
+        rel="stylesheet"
+      />
+      <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="./apple-touch-icon.png"

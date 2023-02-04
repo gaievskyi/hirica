@@ -9,7 +9,7 @@ const features = [
   {
     name: 'No fees',
     description:
-      'We do not collect commission from interaction with Hirica. We only charge one time if a person hired 25% of their expected salary to keep the lights on.',
+      'We do not collect commission from interaction with Hirica. We only charge companies one time if a person hired 25% of their expected salary to keep the lights on.',
     icon: <MdMoneyOff className="h-4 w-4" />,
   },
   {
