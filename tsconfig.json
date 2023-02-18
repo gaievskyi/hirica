@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "baseUrl": "./src/",
     "lib": [
       "dom",
       "dom.iterable",
@@ -8,42 +8,23 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
-    "noUncheckedIndexedAccess": true,
-    "baseUrl": "./src/",
-    "paths": {
-      "@trpc/*": [
-        "server/trpc/*"
-      ]
-    }
   },
-  "types": [
-    "node",
-    "jest",
-    "@testing-library/jest-dom"
-  ],
   "include": [
-    "./src/*",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "**/*.cjs",
-    "**/*.mjs",
-    "jest.config.js",
-    "jest.setup.js"
+    "**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "*.config.[ts,js]",
-    "*.setup.[ts,js]"
+    "node_modules"
   ]
 }

@@ -1,8 +1,15 @@
 import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 export const Hero: React.FC = () => {
   const { data: sessionData } = useSession()
+
+  const router = useRouter()
+
+  const onGetStartedClick = () => {
+    sessionData ? router.push('/profile') : signIn()
+  }
 
   return (
     <section>
@@ -63,7 +70,7 @@ export const Hero: React.FC = () => {
                   </p>
                   <div className="mt-8 flex gap-x-4 sm:justify-center">
                     <button
-                      onClick={() => signIn()}
+                      onClick={onGetStartedClick}
                       className="hover:black/80 inline-flex gap-2 rounded-md bg-black px-4 py-3 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-black hover:bg-black/80"
                     >
                       Get started

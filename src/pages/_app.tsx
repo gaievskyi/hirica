@@ -5,8 +5,6 @@ import { SessionProvider } from 'next-auth/react'
 
 import { trpc } from 'utils/trpc'
 
-import { Layout } from 'ui'
-
 import 'styles/globals.css'
 
 const Hirica: AppType<{ session: Session | null }> = ({
@@ -15,9 +13,7 @@ const Hirica: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </SessionProvider>
   )
 }

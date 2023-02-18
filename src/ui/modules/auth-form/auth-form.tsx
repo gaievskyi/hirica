@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { signIn, useSession } from 'next-auth/react'
@@ -12,14 +10,12 @@ export const AuthForm: React.FC = () => {
   const { data: sessionData } = useSession()
   const router = useRouter()
 
-  useEffect(() => {
-    if (sessionData) {
-      router.push('/profile')
-    }
-  }, [router, sessionData])
+  if (sessionData) {
+    router.push('/profile')
+  }
 
   return (
-    <form className="flex flex-col gap-12">
+    <form className="flex max-w-xs flex-col gap-12">
       <Link href="/" className="text-3xl font-semibold">
         Hirica • Hire and find job anonymously
       </Link>
@@ -33,7 +29,7 @@ export const AuthForm: React.FC = () => {
           placeholder="Enter your e-mail address here."
         />
       </div>
-      <div className="flex items-center justify-center gap-3">
+      <div className="flex flex-col gap-3">
         <button
           onClick={() => signIn('email')}
           type="submit"
@@ -41,7 +37,7 @@ export const AuthForm: React.FC = () => {
         >
           Login
         </button>
-        <span>or continue with</span>
+        <span className="text-center">or continue with</span>
         <button
           onClick={() => signIn('google')}
           type="submit"

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { AuthForm } from 'ui'
+import { AuthForm, Navigation } from 'ui'
 
 import { type NextPage } from 'next'
 
@@ -14,7 +14,8 @@ const StartPage: NextPage = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="flex min-h-[80vh] w-full items-center justify-center bg-[#FDFBF6]">
+    <Navigation />
+    <main className="flex w-full items-center justify-center bg-[#FDFBF6] p-6">
       <AuthForm />
     </main>
   </>

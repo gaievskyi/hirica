@@ -1,10 +1,12 @@
-import type { FC, PropsWithChildren, ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
 
-type Props = PropsWithChildren & {
+type ShowProps = PropsWithChildren<{
   when: boolean
-  fallback?: ReactNode
-}
+  fallback?: JSX.Element
+}>
 
-export const Show: FC<Props> = ({ children, when: ready, fallback }) => (
-  <>{ready ? children : fallback ?? <></>}</>
-)
+export const Show: React.FC<ShowProps> = ({
+  children,
+  when,
+  fallback = null,
+}) => <>{when ? <>{children}</> : fallback}</>

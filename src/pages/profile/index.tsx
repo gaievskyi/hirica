@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react'
 import { trpc } from 'utils/trpc'
 
 import {
+  Layout,
   Divider,
   ProfileContainer,
   ProfileHead,
@@ -46,14 +47,16 @@ const ProfilePage: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ProfileContainer>
-        <ProfileHead />
-        <ProfilePublic />
-        <Divider />
-        <ResponseSettings {...profileData} />
-        <Divider />
-        <NotificationSettings />
-      </ProfileContainer>
+      <Layout>
+        <ProfileContainer>
+          <ProfileHead />
+          <ProfilePublic />
+          <Divider />
+          <ResponseSettings {...profileData} />
+          <Divider />
+          <NotificationSettings />
+        </ProfileContainer>
+      </Layout>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Banner, Features, Hero, Offer, Statistics } from 'ui'
+import { Banner, Features, Hero, Layout, Offer, Statistics } from 'ui'
 
 import { type NextPage } from 'next'
 
@@ -14,11 +14,13 @@ const HomePage: NextPage = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Hero />
-    <Features />
-    <Banner />
-    <Statistics />
-    <Offer />
+    <Layout>
+      <Hero />
+      <Features />
+      <Banner />
+      <Statistics />
+      <Offer />
+    </Layout>
   </>
 )
 
