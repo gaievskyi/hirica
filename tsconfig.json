@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
     "baseUrl": "./src/",
     "lib": [
       "dom",
@@ -20,6 +21,7 @@
     "jsx": "preserve",
   },
   "include": [
+    "next.config.mjs",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
