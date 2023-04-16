@@ -5,7 +5,7 @@ RUN apk add --no-cache libc6-compat openssl
 WORKDIR /app
 
 # Prisma client
-COPY prisma/db.sqlite prisma/schema.prisma ./prisma/
+COPY prisma ./prisma/
 
 # package.json dependencies
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml\* ./
