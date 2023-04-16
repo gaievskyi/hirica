@@ -7,15 +7,15 @@ import { trpc } from 'utils/trpc'
 
 import 'styles/globals.css'
 
-const Hirica: AppType<{ session: Session | null }> = ({
+type AppProps = { session: Session | null }
+
+const Hirica: AppType<AppProps> = ({
   Component,
   pageProps: { session, ...pageProps },
-}) => {
-  return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
-  )
-}
+}) => (
+  <SessionProvider session={session}>
+    <Component {...pageProps} />
+  </SessionProvider>
+)
 
 export default trpc.withTRPC(Hirica)

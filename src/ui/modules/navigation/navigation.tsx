@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 
 import {
-  // NavigationBanner,
+  NavigationBanner,
   NavigationLinks,
   NavigationLogo,
   NavigationSearch,
@@ -10,22 +10,22 @@ import {
 } from './components'
 
 export const Navigation: React.FC = () => {
-  const { data: sessionData } = useSession()
+  const { data: session } = useSession()
   const [minimized, setMinimized] = useState(false)
-  // const [showBanner, setShowBanner] = useState(true)
+  const [showBanner, setShowBanner] = useState(true)
 
-  // const closeBanner = () => {
-  //   setShowBanner(false)
-  // }
+  const closeBanner = () => {
+    setShowBanner(false)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setMinimized(true)
-        // setShowBanner(false)
+        setShowBanner(false)
       } else {
         setMinimized(false)
-        // setShowBanner(true)
+        setShowBanner(true)
       }
     }
 
@@ -37,10 +37,10 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      {/* {showBanner && <NavigationBanner action={closeBanner} />} */}
-      <nav className="sticky top-0 left-0 z-[100] mb-10 flex select-none justify-center gap-2 py-2 px-8">
+      {showBanner && <NavigationBanner action={closeBanner} />}
+      <nav className="sticky left-0 top-0 z-[100] mb-10 flex select-none justify-center gap-2 px-8 py-2">
         <NavigationLogo minimized={minimized} />
-        {!minimized && sessionData && <NavigationSession />}
+        {!minimized && session && <NavigationSession />}
         {!minimized && <NavigationLinks />}
         {!minimized && <NavigationSearch />}
       </nav>

@@ -15,30 +15,20 @@ import {
   ResponseSettings,
 } from 'ui'
 
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-
 const ProfilePage: NextPage = () => {
-  const { data: sessionData } = useSession()
-  const router = useRouter()
+  const { data: session } = useSession()
 
   const { data: profileData } = trpc.auth.getProfile.useQuery(
     undefined, // no input
-    { enabled: sessionData?.user !== undefined }
+    { enabled: session?.user !== undefined }
   )
-
-  useEffect(() => {
-    if (!sessionData) {
-      router.push('/start')
-    }
-  }, [router, sessionData])
 
   return (
     <>
       <Head>
         <title>
-          {sessionData
-            ? `Hirica ${sessionData?.user?.name ?? ''} profile`
+          {session
+            ? `Hirica ${session?.user?.name ?? ''} profile`
             : 'Hirica profile'}
         </title>
         <meta

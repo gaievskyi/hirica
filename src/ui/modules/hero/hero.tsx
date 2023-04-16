@@ -3,12 +3,12 @@ import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 export const Hero: React.FC = () => {
-  const { data: sessionData } = useSession()
+  const { data: session } = useSession()
 
   const router = useRouter()
 
   const onGetStartedClick = () => {
-    sessionData ? router.push('/profile') : signIn()
+    session ? router.push('/profile') : signIn()
   }
 
   return (
@@ -43,10 +43,10 @@ export const Hero: React.FC = () => {
         </div>
         <main>
           <div className="relative px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl pt-12 pb-32 sm:pt-48 sm:pb-64">
+            <div className="mx-auto max-w-3xl pb-32 pt-12 sm:pb-64 sm:pt-48">
               <div>
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                  <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  <div className="relative overflow-hidden rounded-full px-4 py-1.5 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                     <span className="text-gray-600">
                       Discover our strategy of redefining the recruiting system{' '}
                       <Link

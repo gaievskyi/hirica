@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { BiAward, BiCertification, BiNotification } from 'react-icons/bi'
 
 export const NavigationSession: React.FC = () => {
-  const { data: sessionData } = useSession()
+  const { data: session } = useSession()
   const { pathname } = useRouter()
 
   return (
@@ -18,8 +18,8 @@ export const NavigationSession: React.FC = () => {
                 'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
               } `}
       >
-        {sessionData?.user?.name && (
-          <p className="text-xs uppercase">{sessionData.user.name}</p>
+        {session?.user?.name && (
+          <p className="text-xs uppercase">{session.user.name}</p>
         )}
         <button
           className=" text-white underline-offset-4 hover:underline"
