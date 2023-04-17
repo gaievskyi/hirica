@@ -28,6 +28,12 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
 - [x] [Docker](https://www.docker.com/) for containerization
 - [x] [Vercel](https://vercel.com/) for hosting
 
+## Project docs
+
+- [Roadmap](/docs/roadmap.md)
+- [Code style](/docs/code_style.md)
+- [Architecture](/docs/architecture.md)
+
 ## Prerequisites
 
 ```bash
