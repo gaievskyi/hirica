@@ -1,12 +1,14 @@
 import { type AppType } from "next/app"
 import { type Session } from "next-auth"
+import { SessionProvider } from "next-auth/react"
 
 import { api } from "~/utils/api"
-import { SessionProvider } from "next-auth/react"
 
 import "~/styles/globals.css"
 
-type AppProps = { session: Session | null }
+type AppProps = {
+  session: Session | null
+}
 
 const Hirica: AppType<AppProps> = ({
   Component,

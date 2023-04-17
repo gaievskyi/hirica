@@ -36,7 +36,7 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
 
 ## Prerequisites
 
-```bash
+```shell
 # Install pnpm globally (skip if you already have it installed)
 npm install -g pnpm
 # Install dependencies
@@ -45,19 +45,19 @@ pnpm install
 
 Create a `.env` file with your environment configurations using [template](/.env.example)
 
-```bash
+```shell
 grep -v '^#' .env.example | grep -v '^$' > .env
 ```
 
 ## Run locally (development)
 
-```bash
+```shell
 pnpm dev
 ```
 
 ## Build and run locally (production)
 
-```bash
+```shell
 pnpm run build
 pnpm start
 ```
@@ -66,12 +66,12 @@ pnpm start
 
 1. Build Docker image
 
-```bash
-docker build -t <image name> .
-```
+   ```shell
+   docker build -t <image name> .
+   ```
 
-2.  Run Docker container
+2. Run Docker container
 
-```bash
-docker run --name <container name> -p 80:<port> --env-file .env -d <image name>
-```
+   ```shell
+   docker run --name <container name> -p 80:<port> --env-file .env -d <image name>
+   ```
