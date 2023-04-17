@@ -36,42 +36,46 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
 
 ## Prerequisites
 
-```shell
-# Install pnpm globally (skip if you already have it installed)
-npm install -g pnpm
-# Install dependencies
-pnpm install
-```
+1. Install pnpm globally (skip if you already have it installed)
+
+   ```console
+   foo@bar:~$ npm install -g pnpm
+   ```
+2. Install dependencies
+
+   ```console
+   foo@bar:hirica$ pnpm install
+   ```
 
 Create a `.env` file with your environment configurations using [template](/.env.example)
 
-```shell
-grep -v '^#' .env.example | grep -v '^$' > .env
+```console
+foo@bar:hirica$ grep -v '^#' .env.example | grep -v '^$' > .env
 ```
 
 ## Run locally (development)
 
-```shell
-pnpm dev
+```console
+foo@bar:hirica$ pnpm dev
 ```
 
 ## Build and run locally (production)
 
-```shell
-pnpm run build
-pnpm start
+```console
+foo@bar:hirica$ pnpm run build
+foo@bar:hirica$ pnpm start
 ```
 
 ## Run with Docker
 
 1. Build Docker image
 
-   ```shell
-   docker build -t <image name> .
+   ```console
+   foo@bar:hirica$ docker build -t <image name> .
    ```
 
 2. Run Docker container
 
-   ```shell
-   docker run --name <container name> -p 80:<port> --env-file .env -d <image name>
+   ```console
+   foo@bar:hirica$ docker run --name <container name> -p 80:<port> --env-file .env -d <image name>
    ```
