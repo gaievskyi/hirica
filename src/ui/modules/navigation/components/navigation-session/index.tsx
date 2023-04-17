@@ -1,8 +1,8 @@
-import { signOut, useSession } from 'next-auth/react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { signOut, useSession } from "next-auth/react"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import { BiAward, BiCertification, BiNotification } from 'react-icons/bi'
+import { BiAward, BiCertification, BiNotification } from "react-icons/bi"
 
 export const NavigationSession: React.FC = () => {
   const { data: session } = useSession()
@@ -14,8 +14,9 @@ export const NavigationSession: React.FC = () => {
         href="/profile"
         className={`flex items-center justify-between gap-4 rounded-full  border-white bg-black px-5 py-2 text-xs uppercase text-white transition-all duration-500 ease-in-out hover:mx-2 hover:scale-105
               ${
-                pathname === '/profile' &&
-                'bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500'
+                pathname === "/profile"
+                  ? "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
+                  : ""
               } `}
       >
         {session?.user?.name && (
@@ -23,7 +24,7 @@ export const NavigationSession: React.FC = () => {
         )}
         <button
           className=" text-white underline-offset-4 hover:underline"
-          onClick={() => signOut()}
+          onClick={() => void signOut()}
         >
           Sign out
         </button>

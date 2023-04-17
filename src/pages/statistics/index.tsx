@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import { type NextPage } from 'next'
+import { type NextPage } from "next"
 
-import { Layout } from '~/ui'
+import { Layout } from "~/ui"
 
 const StatisticsPage: NextPage = () => (
   <>
@@ -12,7 +12,10 @@ const StatisticsPage: NextPage = () => (
         name="description"
         content="Compensation statistics of current year in the IT industry"
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        href="/favicon.ico"
+      />
     </Head>
     <Layout>
       <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left ">

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link"
 
 export const Banner: React.FC = () => (
   <section className="my-16 flex flex-col items-center justify-center bg-white py-16 text-black">

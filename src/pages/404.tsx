@@ -1,6 +1,6 @@
-import { Layout, NotFound } from '~/ui'
+import { Layout, NotFound } from "~/ui"
 
-import type { NextPage } from 'next'
+import type { NextPage } from "next"
 
 const NotFoundPage: NextPage = () => (
   <Layout>

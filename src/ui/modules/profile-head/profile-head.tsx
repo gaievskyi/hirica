@@ -57,7 +57,7 @@ export const ProfileHead: React.FC = () => (
         </div>
       </div>
     </div>
-    <div className="mt-5 flex lg:mt-0 lg:ml-4">
+    <div className="mt-5 flex lg:ml-4 lg:mt-0">
       <span className="ml-3 hidden sm:block">
         <button
           type="button"
@@ -127,7 +127,7 @@ export const ProfileHead: React.FC = () => (
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="mobile-menu-button"
-          className="absolute right-0 z-10 mt-2 -mr-1 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="absolute right-0 z-10 -mr-1 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           <a
             href="#"

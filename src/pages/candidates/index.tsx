@@ -1,9 +1,9 @@
-import { type NextPage } from 'next'
+import { type NextPage } from "next"
 
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head"
+import Link from "next/link"
 
-import { Layout } from '~/ui'
+import { Layout } from "~/ui"
 
 const CandidatesPage: NextPage = () => (
   <>
@@ -13,7 +13,10 @@ const CandidatesPage: NextPage = () => (
         name="description"
         content="Explore Hirica candidates. Find your next IT job. +199000 active candidates."
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        href="/favicon.ico"
+      />
     </Head>
     <Layout>
       <div className="flex flex-col gap-5">
@@ -27,19 +30,19 @@ const CandidatesPage: NextPage = () => (
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link href="#">
-                    1. Frontend Developer, $5600, 5 years{' '}
+                    1. Frontend Developer, $5600, 5 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    2. Cloud Engineer, $7200, 8 years{' '}
+                    2. Cloud Engineer, $7200, 8 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    3. QA Tech Lead, $6500, 11 years{' '}
+                    3. QA Tech Lead, $6500, 11 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
@@ -50,19 +53,19 @@ const CandidatesPage: NextPage = () => (
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link href="#">
-                    1. Frontend Developer, $5600, 5 years{' '}
+                    1. Frontend Developer, $5600, 5 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    2. Cloud Engineer, $7200, 8 years{' '}
+                    2. Cloud Engineer, $7200, 8 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    3. QA Tech Lead, $6500, 11 years{' '}
+                    3. QA Tech Lead, $6500, 11 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
@@ -73,19 +76,19 @@ const CandidatesPage: NextPage = () => (
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link href="#">
-                    1. Frontend Developer, $5600, 5 years{' '}
+                    1. Frontend Developer, $5600, 5 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="">
-                    2. Cloud Engineer, $7200, 8 years{' '}
+                    2. Cloud Engineer, $7200, 8 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    3. QA Tech Lead, $6500, 11 years{' '}
+                    3. QA Tech Lead, $6500, 11 years{" "}
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </li>

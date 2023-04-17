@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import { AuthForm, Navigation } from '~/ui'
+import { AuthForm, Navigation } from "~/ui"
 
-import { type NextPage } from 'next'
+import { type NextPage } from "next"
 
 const StartPage: NextPage = () => (
   <>
@@ -12,7 +12,10 @@ const StartPage: NextPage = () => (
         name="description"
         content="Hirica is a web 3.0 IT job search platform"
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        href="/favicon.ico"
+      />
     </Head>
     <Navigation />
     <main className="flex w-full items-center justify-center bg-[#FDFBF6] p-6">

@@ -1,1 +1,1 @@
-export * from './use-name.adapter'
+export * from "./use-name.adapter"

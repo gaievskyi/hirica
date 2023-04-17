@@ -1,4 +1,4 @@
-import { createContext, useContext, Children, isValidElement } from 'react'
+import { createContext, useContext, Children, isValidElement } from "react"
 
 type MatchProps = {
   when: boolean
@@ -47,7 +47,7 @@ const Match: React.FC<MatchProps> = ({ when, children }) => {
   const isInsideSwitch = useIsMatchInSwitch()
 
   if (!isInsideSwitch) {
-    throw new Error('Match components must be used inside a Switch component')
+    throw new Error("Match components must be used inside a Switch component")
   }
 
   return when ? <>{children}</> : null

@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-import { Divider } from '~/ui/components'
+import { Divider } from "~/ui/components"
 
 export const Offer: React.FC = () => (
-  <section className="mx-auto my-5 max-w-7xl rounded-2xl bg-white py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-16">
+  <section className="mx-auto my-5 max-w-7xl rounded-2xl bg-white px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-16 lg:py-16">
     <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
       <span className="block">Ready to dive in?</span>
       <span className="block text-indigo-700">

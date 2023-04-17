@@ -1,1 +1,1 @@
-export * from './switch-match'
+export * from "./switch-match"

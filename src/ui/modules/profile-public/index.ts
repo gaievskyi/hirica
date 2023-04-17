@@ -1,1 +1,1 @@
-export * from './profile-public'
+export * from "./profile-public"

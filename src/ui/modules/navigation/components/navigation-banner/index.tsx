@@ -1,4 +1,4 @@
-import { IoCloseOutline } from 'react-icons/io5'
+import { IoCloseOutline } from "react-icons/io5"
 
 type NavigationBannerProps = {
   action: () => void

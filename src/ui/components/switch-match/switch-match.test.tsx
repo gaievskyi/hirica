@@ -1,8 +1,8 @@
-import { render, screen } from 'utils/render'
-import { Switch, Match } from './switch-match'
+import { render, screen } from "~/utils/render"
+import { Switch, Match } from "./switch-match"
 
-describe('Switch', () => {
-  it('renders fallback if no Match components match', () => {
+describe("Switch", () => {
+  it("renders fallback if no Match components match", () => {
     render(
       <Switch fallback={<p>No matches found</p>}>
         <Match when={false}>
@@ -14,10 +14,10 @@ describe('Switch', () => {
       </Switch>
     )
 
-    expect(screen.getByText('No matches found')).toBeInTheDocument()
+    expect(screen.getByText("No matches found")).toBeInTheDocument()
   })
 
-  it('renders the first Match component that matches', () => {
+  it("renders the first Match component that matches", () => {
     render(
       <Switch fallback={<p>No matches found</p>}>
         <Match when={false}>
@@ -32,22 +32,22 @@ describe('Switch', () => {
       </Switch>
     )
 
-    expect(screen.getByText('This should be rendered')).toBeInTheDocument()
+    expect(screen.getByText("This should be rendered")).toBeInTheDocument()
   })
 })
 
-describe('Match', () => {
-  it('throws an error if used outside a Switch component', () => {
+describe("Match", () => {
+  it("throws an error if used outside a Switch component", () => {
     expect(() =>
       render(
         <Match when={true}>
           <p>This should not be rendered</p>
         </Match>
       )
-    ).toThrow('Match components must be used inside a Switch component')
+    ).toThrow("Match components must be used inside a Switch component")
   })
 
-  it('renders its children if the `when` prop is true', () => {
+  it("renders its children if the `when` prop is true", () => {
     render(
       <Switch fallback={<p>No matches found</p>}>
         <Match when={true}>
@@ -56,10 +56,10 @@ describe('Match', () => {
       </Switch>
     )
 
-    expect(screen.getByText('This should be rendered')).toBeInTheDocument()
+    expect(screen.getByText("This should be rendered")).toBeInTheDocument()
   })
 
-  it('does not render its children if the `when` prop is false', () => {
+  it("does not render its children if the `when` prop is false", () => {
     render(
       <Switch fallback={<p>No matches found</p>}>
         <Match when={false}>
@@ -69,7 +69,7 @@ describe('Match', () => {
     )
 
     expect(
-      screen.queryByText('This should not be rendered')
+      screen.queryByText("This should not be rendered")
     ).not.toBeInTheDocument()
   })
 })

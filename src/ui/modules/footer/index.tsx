@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link"
+import Image from "next/image"
 
 export const Footer: React.FC = () => (
   <footer
@@ -12,7 +12,7 @@ export const Footer: React.FC = () => (
         width={800}
         height={540}
         alt="abstract background"
-        className="absolute inset-0 top-0 left-0 right-0 h-full w-full"
+        className="absolute inset-0 left-0 right-0 top-0 h-full w-full"
       />
     </div>
 
@@ -155,7 +155,10 @@ export const Footer: React.FC = () => (
           <div>
             <p className="font-medium text-gray-900">Services</p>
 
-            <nav aria-label="Footer Navigation - Services" className="mt-6">
+            <nav
+              aria-label="Footer Navigation - Services"
+              className="mt-6"
+            >
               <ul className="space-y-4 text-sm">
                 <li>
                   <Link
@@ -199,7 +202,10 @@ export const Footer: React.FC = () => (
           <div>
             <p className="font-medium text-gray-900">Company</p>
 
-            <nav aria-label="Footer Navigation - Company" className="mt-6">
+            <nav
+              aria-label="Footer Navigation - Company"
+              className="mt-6"
+            >
               <ul className="space-y-4 text-sm">
                 <li>
                   <a
@@ -258,7 +264,7 @@ export const Footer: React.FC = () => (
           </nav>
 
           <p className="mt-8 text-xs text-gray-500 sm:mt-0">
-            &copy; {new Date().getFullYear()}. Hirica by{' '}
+            &copy; {new Date().getFullYear()}. Hirica by{" "}
             <a
               href="https://www.linkedin.com/in/gaievskyi/"
               className="cursor-pointer underline underline-offset-8"

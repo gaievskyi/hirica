@@ -1,2 +1,2 @@
-export * from './use-intersection-observer'
-export * from './use-name-adapter'
+export * from "./use-intersection-observer"
+export * from "./use-name-adapter"

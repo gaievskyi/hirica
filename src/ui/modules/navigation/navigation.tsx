@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { useSession } from 'next-auth/react'
+import { useEffect, useState } from "react"
+import { useSession } from "next-auth/react"
 
 import {
   NavigationBanner,
@@ -7,7 +7,7 @@ import {
   NavigationLogo,
   NavigationSearch,
   NavigationSession,
-} from './components'
+} from "./components"
 
 export const Navigation: React.FC = () => {
   const { data: session } = useSession()
@@ -29,9 +29,9 @@ export const Navigation: React.FC = () => {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [setMinimized])
 

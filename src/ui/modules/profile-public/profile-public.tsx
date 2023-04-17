@@ -10,7 +10,10 @@ export const ProfilePublic: React.FC = () => (
       </div>
     </div>
     <div className="mt-5 md:col-span-2 md:mt-0">
-      <form action="#" method="POST">
+      <form
+        action="#"
+        method="POST"
+      >
         <div className="shadow sm:overflow-hidden sm:rounded-md">
           <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
             <div>
@@ -32,7 +35,10 @@ export const ProfilePublic: React.FC = () => (
                   placeholder="Provide your expected salary and choose currency"
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center">
-                  <label htmlFor="currency" className="sr-only">
+                  <label
+                    htmlFor="currency"
+                    className="sr-only"
+                  >
                     Currency
                   </label>
                   <select
@@ -61,7 +67,7 @@ export const ProfilePublic: React.FC = () => (
                   rows={3}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
                   placeholder="Use this space to tell everyone about your experience, achievements or career goals."
-                  defaultValue={''}
+                  defaultValue={""}
                 />
               </div>
               <p className="mt-2 text-sm text-gray-500">
@@ -93,7 +99,7 @@ export const ProfilePublic: React.FC = () => (
           <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
             <button
               type="submit"
-              className="inline-flex justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              className="inline-flex justify-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
             >
               Save
             </button>

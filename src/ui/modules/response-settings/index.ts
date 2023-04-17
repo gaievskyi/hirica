@@ -1,1 +1,1 @@
-export * from './response-settings'
+export * from "./response-settings"

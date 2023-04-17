@@ -1,68 +1,68 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
-import { HiOutlineChevronDown, HiSortDescending } from 'react-icons/hi'
+import { Fragment, useState } from "react"
+import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react"
+import { HiOutlineChevronDown, HiSortDescending } from "react-icons/hi"
 
-const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ')
+const classNames = (...classes: string[]) => classes.filter(Boolean).join(" ")
 
 const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Highest salary', href: '#', current: false },
+  { name: "Most Popular", href: "#", current: true },
+  { name: "Best Rating", href: "#", current: false },
+  { name: "Newest", href: "#", current: false },
+  { name: "Highest salary", href: "#", current: false },
 ]
 const subCategories = [
-  { name: 'Frontend', href: '?category=frontend' },
-  { name: 'Backend', href: '?category=backend' },
-  { name: 'Fullstack', href: '?category=fullstack' },
-  { name: 'DevOps', href: '?category=devops' },
-  { name: 'Design', href: '?category=design' },
-  { name: 'Mobile', href: '?category=mobile' },
-  { name: 'Gaming', href: '?category=gaming' },
-  { name: 'Support', href: '?category=support' },
-  { name: 'Big Data', href: '?category=big-data' },
-  { name: 'IT administration', href: '?category=it-administration' },
-  { name: 'Testing', href: '?category=testing' },
-  { name: 'Embedded', href: '?category=embedded' },
-  { name: 'Security', href: '?category=security' },
-  { name: 'PM', href: '?category=pm' },
-  { name: 'AI', href: '?category=ai' },
-  { name: 'HR', href: '?category=hr' },
-  { name: 'BA', href: '?category=ba' },
-  { name: 'Other', href: '?category=other' },
+  { name: "Frontend", href: "?category=frontend" },
+  { name: "Backend", href: "?category=backend" },
+  { name: "Fullstack", href: "?category=fullstack" },
+  { name: "DevOps", href: "?category=devops" },
+  { name: "Design", href: "?category=design" },
+  { name: "Mobile", href: "?category=mobile" },
+  { name: "Gaming", href: "?category=gaming" },
+  { name: "Support", href: "?category=support" },
+  { name: "Big Data", href: "?category=big-data" },
+  { name: "IT administration", href: "?category=it-administration" },
+  { name: "Testing", href: "?category=testing" },
+  { name: "Embedded", href: "?category=embedded" },
+  { name: "Security", href: "?category=security" },
+  { name: "PM", href: "?category=pm" },
+  { name: "AI", href: "?category=ai" },
+  { name: "HR", href: "?category=hr" },
+  { name: "BA", href: "?category=ba" },
+  { name: "Other", href: "?category=other" },
 ]
 const filters = [
   {
-    id: 'technologies',
-    name: 'Technologies',
+    id: "technologies",
+    name: "Technologies",
     options: [
-      { value: 'react', label: 'React', checked: false },
-      { value: 'javascript', label: 'JavaScript', checked: false },
-      { value: 'typescript', label: 'Typescript', checked: true },
-      { value: 'python', label: 'Python', checked: false },
-      { value: 'django', label: 'Django', checked: false },
+      { value: "react", label: "React", checked: false },
+      { value: "javascript", label: "JavaScript", checked: false },
+      { value: "typescript", label: "Typescript", checked: true },
+      { value: "python", label: "Python", checked: false },
+      { value: "django", label: "Django", checked: false },
     ],
   },
   {
-    id: 'experience',
-    name: 'Experience',
+    id: "experience",
+    name: "Experience",
     options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
+      { value: "new-arrivals", label: "New Arrivals", checked: false },
+      { value: "sale", label: "Sale", checked: false },
+      { value: "travel", label: "Travel", checked: true },
+      { value: "organization", label: "Organization", checked: false },
+      { value: "accessories", label: "Accessories", checked: false },
     ],
   },
   {
-    id: 'salary',
-    name: 'Salary',
+    id: "salary",
+    name: "Salary",
     options: [
-      { value: 10_000, label: '10k+', checked: false },
-      { value: 50_000, label: '50k+', checked: false },
-      { value: 100_000, label: '100k+', checked: false },
-      { value: 150_000, label: '150k+', checked: false },
-      { value: 200_000, label: '200k+', checked: false },
-      { value: 300_000, label: '300k+', checked: true },
+      { value: 10_000, label: "10k+", checked: false },
+      { value: 50_000, label: "50k+", checked: false },
+      { value: 100_000, label: "100k+", checked: false },
+      { value: 150_000, label: "150k+", checked: false },
+      { value: 200_000, label: "200k+", checked: false },
+      { value: 300_000, label: "300k+", checked: true },
     ],
   },
 ]
@@ -74,7 +74,10 @@ export const JobFilters: React.FC = () => {
     <div className="bg-[#FDFBF5]">
       <div>
         {/* Mobile filter dialog */}
-        <Transition.Root show={mobileFiltersOpen} as={Fragment}>
+        <Transition.Root
+          show={mobileFiltersOpen}
+          as={Fragment}
+        >
           <Dialog
             as="div"
             className="relative z-40 lg:hidden"
@@ -127,7 +130,10 @@ export const JobFilters: React.FC = () => {
                     >
                       {subCategories.map((category) => (
                         <li key={category.name}>
-                          <a href={category.href} className="block px-2 py-3">
+                          <a
+                            href={category.href}
+                            className="block px-2 py-3"
+                          >
                             {category.name}
                           </a>
                         </li>
@@ -148,7 +154,7 @@ export const JobFilters: React.FC = () => {
                                   {section.name}
                                 </span>
                                 <span className="ml-6 flex items-center">
-                                  {open ? '-' : '+'}
+                                  {open ? "-" : "+"}
                                 </span>
                               </Disclosure.Button>
                             </h3>
@@ -189,18 +195,21 @@ export const JobFilters: React.FC = () => {
         </Transition.Root>
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pt-3 pb-3">
+          <div className="flex items-baseline justify-between border-b border-gray-200 pb-3 pt-3">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
               Filters
             </h1>
 
             <div className="flex items-center">
-              <Menu as="div" className="relative inline-block text-left">
+              <Menu
+                as="div"
+                className="relative inline-block text-left"
+              >
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
                     <HiOutlineChevronDown
-                      className="mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                      className="ml-1 mr-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -224,10 +233,10 @@ export const JobFilters: React.FC = () => {
                               href={option.href}
                               className={classNames(
                                 option.current
-                                  ? 'font-medium text-gray-900'
-                                  : 'text-gray-500',
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm'
+                                  ? "font-medium text-gray-900"
+                                  : "text-gray-500",
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm"
                               )}
                             >
                               {option.name}
@@ -254,13 +263,22 @@ export const JobFilters: React.FC = () => {
               >
                 <span className="sr-only">Filters</span>
                 {/* <FunnelIcon className="h-5 w-5" aria-hidden="true" /> */}
-                <HiSortDescending className="h-5 w-5" aria-hidden="true" />
+                <HiSortDescending
+                  className="h-5 w-5"
+                  aria-hidden="true"
+                />
               </button>
             </div>
           </div>
 
-          <section aria-labelledby="products-heading" className="pt-6 pb-24">
-            <h2 id="products-heading" className="sr-only">
+          <section
+            aria-labelledby="products-heading"
+            className="pb-24 pt-6"
+          >
+            <h2
+              id="products-heading"
+              className="sr-only"
+            >
               Products
             </h2>
 
@@ -293,7 +311,7 @@ export const JobFilters: React.FC = () => {
                               {section.name}
                             </span>
                             <span className="ml-6 flex items-center">
-                              {open ? '-' : '+'}
+                              {open ? "-" : "+"}
                             </span>
                           </Disclosure.Button>
                         </h3>

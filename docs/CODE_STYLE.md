@@ -39,10 +39,10 @@
 
   ```ts
   // 👎 Bad
-  import { UserProfile } from './UserProfile';
+  import { UserProfile } from "./UserProfile"
 
   // 👍 Good
-  import { ProfileForm } from './profile-form';
+  import { ProfileForm } from "./profile-form"
   ```
 
 - In most of cases, use `camelCase` (variables, functions, methods, properties, parameters). Use `PascalCase` for classes, interfaces, types, enums. Use `UPPER_CASE` for constants.
@@ -61,10 +61,10 @@
 
   ```ts
   // 👎 Bad
-  const fs = require('fs');
+  const fs = require("fs")
 
   // 👍 Good
-  import fs from 'fs';
+  import fs from "fs"
   ```
 
 - Do not put multiple classes/components and so on in a single file. Each file should contain only one class/component, etc.
@@ -73,10 +73,10 @@
 
   ```ts
   // 👎 Bad
-  import { ProfileForm } from './profile-form.tsx';
+  import { ProfileForm } from "./profile-form.tsx"
 
   // 👍 Good
-  import { ProfileForm } from './profile-form';
+  import { ProfileForm } from "./profile-form"
   ```
 
 - Do not use `default` exports where possible. Prefer using named exports instead.
