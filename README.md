@@ -30,9 +30,9 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
 
 ## Project docs
 
-- [Roadmap](/docs/roadmap.md)
-- [Code style](/docs/code_style.md)
-- [Architecture](/docs/architecture.md)
+- [Roadmap](/docs/ROADMAP.md)
+- [Code style](/docs/CODE_STYLE.md)
+- [Architecture](/docs/ARCHITECTURE.md)
 
 ## Prerequisites
 
