@@ -24,7 +24,7 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
 - [ ] [Storybook](https://storybook.js.org/) for component development
 - [x] [ESLint](https://eslint.org/) for linting
 - [x] [Prettier](https://prettier.io/) for code formatting
-- [x] [Husky](https://typicode.github.io/husky/#/) for Git hooks
+- [ ] [Husky](https://typicode.github.io/husky/#/) for Git hooks
 - [x] [Docker](https://www.docker.com/) for containerization
 - [x] [Vercel](https://vercel.com/) for hosting
 
