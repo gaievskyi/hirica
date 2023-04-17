@@ -15,24 +15,24 @@
 
   ```ts
   // 👎 Bad
-  let c = 1;
-  c++;
+  let c = 1
+  c++
 
   const obj = {
     ...
-  };
+  }
 
-  const btnEl = document.querySelector('.button');
+  const btnEl = document.querySelector('.button')
 
   // 👍 Good
-  let counter = 0;
-  counter++;
+  let counter = 0
+  counter++
 
   const parsedWeather = {
     ...
-  };
+  }
 
-  const buttonElement = document.querySelector('.button');
+  const buttonElement = document.querySelector('.button')
   ```
 
 - Files should be named in `kebab-case`.
@@ -89,7 +89,7 @@
     ...
   }
   // some-file.ts
-  import Candidate from './candidate';
+  import Candidate from './candidate'
 
   // 👍 Good
 
@@ -98,5 +98,5 @@
     ...
   }
   // some-file.ts
-  import { Candidate } from './candidate';
+  import { Candidate } from './candidate'
   ```
