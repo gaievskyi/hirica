@@ -47,11 +47,11 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
    foo@bar:hirica$ pnpm install
    ```
 
-Create a `.env` file with your environment configurations using [template](/.env.example)
+3. Create a `.env` file with your environment configurations using [template](/.env.example)
 
-```console
-foo@bar:hirica$ grep -v '^#' .env.example | grep -v '^$' > .env
-```
+   ```console
+   foo@bar:hirica$ grep -v '^#' .env.example | grep -v '^$' > .env
+   ```
 
 ## Run locally (development)
 
