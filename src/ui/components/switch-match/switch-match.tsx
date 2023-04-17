@@ -1,25 +1,33 @@
-import { createContext, useContext, Children, isValidElement } from "react"
+import {
+  createContext,
+  useContext,
+  Children,
+  isValidElement,
+  type PropsWithChildren,
+  type FC,
+  type ReactNode,
+} from "react"
 
-type MatchProps = {
+type MatchProps = PropsWithChildren<{
   when: boolean
-  children: JSX.Element
-}
+}>
 
-type SwitchProps = {
-  fallback: React.ReactNode
-  children: React.ReactNode
-}
+type SwitchProps = PropsWithChildren<{
+  fallback: ReactNode
+}>
 
 const IsMatchInSwitchCtx = createContext<boolean>(false)
 const useIsMatchInSwitch = () => useContext(IsMatchInSwitchCtx)
 
-const SwitchMatchGuard = ({ children }) => (
+type SwitchMatchGuardProps = PropsWithChildren
+
+const SwitchMatchGuard: FC<SwitchMatchGuardProps> = ({ children }) => (
   <IsMatchInSwitchCtx.Provider value={true}>
     {children}
   </IsMatchInSwitchCtx.Provider>
 )
 
-const Switch: React.FC<SwitchProps> = ({ fallback, children }) => {
+const Switch: FC<SwitchProps> = ({ fallback, children }) => {
   let matchFound = false
 
   const matchedChild = Children.toArray(children).find((child) => {
@@ -43,7 +51,7 @@ const Switch: React.FC<SwitchProps> = ({ fallback, children }) => {
   )
 }
 
-const Match: React.FC<MatchProps> = ({ when, children }) => {
+const Match: FC<MatchProps> = ({ when, children }) => {
   const isInsideSwitch = useIsMatchInSwitch()
 
   if (!isInsideSwitch) {

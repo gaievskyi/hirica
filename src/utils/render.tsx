@@ -39,6 +39,9 @@ export const createMockRouter = (router: NextRouter): NextRouter => ({
 })
 
 const mockSession: Session = {
+  user: {
+    id: crypto.randomUUID(),
+  },
   expires: `${Date.now() * 100}`,
 }
 
