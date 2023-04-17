@@ -1,45 +1,45 @@
-import { GiCobweb, GiNinjaMask, GiAchievement } from 'react-icons/gi'
-import { MdMoneyOff } from 'react-icons/md'
-import { SiSuperuser } from 'react-icons/si'
-import { AiOutlineSmile } from 'react-icons/ai'
+import { GiCobweb, GiNinjaMask, GiAchievement } from "react-icons/gi"
+import { MdMoneyOff } from "react-icons/md"
+import { SiSuperuser } from "react-icons/si"
+import { AiOutlineSmile } from "react-icons/ai"
 
-import { Divider } from 'ui/components'
+import { Divider } from "~/ui/components"
 
 const features = [
   {
-    name: 'No fees',
+    name: "No fees",
     description:
-      'We do not collect commission from interaction with Hirica. We only charge companies one time if a person hired 25% of their expected salary to keep the lights on.',
+      "We do not collect commission from interaction with Hirica. We only charge companies one time if a person hired 25% of their expected salary to keep the lights on.",
     icon: <MdMoneyOff className="h-4 w-4" />,
   },
   {
-    name: 'Anonymous',
+    name: "Anonymous",
     description:
-      'Only you can choose who you want to reveal your contact information to and dive into the recruitment process. We do not share your information with anyone.',
+      "Only you can choose who you want to reveal your contact information to and dive into the recruitment process. We do not share your information with anyone.",
     icon: <GiNinjaMask className="h-4 w-4" />,
   },
   {
-    name: 'Web 3.0',
+    name: "Web 3.0",
     description:
-      'Hirica is a Web 3.0 job search platform. It is decentralized and anonymous, we use the latest technologies to make your experience better.',
+      "Hirica is a Web 3.0 job search platform. It is decentralized and anonymous, we use the latest technologies to make your experience better.",
     icon: <GiCobweb className="h-4 w-4" />,
   },
   {
-    name: 'User friendly',
+    name: "User friendly",
     description:
-      'We are working constantly on making Hirica as user friendly as possible. We create tools for recruiters and candidates to make the process of hiring and finding a job easier for both sides.',
+      "We are working constantly on making Hirica as user friendly as possible. We create tools for recruiters and candidates to make the process of hiring and finding a job easier for both sides.",
     icon: <SiSuperuser className="h-4 w-4" />,
   },
   {
-    name: 'Truth',
+    name: "Truth",
     description:
-      'We created an algorithm which moderates our content. We do not allow any fake information to be posted on our platform, so that you can be sure that you are talking to a real person.',
+      "We created an algorithm which moderates our content. We do not allow any fake information to be posted on our platform, so that you can be sure that you are talking to a real person.",
     icon: <AiOutlineSmile className="h-4 w-4" />,
   },
   {
-    name: 'Achievements',
+    name: "Achievements",
     description:
-      'Consider your profile as a game. The more achievements you get, the more you will be noticed by recruiters. Both employees and employers can receive profile badges for their interactions with Hirica.',
+      "Consider your profile as a game. The more achievements you get, the more you will be noticed by recruiters. Both employees and employers can receive profile badges for their interactions with Hirica.",
     icon: <GiAchievement className="h-4 w-4" />,
   },
 ] as const
@@ -50,7 +50,7 @@ export const Features: React.FC = () => (
       <p className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         An easier way to hire and be hired
       </p>
-      <p className="mx-auto mt-3 mb-4 max-w-2xl text-lg leading-8 text-gray-600">
+      <p className="mx-auto mb-4 mt-3 max-w-2xl text-lg leading-8 text-gray-600">
         No fees, no middlemen. Just you and the person you need.
       </p>
     </div>

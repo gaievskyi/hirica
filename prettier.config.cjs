@@ -1,12 +1,9 @@
 /** @type {import("prettier").Config} */
-module.exports = {
-  plugins: [
-    require.resolve(
-      'prettier-plugin-tailwindcss'
-    ),
-  ],
-  semi: false,
-  singleQuote: true,
-  tabWidth: 2,
+const config = {
+  plugins: [require.resolve('prettier-plugin-tailwindcss')],
   printWidth: 80,
+  singleAttributePerLine: true,
+  semi: false,
 }
+
+module.exports = config

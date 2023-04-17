@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Divider } from 'ui/components'
+import { Divider } from '~/ui/components'
 
 export const Offer: React.FC = () => (
   <section className="mx-auto my-5 max-w-7xl rounded-2xl bg-white py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-16">

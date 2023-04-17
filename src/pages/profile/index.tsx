@@ -1,9 +1,7 @@
-import { type NextPage } from 'next'
+import { type NextPage } from "next"
 
-import Head from 'next/head'
-import { useSession } from 'next-auth/react'
-
-import { trpc } from 'utils/trpc'
+import Head from "next/head"
+import { useSession } from "next-auth/react"
 
 import {
   Layout,
@@ -13,36 +11,34 @@ import {
   NotificationSettings,
   ProfilePublic,
   ResponseSettings,
-} from 'ui'
+} from "~/ui"
 
 const ProfilePage: NextPage = () => {
   const { data: session } = useSession()
-
-  const { data: profileData } = trpc.auth.getProfile.useQuery(
-    undefined, // no input
-    { enabled: session?.user !== undefined }
-  )
 
   return (
     <>
       <Head>
         <title>
           {session
-            ? `Hirica ${session?.user?.name ?? ''} profile`
-            : 'Hirica profile'}
+            ? `Hirica ${session?.user?.name ?? ""} profile`
+            : "Hirica profile"}
         </title>
         <meta
           name="description"
           content="Hirica is a pretty job search platform."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="/favicon.ico"
+        />
       </Head>
       <Layout>
         <ProfileContainer>
           <ProfileHead />
           <ProfilePublic />
           <Divider />
-          <ResponseSettings {...profileData} />
+          <ResponseSettings />
           <Divider />
           <NotificationSettings />
         </ProfileContainer>

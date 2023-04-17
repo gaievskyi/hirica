@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { AuthForm, Navigation } from 'ui'
+import { AuthForm, Navigation } from '~/ui'
 
 import { type NextPage } from 'next'
 

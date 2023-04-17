@@ -1,4 +1,4 @@
-import { useNameAdapter } from 'utils/hooks'
+import { useNameAdapter } from "~/utils/hooks"
 
 type ResponseSettingsProps = {
   name?: string | null | undefined
@@ -9,7 +9,7 @@ type ResponseSettingsProps = {
 export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
   ...data
 }) => {
-  const { name, surname } = useNameAdapter(data?.name)
+  const { name, surname } = useNameAdapter("")
 
   return (
     <div className="mt-10 sm:mt-0">
@@ -26,7 +26,10 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
           </div>
         </div>
         <div className="mt-5 md:col-span-2 md:mt-0">
-          <form action="#" method="POST">
+          <form
+            action="#"
+            method="POST"
+          >
             <div className="overflow-hidden shadow sm:rounded-md">
               <div className="bg-white px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
@@ -72,7 +75,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                       Email address
                     </label>
                     <input
-                      defaultValue={data?.email ?? ''}
+                      defaultValue={data?.email ?? ""}
                       type="text"
                       name="email-address"
                       id="email-address"
@@ -108,7 +111,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                       id="country"
                       name="country"
                       autoComplete="country-name"
-                      className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
+                      className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
                     >
                       <option>European Union</option>
                       <option>United States</option>
@@ -141,7 +144,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                       name="response-message"
                       rows={3}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                      defaultValue={''}
+                      defaultValue={""}
                     />
                   </div>
                 </div>
@@ -149,7 +152,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                   <label className="block text-sm font-medium text-gray-700">
                     Resume
                   </label>
-                  <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
+                  <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pb-6 pt-5">
                     <div className="space-y-1 text-center">
                       <svg
                         className="mx-auto h-12 w-12 text-gray-400"
@@ -190,7 +193,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
               <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                 >
                   Save
                 </button>

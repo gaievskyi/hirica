@@ -1,4 +1,4 @@
-import { HiricaLogo } from 'ui/components'
+import { HiricaLogo } from "~/ui/components"
 
 export const Statistics: React.FC = () => (
   <div className="flex gap-3 px-12">

@@ -1,24 +1,24 @@
-import type { NextRouter } from 'next/router'
-import Router from 'next/router'
-import { Suspense } from 'react'
+import Router from "next/router"
+import { Suspense } from "react"
 
-import { render } from '@testing-library/react'
-import { SessionProvider } from 'next-auth/react'
-import { RouterContext } from 'next/dist/shared/lib/router-context'
+import { render } from "@testing-library/react"
+import { SessionProvider } from "next-auth/react"
+import { RouterContext } from "next/dist/shared/lib/router-context"
 
-import type { RenderOptions } from '@testing-library/react'
-import type { Session } from 'next-auth'
-import type { FC, PropsWithChildren, ReactElement } from 'react'
+import type { NextRouter } from "next/router"
+import { type RenderOptions } from "@testing-library/react"
+import { type Session } from "next-auth"
+import { type FC, type PropsWithChildren, type ReactElement } from "react"
 
 type MockProps = PropsWithChildren & unknown
 
 export const createMockRouter = (router: NextRouter): NextRouter => ({
   ...router,
-  basePath: '',
-  pathname: '/',
-  route: '/',
+  basePath: "",
+  pathname: "/",
+  route: "/",
   query: {},
-  asPath: '/',
+  asPath: "/",
   back: jest.fn(),
   beforePopState: jest.fn(),
   prefetch: jest.fn(),
@@ -33,7 +33,7 @@ export const createMockRouter = (router: NextRouter): NextRouter => ({
   isFallback: false,
   isLocaleDomain: false,
   isReady: true,
-  defaultLocale: 'en',
+  defaultLocale: "en",
   domainLocales: [],
   isPreview: false,
 })
@@ -54,8 +54,8 @@ const MockApp: FC<MockProps> = ({ children }) => (
 
 const mockRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
+  options?: Omit<RenderOptions, "wrapper">
 ) => render(ui, { wrapper: MockApp, ...options })
 
-export * from '@testing-library/react'
+export * from "@testing-library/react"
 export { mockRender as render, mockRouter as router, mockSession as session }

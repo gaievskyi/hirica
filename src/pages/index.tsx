@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import Head from "next/head"
 
-import { Banner, Features, Hero, Layout, Offer } from 'ui'
+import { Banner, Features, Hero, Layout, Offer } from "~/ui"
 
-import { type NextPage } from 'next'
+import { type NextPage } from "next"
 
 const HomePage: NextPage = () => (
   <>
@@ -12,7 +12,10 @@ const HomePage: NextPage = () => (
         name="description"
         content="Hirica is a pretty job search platform."
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        href="/favicon.ico"
+      />
     </Head>
     <Layout>
       <Hero />

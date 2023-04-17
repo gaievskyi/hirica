@@ -1,8 +1,9 @@
 {
   "name": "hirica",
-  "description": "Hirica is a pretty job search platform.",
+  "description": "Hirica is a pretty job search platform",
   "version": "0.1.0",
   "private": true,
+  "author": "Daniel Gaievskyi <gaievskyi@proton.me>",
   "scripts": {
     "start": "next start",
     "dev": "next dev",
@@ -23,7 +24,6 @@
     "@trpc/next": "^10.20.0",
     "@trpc/react-query": "^10.20.0",
     "@trpc/server": "^10.20.0",
-    "framer-motion": "^10.12.2",
     "next": "13.3.0",
     "next-auth": "^4.22.0",
     "react": "18.2.0",
@@ -31,7 +31,6 @@
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "superjson": "1.12.2",
-    "tailwindcss-classnames": "^3.0.7",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -60,6 +59,6 @@
     "whatwg-fetch": "^3.6.2"
   },
   "ct3aMetadata": {
-    "initVersion": "6.10.2"
+    "initVersion": "7.10.2"
   }
 }

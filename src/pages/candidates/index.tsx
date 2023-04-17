@@ -3,7 +3,7 @@ import { type NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { Layout } from 'ui'
+import { Layout } from '~/ui'
 
 const CandidatesPage: NextPage = () => (
   <>

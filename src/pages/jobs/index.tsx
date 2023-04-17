@@ -2,7 +2,7 @@ import { type NextPage } from 'next'
 
 import Head from 'next/head'
 
-import { JobFilters, Layout } from 'ui'
+import { JobFilters, Layout } from '~/ui'
 
 const JobsPage: NextPage = () => (
   <>

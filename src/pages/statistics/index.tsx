@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { type NextPage } from 'next'
 
-import { Layout } from 'ui'
+import { Layout } from '~/ui'
 
 const StatisticsPage: NextPage = () => (
   <>
