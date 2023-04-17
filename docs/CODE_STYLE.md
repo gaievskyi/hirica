@@ -6,7 +6,7 @@
 - **Double** quotes
 - **Max** line length is **80** characters
 - **Unix** line endings
-- Semi-colons are **required**
+- No semi-colons
 - Trailing commas are **required**
 
 ## Naming
