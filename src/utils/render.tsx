@@ -5,7 +5,7 @@ import { render } from "@testing-library/react"
 import { SessionProvider } from "next-auth/react"
 import { RouterContext } from "next/dist/shared/lib/router-context"
 
-import type { NextRouter } from "next/router"
+import { type NextRouter } from "next/router"
 import { type RenderOptions } from "@testing-library/react"
 import { type Session } from "next-auth"
 import { type FC, type PropsWithChildren, type ReactElement } from "react"
