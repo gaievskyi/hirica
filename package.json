@@ -6,7 +6,7 @@
     "author": "Daniel Gaievskyi <gaievskyi@proton.me>",
     "license": "MIT",
     "homepage": "https://hirica.app",
-    "packageManager": "^pnpm@8.2.0",
+    "packageManager": "pnpm@8.2.0",
     "repository": {
         "url": "https://github.com/gaievskyi/hirica"
     },
@@ -17,7 +17,6 @@
         "test": "vitest",
         "lint": "next lint",
         "format": "prettier --cache --write \"./**/*.{js,jsx,cjs,mjs,ts,tsx,json}\"",
-        "preinstall": "npx only-allow pnpm",
         "postinstall": "prisma generate && prisma db push"
     },
     "dependencies": {
