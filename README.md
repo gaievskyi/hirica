@@ -19,7 +19,7 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
 - [x] [Prisma](https://www.prisma.io/) for database access and migrations
 - [x] [pnpm](https://pnpm.io/) for package management (we use it as our **default** package manager)
 - [x] [Tailwind.css](https://tailwindcss.com/) for styling
-- [x] [Jest](https://jestjs.io/) for unit testing
+- [x] [Vitest](https://vitest.dev/) for unit testing
 - [ ] [Cypress](https://www.cypress.io/) for end-to-end testing
 - [ ] [Storybook](https://storybook.js.org/) for component development
 - [x] [ESLint](https://eslint.org/) for linting
@@ -41,6 +41,7 @@ Yet another job board? **No**. Hirica is an **✨anonymous✨** job board, where
    ```console
    foo@bar:~$ npm install -g pnpm
    ```
+
 2. Install dependencies
 
    ```console
