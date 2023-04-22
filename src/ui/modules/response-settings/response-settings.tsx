@@ -1,15 +1,15 @@
 import { useNameAdapter } from "~/utils/hooks"
 
 type ResponseSettingsProps = {
-  name?: string | null | undefined
-  email?: string | null | undefined
+  name: string | null | undefined
+  email: string | null | undefined
   image?: string | null | undefined
 }
 
 export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
   ...data
 }) => {
-  const { name, surname } = useNameAdapter("")
+  const { name, surname } = useNameAdapter(data.name ?? "")
 
   return (
     <div className="mt-10 sm:mt-0">
@@ -144,7 +144,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                       name="response-message"
                       rows={3}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
-                      defaultValue={""}
+                      defaultValue=""
                     />
                   </div>
                 </div>
