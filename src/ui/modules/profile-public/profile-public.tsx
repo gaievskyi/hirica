@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form"
 export const ProfilePublic: React.FC = () => {
   const form = useForm()
 
+  const submit = () => {
+    //
+  }
 
   return (
     <div className="md:grid md:grid-cols-3 md:gap-6">
@@ -18,10 +21,7 @@ export const ProfilePublic: React.FC = () => {
         </div>
       </div>
       <div className="mt-5 md:col-span-2 md:mt-0">
-        <form
-          action="#"
-          method="POST"
-        >
+        <form onSubmit={() => form.handleSubmit(submit)}>
           <div className="shadow sm:overflow-hidden sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div>

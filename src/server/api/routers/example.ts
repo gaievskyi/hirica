@@ -23,3 +23,8 @@ export const exampleRouter = createTRPCRouter({
     return "you can now see this secret message!"
   }),
 })
+
+
+// export const userRoute = createTRPCRouter({
+//   setProfile: protectedProcedure.mutation((opts) =>)
+// })

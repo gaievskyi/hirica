@@ -21,7 +21,7 @@ const ProfilePage: NextPage = () => {
       <Head>
         <title>
           {session
-            ? `Hirica ${session?.user?.name ?? ""} profile`
+            ? `Hirica ${session?.user.name ?? ""} profile`
             : "Hirica profile"}
         </title>
         <meta
