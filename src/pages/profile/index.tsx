@@ -38,7 +38,10 @@ const ProfilePage: NextPage = () => {
           <ProfileHead />
           <ProfilePublic />
           <Divider />
-          <ResponseSettings />
+          <ResponseSettings
+            name={session?.user.name}
+            email={session?.user.email}
+          />
           <Divider />
           <NotificationSettings />
         </ProfileContainer>
