@@ -2,7 +2,8 @@ import { type NextPage } from "next"
 
 import Head from "next/head"
 
-import { JobFilters, Layout } from "~/ui"
+import { Layout } from "~/ui"
+import { JobFilters } from "~/ui/modules/hero/components"
 
 const JobsPage: NextPage = () => (
   <>
