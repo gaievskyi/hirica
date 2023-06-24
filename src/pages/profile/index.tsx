@@ -16,32 +16,26 @@ import {
 const ProfilePage: NextPage = () => {
   const { data: session } = useSession()
 
+  const userName = session?.user.name ?? ""
+  const email = session?.user.email ?? ""
+  const title = `Hirica | ${userName} profile`
+
   return (
     <>
       <Head>
-        <title>
-          {session
-            ? `Hirica ${session?.user.name ?? ""} profile`
-            : "Hirica profile"}
-        </title>
+        <title>{title}</title>
         <meta
           name="description"
           content="Hirica is a pretty job search platform."
         />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <ProfileContainer>
           <ProfileHead />
           <ProfilePublic />
           <Divider />
-          <ResponseSettings
-            name={session?.user.name}
-            email={session?.user.email}
-          />
+          <ResponseSettings fullName={userName} email={email} />
           <Divider />
           <NotificationSettings />
         </ProfileContainer>

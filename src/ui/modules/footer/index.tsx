@@ -155,10 +155,7 @@ export const Footer: React.FC = () => (
           <div>
             <p className="font-medium text-gray-900">Services</p>
 
-            <nav
-              aria-label="Footer Navigation - Services"
-              className="mt-6"
-            >
+            <nav aria-label="Footer Navigation - Services" className="mt-6">
               <ul className="space-y-4 text-sm">
                 <li>
                   <Link
@@ -202,10 +199,7 @@ export const Footer: React.FC = () => (
           <div>
             <p className="font-medium text-gray-900">Company</p>
 
-            <nav
-              aria-label="Footer Navigation - Company"
-              className="mt-6"
-            >
+            <nav aria-label="Footer Navigation - Company" className="mt-6">
               <ul className="space-y-4 text-sm">
                 <li>
                   <a

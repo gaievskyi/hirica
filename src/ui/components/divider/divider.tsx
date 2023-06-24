@@ -11,10 +11,7 @@ const sizes: Record<Size, string> = {
 }
 
 export const Divider: React.FC<DividerProps> = ({ size = "md" }) => (
-  <div
-    aria-hidden="true"
-    className={sizes[size]}
-  >
+  <div aria-hidden="true" className={sizes[size]}>
     <hr className="h-full w-full border-t border-gray-200" />
   </div>
 )

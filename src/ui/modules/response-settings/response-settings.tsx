@@ -1,15 +1,17 @@
 import { useNameAdapter } from "~/utils/hooks"
 
 type ResponseSettingsProps = {
-  name: string | null | undefined
-  email: string | null | undefined
-  image?: string | null | undefined
+  fullName: string
+  email: string
+  image?: string
 }
 
 export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
-  ...data
+  fullName,
+  email,
+  image,
 }) => {
-  const { name, surname } = useNameAdapter(data.name ?? "")
+  const { name, surname } = useNameAdapter(fullName)
 
   return (
     <div className="mt-10 sm:mt-0">
@@ -26,10 +28,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
           </div>
         </div>
         <div className="mt-5 md:col-span-2 md:mt-0">
-          <form
-            action="#"
-            method="POST"
-          >
+          <form action="#" method="POST">
             <div className="overflow-hidden shadow sm:rounded-md">
               <div className="bg-white px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
@@ -75,7 +74,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                       Email address
                     </label>
                     <input
-                      defaultValue={data?.email ?? ""}
+                      defaultValue={email}
                       type="text"
                       name="email-address"
                       id="email-address"

@@ -24,7 +24,6 @@ export const exampleRouter = createTRPCRouter({
   }),
 })
 
-
 // export const userRoute = createTRPCRouter({
 //   setProfile: protectedProcedure.mutation((opts) =>)
 // })

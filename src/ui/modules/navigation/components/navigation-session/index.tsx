@@ -7,67 +7,25 @@ import { cn } from "~/utils/helpers"
 
 export const NavigationSession: React.FC = () => {
   const { data: session } = useSession()
-  const { pathname } = useRouter()
+  const router = useRouter()
 
-  const isProfile = pathname === "/profile"
+  const isProfile = router.pathname === "/profile"
 
   return (
     <>
       <Link
         href="/profile"
-        className={cn(
-          "flex",
-          "items-center",
-          "justify-between",
-          "gap-4",
-          "rounded-full",
-          "border-white",
-          "bg-black",
-          "px-5",
-          "py-2",
-          "text-xs",
-          "uppercase",
-          "text-white",
-          "transition-all",
-          "duration-500",
-          "ease-in-out",
-          "hover:mx-2",
-          "hover:scale-105",
-          isProfile &&
-            "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
-        )}
+        className={cn(profileLink, isProfile && bgGradient)}
       >
-        {session?.user?.name && (
-          <p className="text-xs uppercase">{session.user.name}</p>
-        )}
+        {session?.user?.name && <p className={userName}>{session.user.name}</p>}
         <button
-          className=" text-white underline-offset-4 hover:underline"
-          onClick={() => void signOut()}
+          className={signOutButton}
+          onClick={() => void signOut().then(() => router.push("/sign-out"))}
         >
           Sign out
         </button>
       </Link>
-      <div
-        className={cn(
-          "flex",
-          "cursor-not-allowed",
-          "items-center",
-          "justify-between",
-          "gap-4",
-          "rounded-full",
-          "border-white",
-          "bg-black/20",
-          "px-5",
-          "py-2",
-          "text-xs",
-          "text-white",
-          "transition-all",
-          "duration-500",
-          "ease-in-out",
-          "hover:mx-2",
-          "hover:scale-105"
-        )}
-      >
+      <div className={sessionBlock}>
         <BiNotification />
         <BiAward />
         <BiCertification />
@@ -75,3 +33,53 @@ export const NavigationSession: React.FC = () => {
     </>
   )
 }
+
+const profileLink = cn(
+  "flex",
+  "items-center",
+  "justify-between",
+  "gap-4",
+  "rounded-full",
+  "border-white",
+  "bg-black",
+  "px-5",
+  "py-2",
+  "text-xs",
+  "uppercase",
+  "text-white",
+  "transition-all",
+  "duration-500",
+  "ease-in-out",
+  "hover:mx-2",
+  "hover:scale-105"
+)
+
+const sessionBlock = cn(
+  "flex",
+  "cursor-not-allowed",
+  "items-center",
+  "justify-between",
+  "gap-4",
+  "rounded-full",
+  "border-white",
+  "bg-black/20",
+  "px-5",
+  "py-2",
+  "text-xs",
+  "text-white",
+  "transition-all",
+  "duration-500",
+  "ease-in-out",
+  "hover:mx-2",
+  "hover:scale-105"
+)
+
+const bgGradient = cn(
+  "bg-gradient-to-r",
+  "from-blue-300",
+  "via-rose-200",
+  "to-orange-500"
+)
+
+const signOutButton = cn("text-white", "underline-offset-4", "hover:underline")
+const userName = cn("text-xs", "uppercase")

@@ -13,10 +13,7 @@ const CandidatesPage: NextPage = () => (
         name="description"
         content="Explore Hirica candidates. Find your next IT job. +199000 active candidates."
       />
-      <link
-        rel="icon"
-        href="/favicon.ico"
-      />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
       <div className="flex flex-col gap-5">

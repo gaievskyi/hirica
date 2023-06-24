@@ -74,10 +74,7 @@ export const JobFilters: React.FC = () => {
     <div className="bg-[#FDFBF5]">
       <div>
         {/* Mobile filter dialog */}
-        <Transition.Root
-          show={mobileFiltersOpen}
-          as={Fragment}
-        >
+        <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog
             as="div"
             className="relative z-40 lg:hidden"
@@ -130,10 +127,7 @@ export const JobFilters: React.FC = () => {
                     >
                       {subCategories.map((category) => (
                         <li key={category.name}>
-                          <a
-                            href={category.href}
-                            className="block px-2 py-3"
-                          >
+                          <a href={category.href} className="block px-2 py-3">
                             {category.name}
                           </a>
                         </li>
@@ -201,10 +195,7 @@ export const JobFilters: React.FC = () => {
             </h1>
 
             <div className="flex items-center">
-              <Menu
-                as="div"
-                className="relative inline-block text-left"
-              >
+              <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
@@ -263,22 +254,13 @@ export const JobFilters: React.FC = () => {
               >
                 <span className="sr-only">Filters</span>
                 {/* <FunnelIcon className="h-5 w-5" aria-hidden="true" /> */}
-                <HiSortDescending
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                />
+                <HiSortDescending className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>
 
-          <section
-            aria-labelledby="products-heading"
-            className="pb-24 pt-6"
-          >
-            <h2
-              id="products-heading"
-              className="sr-only"
-            >
+          <section aria-labelledby="products-heading" className="pb-24 pt-6">
+            <h2 id="products-heading" className="sr-only">
               Products
             </h2>
 

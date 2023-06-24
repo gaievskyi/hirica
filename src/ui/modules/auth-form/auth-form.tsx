@@ -7,10 +7,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 export const AuthForm: React.FC = () => {
   return (
     <form className="flex max-w-xs flex-col gap-12">
-      <Link
-        href="/"
-        className="text-3xl font-semibold"
-      >
+      <Link href="/" className="text-3xl font-semibold">
         Hirica • Hire and find job anonymously
       </Link>
       <div className="flex flex-col gap-3">
@@ -35,11 +32,7 @@ export const AuthForm: React.FC = () => {
           type="button"
           className="flex cursor-not-allowed items-center gap-2 rounded-full bg-black px-6 py-3 text-white opacity-50"
         >
-          <FaLinkedin
-            color="0A66C2"
-            className="rounded-sm bg-white"
-          />{" "}
-          LinkedIn
+          <FaLinkedin color="0A66C2" className="rounded-sm bg-white" /> LinkedIn
         </button>
       </div>
     </form>

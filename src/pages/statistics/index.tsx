@@ -12,10 +12,7 @@ const StatisticsPage: NextPage = () => (
         name="description"
         content="Compensation statistics of current year in the IT industry"
       />
-      <link
-        rel="icon"
-        href="/favicon.ico"
-      />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
       <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left ">

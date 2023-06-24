@@ -43,10 +43,7 @@ export const ProfilePublic: React.FC = () => {
                     placeholder="Provide your expected salary and choose currency"
                   />
                   <div className="absolute inset-y-0 right-0 flex items-center">
-                    <label
-                      htmlFor="currency"
-                      className="sr-only"
-                    >
+                    <label htmlFor="currency" className="sr-only">
                       Currency
                     </label>
                     <select

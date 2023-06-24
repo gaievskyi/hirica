@@ -36,10 +36,7 @@ export const Hero: React.FC = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stopColor="#9089FC" />
-                <stop
-                  offset={1}
-                  stopColor="#FF80B5"
-                />
+                <stop offset={1} stopColor="#FF80B5" />
               </linearGradient>
             </defs>
           </svg>
@@ -56,10 +53,7 @@ export const Hero: React.FC = () => {
                         href="/statistics"
                         className="font-semibold text-indigo-600"
                       >
-                        <span
-                          className="absolute inset-0"
-                          aria-hidden="true"
-                        />
+                        <span className="absolute inset-0" aria-hidden="true" />
                         Read more <span aria-hidden="true">&rarr;</span>
                       </Link>
                     </span>
@@ -80,10 +74,7 @@ export const Hero: React.FC = () => {
                       className="hover:black/80 inline-flex gap-2 rounded-md bg-black px-4 py-3 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-black hover:bg-black/80"
                     >
                       Get started
-                      <span
-                        className="text-indigo-200"
-                        aria-hidden="true"
-                      >
+                      <span className="text-indigo-200" aria-hidden="true">
                         &rarr;
                       </span>
                     </button>
@@ -92,10 +83,7 @@ export const Hero: React.FC = () => {
                       className="inline-flex gap-2 rounded-md px-4 py-3 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                     >
                       Explore jobs
-                      <span
-                        className="text-gray-400"
-                        aria-hidden="true"
-                      >
+                      <span className="text-gray-400" aria-hidden="true">
                         &rarr;
                       </span>
                     </Link>
@@ -123,10 +111,7 @@ export const Hero: React.FC = () => {
                         gradientUnits="userSpaceOnUse"
                       >
                         <stop stopColor="#9089FC" />
-                        <stop
-                          offset={1}
-                          stopColor="#FF80B5"
-                        />
+                        <stop offset={1} stopColor="#FF80B5" />
                       </linearGradient>
                     </defs>
                   </svg>

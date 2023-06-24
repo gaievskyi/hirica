@@ -1,4 +1,5 @@
 import { IoCloseOutline } from "react-icons/io5"
+import { cn } from '~/utils/helpers'
 
 type NavigationBannerProps = {
   action: () => void
@@ -7,7 +8,7 @@ type NavigationBannerProps = {
 export const NavigationBanner: React.FC<NavigationBannerProps> = ({
   action,
 }) => (
-  <div className="flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-7 text-center text-xs">
+  <div className={banner}>
     <h1>Hirica is a Web 3.0 job share platform. Anonymous and free.</h1>
     <IoCloseOutline
       fontSize={24}
@@ -15,4 +16,9 @@ export const NavigationBanner: React.FC<NavigationBannerProps> = ({
       onClick={action}
     />
   </div>
+)
+
+// "flex items-center justify-center bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500 py-7 text-center text-xs"
+const banner = cn(
+
 )

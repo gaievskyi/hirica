@@ -2,22 +2,20 @@ import { type NextPage } from "next"
 
 import Head from "next/head"
 
-import { JobFilters, Layout } from "~/ui"
+import { Layout } from "~/ui"
 
-const JobsPage: NextPage = () => (
+const SignOutPage: NextPage = () => (
   <>
     <Head>
-      <title>Hirica jobs</title>
+      <title>Signed out</title>
       <meta
         name="description"
         content="Hirica is a pretty job search platform."
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Layout>
-      <JobFilters />
-    </Layout>
+    <Layout>SignOutPage</Layout>
   </>
 )
 
-export default JobsPage
+export default SignOutPage

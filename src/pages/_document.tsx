@@ -24,22 +24,10 @@ const Document = () => (
         sizes="16x16"
         href="./favicon-16x16.png"
       />
-      <link
-        rel="shortcut icon"
-        href="./favicon.ico"
-      />
-      <link
-        rel="manifest"
-        href="./site.webmanifest"
-      />
-      <meta
-        name="msapplication-TileColor"
-        content="#da532c"
-      />
-      <meta
-        name="theme-color"
-        content="#ffffff"
-      />
+      <link rel="shortcut icon" href="./favicon.ico" />
+      <link rel="manifest" href="./site.webmanifest" />
+      <meta name="msapplication-TileColor" content="#da532c" />
+      <meta name="theme-color" content="#ffffff" />
     </Head>
     <body>
       <Main />
