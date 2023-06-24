@@ -1,8 +1,7 @@
 import { Fragment, useState } from "react"
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react"
 import { HiOutlineChevronDown, HiSortDescending } from "react-icons/hi"
-
-const classNames = (...classes: string[]) => classes.filter(Boolean).join(" ")
+import { cn } from "~/utils/helpers"
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -67,13 +66,12 @@ const filters = [
   },
 ]
 
-export const JobFilters: React.FC = () => {
+export const JobFilters = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
     <div className="bg-[#FDFBF5]">
       <div>
-        {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -222,12 +220,12 @@ export const JobFilters: React.FC = () => {
                           {({ active }) => (
                             <a
                               href={option.href}
-                              className={classNames(
+                              className={cn(
+                                "block px-4 py-2 text-sm",
                                 option.current
                                   ? "font-medium text-gray-900"
                                   : "text-gray-500",
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm"
+                                active && "bg-gray-100"
                               )}
                             >
                               {option.name}

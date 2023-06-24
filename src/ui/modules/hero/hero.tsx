@@ -2,7 +2,7 @@ import Link from "next/link"
 import { signIn, useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 
-export const Hero: React.FC = () => {
+export const Hero = () => {
   const { data: session } = useSession()
 
   const router = useRouter()

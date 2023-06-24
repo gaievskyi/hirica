@@ -1,8 +1,8 @@
+import { type NextPage } from "next"
 import Head from "next/head"
 
-import { type NextPage } from "next"
-
 import { Layout } from "~/ui"
+import { cn } from "~/utils/helpers"
 
 const StatisticsPage: NextPage = () => (
   <>
@@ -15,12 +15,21 @@ const StatisticsPage: NextPage = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
-      <main className="flex flex-col items-center justify-center bg-[#FDFBF6] text-left ">
+      <main
+        className={cn(
+          "flex",
+          "flex-col",
+          "items-center",
+          "justify-center",
+          "bg-[#FDFBF6]",
+          "text-left"
+        )}
+      >
         <h1>Statistics (building)</h1>
         <p className="text-lg">
           <a
             href="https://www.glassdoor.com/Salaries/it-salary-SRCH_KO0,2.htm"
-            className="text-blue-600 hover:underline"
+            className={cn("text-blue-600", "hover:underline")}
           >
             Glassdoor
           </a>
@@ -28,7 +37,7 @@ const StatisticsPage: NextPage = () => (
         <p className="text-lg">
           <a
             href="https://www.levels.fyi/"
-            className="text-blue-600 hover:underline"
+            className={cn("text-blue-600", "hover:underline")}
           >
             Levels.fyi
           </a>

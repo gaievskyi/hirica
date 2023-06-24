@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 
-export const ProfilePublic: React.FC = () => {
+export const PublicData = () => {
   const form = useForm()
 
   const submit = () => {

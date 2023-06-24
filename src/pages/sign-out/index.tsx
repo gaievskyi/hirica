@@ -1,8 +1,9 @@
 import { type NextPage } from "next"
 
 import Head from "next/head"
-
 import { Layout } from "~/ui"
+
+import { cn } from "~/utils/helpers"
 
 const SignOutPage: NextPage = () => (
   <>
@@ -14,7 +15,11 @@ const SignOutPage: NextPage = () => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Layout>SignOutPage</Layout>
+    <Layout>
+      <div className={cn("flex", "items-center", "justify-center")}>
+        <h1>You&apos;ve been signed out.</h1>
+      </div>
+    </Layout>
   </>
 )
 

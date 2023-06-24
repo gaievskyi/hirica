@@ -1,4 +1,4 @@
-export const HiricaLogoInverted: React.FC = () => (
+export const HiricaLogoInverted = () => (
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"

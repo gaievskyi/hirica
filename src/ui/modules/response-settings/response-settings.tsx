@@ -6,11 +6,10 @@ type ResponseSettingsProps = {
   image?: string
 }
 
-export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
+export const ResponseSettings = ({
   fullName,
   email,
-  image,
-}) => {
+}: ResponseSettingsProps) => {
   const { name, surname } = useNameAdapter(fullName)
 
   return (

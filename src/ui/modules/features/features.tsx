@@ -44,7 +44,7 @@ const features = [
   },
 ] as const
 
-export const Features: React.FC = () => (
+export const Features = () => (
   <section className="lg:container">
     <div className="sm:text-center">
       <p className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

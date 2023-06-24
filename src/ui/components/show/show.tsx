@@ -5,8 +5,6 @@ type ShowProps = PropsWithChildren & {
   fallback?: JSX.Element
 }
 
-export const Show: React.FC<ShowProps> = ({
-  children,
-  when,
-  fallback = null,
-}) => <>{when ? <>{children}</> : fallback}</>
+export const Show = ({ children, when, fallback = <></> }: ShowProps) => (
+  <>{when ? <>{children}</> : fallback}</>
+)

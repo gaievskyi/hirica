@@ -1,4 +1,4 @@
-export const HiricaLogoLight: React.FC = () => (
+export const HiricaLogoLight = () => (
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"

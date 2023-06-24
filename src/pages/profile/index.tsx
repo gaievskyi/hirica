@@ -6,12 +6,14 @@ import { useSession } from "next-auth/react"
 import {
   Layout,
   Divider,
-  ProfileContainer,
-  ProfileHead,
+  Profile,
   NotificationSettings,
-  ProfilePublic,
+  PublicData,
   ResponseSettings,
+  AuthGate,
 } from "~/ui"
+
+import { cn } from "~/utils/helpers"
 
 const ProfilePage: NextPage = () => {
   const { data: session } = useSession()
@@ -19,6 +21,8 @@ const ProfilePage: NextPage = () => {
   const userName = session?.user.name ?? ""
   const email = session?.user.email ?? ""
   const title = `Hirica | ${userName} profile`
+
+  if (!session) return <AuthGate />
 
   return (
     <>
@@ -31,14 +35,14 @@ const ProfilePage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <ProfileContainer>
-          <ProfileHead />
-          <ProfilePublic />
+        <div className={cn("px-[5vw]", "py-10", "lg:px-[20vw]")}>
+          <Profile />
+          <PublicData />
           <Divider />
           <ResponseSettings fullName={userName} email={email} />
           <Divider />
           <NotificationSettings />
-        </ProfileContainer>
+        </div>
       </Layout>
     </>
   )

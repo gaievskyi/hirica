@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-export const Footer: React.FC = () => (
+export const Footer = () => (
   <footer
     aria-label="Hirica footer"
     className="bg-white lg:grid lg:grid-cols-5"
