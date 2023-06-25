@@ -1,5 +1,4 @@
 import { z } from "zod"
-
 import {
   createTRPCRouter,
   publicProcedure,
@@ -7,6 +6,7 @@ import {
 } from "~/server/api/trpc"
 
 const ProfileDataInput = z.object({
+  userId: z.string(),
   expectedSalary: z.number(),
   currency: z.string(),
   about: z.string(),
@@ -14,6 +14,7 @@ const ProfileDataInput = z.object({
 })
 
 const ResponseSettingsInput = z.object({
+  userId: z.string(),
   firstName: z.string(),
   surname: z.string(),
   email: z.string(),
@@ -25,10 +26,11 @@ const ResponseSettingsInput = z.object({
 
 export const profileRouter = createTRPCRouter({
   getProfileData: publicProcedure
-    .input(z.number())
+    .input(z.string().optional())
     .query(async ({ ctx, input }) => {
+      if (!input) throw new Error("Input is undefined")
       const profileData = await ctx.prisma.profileData.findUnique({
-        where: { id: input },
+        where: { userId: input },
       })
       return profileData
     }),
@@ -42,11 +44,22 @@ export const profileRouter = createTRPCRouter({
       return newProfileData
     }),
 
+  updateProfileData: protectedProcedure
+    .input(ProfileDataInput)
+    .mutation(async ({ ctx, input }) => {
+      const updatedProfileData = await ctx.prisma.profileData.update({
+        where: { userId: ctx.session.user.id },
+        data: input,
+      })
+      return updatedProfileData
+    }),
+
   getResponseSettings: publicProcedure
-    .input(z.number())
+    .input(z.string().optional())
     .query(async ({ ctx, input }) => {
+      if (!input) throw new Error("Input is undefined")
       const responseSettings = await ctx.prisma.responseSettings.findUnique({
-        where: { id: input },
+        where: { userId: input },
       })
       return responseSettings
     }),
@@ -58,5 +71,15 @@ export const profileRouter = createTRPCRouter({
         data: input,
       })
       return newResponseSettings
+    }),
+
+  updateResponseSettings: protectedProcedure
+    .input(ResponseSettingsInput)
+    .mutation(async ({ ctx, input }) => {
+      const updatedResponseSettings = await ctx.prisma.responseSettings.update({
+        where: { userId: ctx.session.user.id },
+        data: input,
+      })
+      return updatedResponseSettings
     }),
 })

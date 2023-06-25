@@ -41,16 +41,6 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-}
-
 model VerificationToken {
   identifier String
   token      String   @unique
@@ -59,16 +49,31 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+model User {
+  id               String            @id @default(cuid())
+  name             String?
+  email            String?           @unique
+  emailVerified    DateTime?
+  image            String?
+  accounts         Account[]
+  sessions         Session[]
+  profileData      ProfileData?
+  responseSettings ResponseSettings?
+}
+
 model ProfileData {
-  id             Int    @id @default(autoincrement())
+  id             String @id @default(cuid())
+  userId         String @unique
   expectedSalary Int
   currency       String
   about          String
   skills         String
+  user           User   @relation(fields: [userId], references: [id])
 }
 
 model ResponseSettings {
-  id              Int     @id @default(autoincrement())
+  id              String  @id @default(cuid())
+  userId          String  @unique
   firstName       String
   surname         String
   email           String  @unique
@@ -76,4 +81,5 @@ model ResponseSettings {
   country         String
   city            String
   responseMessage String?
+  user            User    @relation(fields: [userId], references: [id])
 }

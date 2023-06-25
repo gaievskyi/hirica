@@ -2,6 +2,8 @@ import { type SubmitHandler, useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
+import { useSession } from "next-auth/react"
+
 const ProfileSchema = z.object({
   desiredPosition: z.string().min(1),
 })
@@ -9,6 +11,7 @@ const ProfileSchema = z.object({
 export type ProfileType = z.infer<typeof ProfileSchema>
 
 export const Profile = () => {
+  const { data: session } = useSession()
   const form = useForm<ProfileType>({
     resolver: zodResolver(ProfileSchema),
   })
@@ -26,13 +29,12 @@ export const Profile = () => {
       <div className="min-w-0 flex-1">
         <div className="flex items-center">
           <input
-            {...form.register("desiredPosition")}
             tabIndex={-1}
             type="text"
-            name="desiredPosition"
             id="desiredPosition"
             placeholder="Type your desired position.."
             className="text-gray-90 min-w-[400px] border-none bg-transparent p-0 text-2xl font-bold leading-7 underline-offset-4 outline-none outline-0 ring-0 transition-all duration-500 focus:py-3 focus:text-3xl focus:underline focus:ring-0"
+            {...form.register("desiredPosition")}
           />
         </div>
         <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
