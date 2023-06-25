@@ -4,7 +4,7 @@ import Image from "next/image"
 export const Footer = () => (
   <footer
     aria-label="Hirica footer"
-    className="bg-white lg:grid lg:grid-cols-5 lg:py-20"
+    className="bg-white lg:grid lg:grid-cols-5 lg:py-14"
   >
     <div className="relative block h-32 lg:col-span-2 lg:h-full">
       <Image

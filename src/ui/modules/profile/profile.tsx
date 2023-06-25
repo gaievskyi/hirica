@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 import { useSession } from "next-auth/react"
 import Image from "next/image"
+import Link from "next/link"
 
 const ProfileSchema = z.object({
   desiredPosition: z.string().min(1),
@@ -22,6 +23,8 @@ export const Profile = () => {
     console.log({ formData })
   }
 
+  if (!session) return <>Something went wrong!</>
+
   return (
     <form
       onSubmit={form.handleSubmit(submit)}
@@ -30,7 +33,7 @@ export const Profile = () => {
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-3">
           <Image
-            src={session?.user.image ?? ""}
+            src={session.user.image ?? ""}
             width={30}
             height={30}
             className="rounded-full"
@@ -40,8 +43,8 @@ export const Profile = () => {
             tabIndex={-1}
             type="text"
             id="desiredPosition"
-            placeholder="Type your desired position.."
-            className="text-gray-90 min-w-[400px] border-none bg-transparent p-0 text-2xl font-bold leading-7 underline-offset-4 outline-none outline-0 ring-0 transition-all duration-500 focus:py-3 focus:text-3xl focus:underline focus:ring-0"
+            placeholder="Desired position"
+            className="text-gray-90 min-w-[400px] border-none bg-transparent p-0 text-2xl font-bold leading-7 underline-offset-4 outline-none outline-0 ring-0 transition-all duration-500 focus:py-3 focus:underline focus:ring-0"
             {...form.register("desiredPosition")}
           />
         </div>
@@ -100,23 +103,24 @@ export const Profile = () => {
       </div>
       <div className="mt-5 flex lg:ml-4 lg:mt-0">
         <span className="ml-3 hidden sm:block">
-          <button
-            type="button"
-            disabled
-            className="inline-flex cursor-not-allowed items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-              className="-ml-1 mr-2 h-5 w-5 text-gray-500"
+          <Link href={`/candidates/${session.user.id}`}>
+            <button
+              type="button"
+              className="inline-flex cursor-pointer items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
             >
-              <path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
-              <path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
-            </svg>
-            Preview
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                className="-ml-1 mr-2 h-5 w-5 text-gray-500"
+              >
+                <path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
+                <path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
+              </svg>
+              Preview
+            </button>
+          </Link>
         </span>
 
         <span className="sm:ml-3">

@@ -26,9 +26,6 @@ const CandidatesPage: NextPage = () => {
         </div> */}
         <div className="flex flex-col gap-5">
           <main className="flex flex-col items-center justify-center gap-4 bg-[#FDFBF6]">
-            <h2 className="text-2xl">
-              +199000 active candidates. Find your next IT job.
-            </h2>
             <div className="flex items-center justify-center gap-3">
               <div className="flex flex-col gap-2 rounded-xl bg-white p-5">
                 <h1 className="font-bold">Hot candidates</h1>
@@ -128,7 +125,9 @@ const CandidatesPage: NextPage = () => {
                         </button>
                       </Link>
                       <button
-                        onClick={() => toast.success("Request sent.")}
+                        onClick={() =>
+                          toast.success("Request to share contact sent.")
+                        }
                         className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed"
                       >
                         <BiSolidContact /> Request contact

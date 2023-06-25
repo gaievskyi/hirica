@@ -21,16 +21,14 @@ export const candidatesRouter = createTRPCRouter({
     return candidates
   }),
 
-  one: publicProcedure
-    .input(z.string().uuid())
-    .query(async ({ ctx, input }) => {
-      const candidate = await ctx.prisma.user.findUnique({
-        where: { id: input },
-        include: { profileData: true, responseSettings: true },
-      })
-      if (!candidate) throw new Error("Candidate not found")
-      return candidate
-    }),
+  one: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
+    const candidate = await ctx.prisma.user.findUnique({
+      where: { id: input },
+      include: { profileData: true, responseSettings: true },
+    })
+    if (!candidate) throw new Error("Candidate not found")
+    return candidate
+  }),
 
   create: publicProcedure
     .input(CandidateInput)
