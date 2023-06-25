@@ -4,8 +4,10 @@ import { type SubmitHandler, useForm } from "react-hook-form"
 import { z } from "zod"
 import { api } from "~/utils/api"
 import { RiLoader2Fill } from "react-icons/ri"
+import { AiOutlineCheck } from "react-icons/ai"
 import toast from "react-hot-toast"
-import { useEffect } from "react"
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
+import { Transition } from "@tailwindui/react"
 
 const ProfileDataSchema = z.object({
   expectedSalary: z.coerce.number().min(100).max(20000),
@@ -26,13 +28,18 @@ export const PublicData = () => {
   const utils = api.useContext()
   const { data: session } = useSession()
   const { data: profileData, isLoading: isProfileLoading } =
-    api.profile.getProfileData.useQuery(session?.user.id)
+    api.profile.profileData.useQuery(session?.user.id)
+
+  const [isSalaryModified, setIsSalaryModified] = useState(false)
+  const [isAboutModified, setIsAboutModified] = useState(false)
+  const [isSkillsModified, setIsSkillsModified] = useState(false)
+  const [isCurrencyModified, setIsCurrencyModified] = useState(false)
 
   const { mutate: create, isLoading: isCreating } =
     api.profile.createProfileData.useMutation({
       onSuccess: async () => {
         notifySuccess()
-        await utils.profile.getProfileData.invalidate(session?.user.id)
+        await utils.profile.profileData.invalidate(session?.user.id)
       },
       onError: () => {
         notifyError()
@@ -43,7 +50,7 @@ export const PublicData = () => {
     api.profile.updateProfileData.useMutation({
       onSuccess: async () => {
         notifySuccess()
-        await utils.profile.getProfileData.invalidate(session?.user.id)
+        await utils.profile.profileData.invalidate(session?.user.id)
       },
       onError: () => {
         notifyError()
@@ -57,11 +64,27 @@ export const PublicData = () => {
 
   const submit: SubmitHandler<ProfileData> = (formData) => {
     if (!session) return
-    if (!profileData) {
-      create({ ...formData, userId: session.user.id })
-      return
+
+    const adapterData: Record<
+      keyof ProfileData,
+      Dispatch<SetStateAction<boolean>>
+    > = {
+      expectedSalary: setIsSalaryModified,
+      about: setIsAboutModified,
+      skills: setIsSkillsModified,
+      currency: setIsCurrencyModified,
     }
-    update({ ...formData, userId: session.user.id })
+
+    const action = profileData ? update : create
+    action({ ...formData, userId: session.user.id })
+
+    if (profileData) {
+      const modifiedFields = (
+        Object.keys(adapterData) as Array<keyof ProfileData>
+      )
+        .filter((field) => formData[field] !== profileData[field])
+        .forEach((field) => adapterData[field](true))
+    }
   }
 
   useEffect(() => {
@@ -70,6 +93,34 @@ export const PublicData = () => {
     if (!adaptedData) return
     form.reset(adaptedData)
   }, [form, profileData])
+
+  useEffect(() => {
+    if (isSalaryModified || isCurrencyModified) {
+      const unmountTimer = setTimeout(() => {
+        setIsSalaryModified(false)
+        setIsCurrencyModified(false)
+      }, 5000)
+      return () => clearTimeout(unmountTimer)
+    }
+  }, [isSalaryModified, isCurrencyModified])
+
+  useEffect(() => {
+    if (isAboutModified) {
+      const unmountTimer = setTimeout(() => {
+        setIsAboutModified(false)
+      }, 5000)
+      return () => clearTimeout(unmountTimer)
+    }
+  }, [isAboutModified])
+
+  useEffect(() => {
+    if (isSkillsModified) {
+      const unmountTimer = setTimeout(() => {
+        setIsSkillsModified(false)
+      }, 5000)
+      return () => clearTimeout(unmountTimer)
+    }
+  }, [isSkillsModified])
 
   const isInputDisabled = isProfileLoading || isCreating || isUpdating
 
@@ -87,7 +138,7 @@ export const PublicData = () => {
             </p>
           </div>
         </div>
-        <div className="mt-5 md:col-span-2 md:mt-0">
+        <div className="mt-5 transition-all md:col-span-2 md:mt-0">
           <form onSubmit={form.handleSubmit(submit)}>
             <div className="shadow sm:overflow-hidden sm:rounded-md">
               <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
@@ -103,17 +154,33 @@ export const PublicData = () => {
                       <span className="text-gray-500 sm:text-sm">$</span>
                     </div>
                     <div>
-                      <div className="relative">
-                        <input
-                          type="number"
-                          min="100"
-                          step="100"
-                          id="expectedSalary"
-                          className="block w-full rounded-md border-gray-300 pr-20 transition-all focus:border-black focus:ring-black disabled:animate-pulse disabled:cursor-not-allowed disabled:brightness-90 sm:text-sm"
-                          placeholder="Provide your expected salary and choose currency"
-                          disabled={isInputDisabled}
-                          {...form.register("expectedSalary")}
-                        />
+                      <div>
+                        <div className="relative">
+                          <input
+                            type="number"
+                            min="100"
+                            step="100"
+                            id="expectedSalary"
+                            className="block w-full rounded-md border-gray-300 pr-20 transition-all focus:border-black focus:ring-black disabled:animate-pulse disabled:cursor-not-allowed disabled:brightness-90 sm:text-sm"
+                            placeholder="Provide your expected salary and choose currency"
+                            disabled={isInputDisabled}
+                            {...form.register("expectedSalary")}
+                          />
+                        </div>
+                        <Transition
+                          show={isSalaryModified || isCurrencyModified}
+                          enter="transition ease-out duration-500 transform"
+                          enterFrom="opacity-0 -translate-y-2"
+                          enterTo="opacity-100 translate-y-0"
+                          leave="transition ease duration-300 transform"
+                          leaveFrom="opacity-100 translate-y-0"
+                          leaveTo="opacity-0 -translate-y-2"
+                        >
+                          <small className="absolute right-0 -z-0 inline-flex items-center justify-end gap-1 pt-2 text-xs font-medium leading-none">
+                            <AiOutlineCheck className="animate-pulse" /> Changes
+                            saved
+                          </small>
+                        </Transition>
                         <div className="absolute inset-y-0 right-0 flex items-center">
                           <label htmlFor="currency" className="sr-only">
                             Currency
@@ -158,11 +225,25 @@ export const PublicData = () => {
                       disabled={isInputDisabled}
                       {...form.register("about")}
                     />
+                    <Transition
+                      show={isAboutModified}
+                      enter="transition ease-out duration-500 transform"
+                      enterFrom="opacity-0 -translate-y-2"
+                      enterTo="opacity-100 translate-y-0"
+                      leave="transition ease duration-300 transform"
+                      leaveFrom="opacity-100 translate-y-0"
+                      leaveTo="opacity-0 -translate-y-2"
+                    >
+                      <small className="inline-flex w-full items-center justify-end gap-1 text-xs font-medium leading-none">
+                        <AiOutlineCheck className="animate-pulse" /> Changes
+                        saved
+                      </small>
+                    </Transition>
                     <small className="mt-2 text-xs italic text-red-500">
                       {form.formState.errors.about?.message}
                     </small>
                   </div>
-                  <p className="mt-2 text-sm text-gray-500">
+                  <p className="text-sm text-gray-500">
                     Stay anonymous. It is not allowed to post any contact
                     information here.
                   </p>
@@ -183,6 +264,20 @@ export const PublicData = () => {
                       disabled={isInputDisabled}
                       {...form.register("skills")}
                     />
+                    <Transition
+                      show={isSkillsModified}
+                      enter="transition ease-out duration-500 transform"
+                      enterFrom="opacity-0 -translate-y-2"
+                      enterTo="opacity-100 translate-y-0"
+                      leave="transition ease duration-300 transform"
+                      leaveFrom="opacity-100 translate-y-0"
+                      leaveTo="opacity-0 -translate-y-2"
+                    >
+                      <small className="inline-flex w-full items-center justify-end gap-1 text-xs font-medium leading-none">
+                        <AiOutlineCheck className="animate-pulse" /> Changes
+                        saved
+                      </small>
+                    </Transition>
                     <small className="mt-2 text-xs italic text-red-500">
                       {form.formState.errors.skills?.message}
                     </small>

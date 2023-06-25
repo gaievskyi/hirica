@@ -25,7 +25,7 @@ const ResponseSettingsInput = z.object({
 })
 
 export const profileRouter = createTRPCRouter({
-  getProfileData: publicProcedure
+  profileData: publicProcedure
     .input(z.string().optional())
     .query(async ({ ctx, input }) => {
       if (!input) throw new Error("Input is undefined")
@@ -54,7 +54,7 @@ export const profileRouter = createTRPCRouter({
       return updatedProfileData
     }),
 
-  getResponseSettings: publicProcedure
+  responseSettings: publicProcedure
     .input(z.string().optional())
     .query(async ({ ctx, input }) => {
       if (!input) throw new Error("Input is undefined")
