@@ -20,7 +20,7 @@ const Hirica: AppType<AppProps> = ({
     <Toaster
       position="bottom-right"
       toastOptions={{
-        duration: 3000,
+        duration: 5000,
       }}
     />
   </SessionProvider>

@@ -3,6 +3,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 import { useSession } from "next-auth/react"
+import Image from "next/image"
 
 const ProfileSchema = z.object({
   desiredPosition: z.string().min(1),
@@ -27,7 +28,14 @@ export const Profile = () => {
       className="pb-24 lg:flex lg:items-center lg:justify-between"
     >
       <div className="min-w-0 flex-1">
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
+          <Image
+            src={session?.user.image ?? ""}
+            width={30}
+            height={30}
+            className="rounded-full"
+            alt="Avatar"
+          />
           <input
             tabIndex={-1}
             type="text"

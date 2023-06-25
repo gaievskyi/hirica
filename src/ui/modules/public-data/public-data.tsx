@@ -65,7 +65,7 @@ export const PublicData = () => {
   const submit: SubmitHandler<ProfileData> = (formData) => {
     if (!session) return
 
-    const adapterData: Record<
+    const setModified: Record<
       keyof ProfileData,
       Dispatch<SetStateAction<boolean>>
     > = {
@@ -79,11 +79,12 @@ export const PublicData = () => {
     action({ ...formData, userId: session.user.id })
 
     if (profileData) {
-      const modifiedFields = (
-        Object.keys(adapterData) as Array<keyof ProfileData>
-      )
+      const profileDataArray = Object.keys(setModified) as Array<
+        keyof ProfileData
+      >
+      profileDataArray
         .filter((field) => formData[field] !== profileData[field])
-        .forEach((field) => adapterData[field](true))
+        .forEach((field) => setModified[field](true))
     }
   }
 
@@ -243,7 +244,7 @@ export const PublicData = () => {
                       {form.formState.errors.about?.message}
                     </small>
                   </div>
-                  <p className="text-sm text-gray-500">
+                  <p className="mt-2 text-xs text-gray-500">
                     Stay anonymous. It is not allowed to post any contact
                     information here.
                   </p>
@@ -282,7 +283,7 @@ export const PublicData = () => {
                       {form.formState.errors.skills?.message}
                     </small>
                   </div>
-                  <p className="mt-2 text-sm text-gray-500">
+                  <p className="mt-2  text-xs text-gray-500">
                     List your skills here. Separate them with commas.
                   </p>
                 </div>
