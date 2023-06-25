@@ -123,7 +123,7 @@ const CandidatesPage: NextPage = () => {
                     </div>
                     <div className="flex flex-col items-center gap-2">
                       <Link href={`/candidates/${candidate.id}`}>
-                        <button className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-black border-transparent bg-transparent px-4 py-2 text-sm font-medium text-black shadow-sm transition-all hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed">
+                        <button className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-black bg-transparent px-4 py-2 text-sm font-medium text-black shadow-sm transition-all hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed">
                           Explore profile &rarr;
                         </button>
                       </Link>
