@@ -1,10 +1,30 @@
-import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { type SubmitHandler, useForm } from "react-hook-form"
+import { z } from "zod"
+
+const ProfileDataSchema = z.object({
+  expectedSalary: z.coerce.number().min(100).max(20000),
+  currency: z.string().min(3).max(3),
+  about: z.string().min(30).max(2048),
+  skills: z.string().transform((arg) => {
+    const parsed = arg.split(",")
+    return parsed
+  }),
+})
+
+type ProfileData = z.infer<typeof ProfileDataSchema>
+
+const currencies = ["USD", "CAD", "EUR", "PLN", "UAH"]
 
 export const PublicData = () => {
-  const form = useForm()
+  const form = useForm<ProfileData>({
+    resolver: zodResolver(ProfileDataSchema),
+    reValidateMode: "onChange",
+  })
 
-  const submit = () => {
-    //
+  const submit: SubmitHandler<ProfileData> = (formData) => {
+    console.log("submited")
+    console.log(formData)
   }
 
   return (
@@ -21,7 +41,7 @@ export const PublicData = () => {
         </div>
       </div>
       <div className="mt-5 md:col-span-2 md:mt-0">
-        <form onSubmit={() => form.handleSubmit(submit)}>
+        <form onSubmit={form.handleSubmit(submit)}>
           <div className="shadow sm:overflow-hidden sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div>
@@ -35,26 +55,41 @@ export const PublicData = () => {
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                     <span className="text-gray-500 sm:text-sm">$</span>
                   </div>
-                  <input
-                    type="text"
-                    name="salary"
-                    id="salary"
-                    className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-black focus:ring-black sm:text-sm"
-                    placeholder="Provide your expected salary and choose currency"
-                  />
-                  <div className="absolute inset-y-0 right-0 flex items-center">
-                    <label htmlFor="currency" className="sr-only">
-                      Currency
-                    </label>
-                    <select
-                      id="currency"
-                      name="currency"
-                      className="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                    >
-                      <option>USD</option>
-                      <option>CAD</option>
-                      <option>EUR</option>
-                    </select>
+                  <div>
+                    <div className="relative">
+                      <input
+                        type="number"
+                        min="100"
+                        step="100"
+                        id="expectedSalary"
+                        className="block w-full rounded-md border-gray-300 pr-20 focus:border-black focus:ring-black sm:text-sm"
+                        placeholder="Provide your expected salary and choose currency"
+                        {...form.register("expectedSalary")}
+                      />
+                      <div className="absolute inset-y-0 right-0 flex items-center">
+                        <label htmlFor="currency" className="sr-only">
+                          Currency
+                        </label>
+                        <select
+                          id="currency"
+                          name="currency"
+                          className="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-black focus:ring-black sm:text-sm"
+                        >
+                          {currencies.map((currency) => (
+                            <option key={currency} value={currency}>
+                              {currency}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                    {form.formState.errors.expectedSalary && (
+                      <div className="text-xs italic text-red-400">
+                        <span>
+                          {form.formState.errors.expectedSalary.message}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -68,12 +103,14 @@ export const PublicData = () => {
                 <div className="mt-1">
                   <textarea
                     id="about"
-                    name="about"
-                    rows={3}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                    rows={5}
+                    className="mt-1 block min-h-[80px] w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
                     placeholder="Use this space to tell everyone about your experience, achievements or career goals."
-                    defaultValue={""}
+                    {...form.register("about")}
                   />
+                  <small className="mt-2 text-xs italic text-red-500">
+                    {form.formState.errors.about?.message}
+                  </small>
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
                   Stay anonymous. It is not allowed to post any contact
@@ -89,12 +126,15 @@ export const PublicData = () => {
                 </label>
                 <div className="mt-1">
                   <textarea
-                    id="about"
-                    name="about"
-                    rows={3}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                    id="skills"
+                    rows={5}
+                    className="mt-1 block min-h-[80px] w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
                     placeholder="Example: JavaScript, Nest.js, Agile"
+                    {...form.register("skills")}
                   />
+                  <small className="mt-2 text-xs italic text-red-500">
+                    {form.formState.errors.skills?.message}
+                  </small>
                 </div>
                 <p className="mt-2 text-sm text-gray-500">
                   List your skills here. Separate them with commas.
