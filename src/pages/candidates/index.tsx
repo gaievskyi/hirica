@@ -127,7 +127,7 @@ const CandidatesPage: NextPage = () => {
                   key={candidate.id}
                   className="flex w-full flex-wrap items-center justify-between gap-8"
                 >
-                  <div className="inline-flex items-center gap-4">
+                  <div className="flex w-full items-end justify-between gap-4">
                     <div className="flex w-[25%] flex-col items-start">
                       <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight">
                         Anonymous Frontend Developer
@@ -137,7 +137,7 @@ const CandidatesPage: NextPage = () => {
                         {candidate.profileData?.expectedSalary}{" "}
                       </span>
                     </div>
-                    <div className="flex min-w-[50%] max-w-[75%] gap-2 text-sm">
+                    <div className="flex w-[60%] gap-2 text-sm">
                       <span className="font-bold">Skills</span>
                       <p>{candidate.profileData?.skills}</p>
                     </div>
