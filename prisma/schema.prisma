@@ -50,16 +50,21 @@ model VerificationToken {
 }
 
 model User {
-  id               String            @id @default(cuid())
-  name             String?
-  email            String?           @unique
-  emailVerified    DateTime?
-  role             String?
-  image            String?
-  accounts         Account[]
-  sessions         Session[]
-  profileData      ProfileData?
-  responseSettings ResponseSettings?
+  id                String            @id @default(cuid())
+  name              String?
+  email             String?           @unique
+  emailVerified     DateTime?
+  role              String?
+  image             String?
+  accounts          Account[]
+  sessions          Session[]
+  profileData       ProfileData?
+  responseSettings  ResponseSettings?
+  notifications     Notification[]    @relation("NotificationToUser")
+  sentNotifications Notification[]    @relation("NotificationFromUser")
+
+  @@unique([id, name])
+  @@unique([id, name, role])
 }
 
 model ProfileData {
@@ -84,3 +89,21 @@ model ResponseSettings {
   responseMessage String?
   user            User    @relation(fields: [userId], references: [id])
 }
+
+model Notification {
+  id              String  @id @default(cuid())
+  userId          String
+  senderId        String
+  senderRole      String
+  senderName      String
+  message         String?
+  type            String
+  status          String
+  contactRevealed Boolean
+  user            User    @relation("NotificationToUser", fields: [userId], references: [id])
+  sender          User    @relation("NotificationFromUser", fields: [senderId], references: [id])
+
+  @@index([userId])
+  @@index([senderId])
+}
+

@@ -1,4 +1,5 @@
 import { type NextPage } from "next"
+import { useSession } from "next-auth/react"
 
 import Head from "next/head"
 import Link from "next/link"
@@ -13,6 +14,7 @@ import { api } from "~/utils/api"
 import { cn } from "~/utils/helpers"
 
 const CandidatePage: NextPage = () => {
+  const { data: session } = useSession()
   const router = useRouter()
   const id = router.query.id
   const [isLiked, setIsLiked] = useState(false)
@@ -20,6 +22,28 @@ const CandidatePage: NextPage = () => {
   if (!id || Array.isArray(id)) return <>Something went wrong</>
 
   const { data: candidate } = api.candidates.one.useQuery(id)
+  const isPreview = session?.user.id === candidate?.id
+
+  const { mutate } = api.notifications.create.useMutation({
+    onSuccess: () => {
+      toast.success("Request to share contact sent.")
+    },
+  })
+
+  const request = () => {
+    if (!session) return
+    mutate({
+      userId: id,
+      senderId: session.user.id,
+      senderName: session.user.name ?? "",
+      senderRole: "Candidate",
+      status: "PENDING",
+      type: "CONTACTS_REQUEST",
+      contactRevealed: false,
+      message:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio delectus, amet iusto nam cupiditate natus architecto suscipit error perferendis nobis tempore expedita, voluptatem impedit enim omnis quas dolores quisquam nihil.",
+    })
+  }
 
   const like = () => {
     setIsLiked((prevIsLiked) => {
@@ -65,8 +89,9 @@ const CandidatePage: NextPage = () => {
           </div>
           <div className="flex items-center gap-4">
             <button
-              onClick={() => toast.success("Request to share contact sent.")}
-              className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-transparent bg-black p-4 text-sm font-medium text-white shadow-sm transition-all hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed md:max-w-[200px]"
+              onClick={request}
+              disabled={isPreview}
+              className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-transparent bg-black p-4 text-sm font-medium text-white shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-opacity-50 md:max-w-[200px]"
             >
               <BiSolidContact /> Request contact
             </button>

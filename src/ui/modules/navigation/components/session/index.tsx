@@ -60,16 +60,16 @@ export const Session = () => {
           Sign out
         </button>
       </Link>
-      <div
+      <Link
+        href="/notifications"
         className={cn(
           "flex",
-          "cursor-not-allowed",
           "items-center",
           "justify-between",
           "gap-4",
           "rounded-full",
           "border-white",
-          "bg-black/20",
+          "bg-black",
           "px-5",
           "py-2",
           "text-xs",
@@ -84,7 +84,7 @@ export const Session = () => {
         <BiNotification />
         <BiAward />
         <BiCertification />
-      </div>
+      </Link>
     </>
   )
 }

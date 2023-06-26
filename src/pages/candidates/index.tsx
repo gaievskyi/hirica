@@ -1,4 +1,5 @@
 import { type NextPage } from "next"
+import { useSession } from "next-auth/react"
 
 import Head from "next/head"
 import Link from "next/link"
@@ -9,7 +10,29 @@ import { Layout } from "~/ui"
 import { api } from "~/utils/api"
 
 const CandidatesPage: NextPage = () => {
+  const { data: session } = useSession()
   const { data: candidates } = api.candidates.all.useQuery()
+  const { mutate } = api.notifications.create.useMutation({
+    onSuccess: () => {
+      toast.success("Request to share contact sent.")
+    },
+  })
+
+  const request = (userId: string) => {
+    if (!session) return
+    mutate({
+      userId,
+      senderId: session.user.id,
+      senderName: session.user.name ?? "",
+      senderRole: "Candidate",
+      status: "PENDING",
+      type: "CONTACTS_REQUEST",
+      contactRevealed: false,
+      message:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio delectus, amet iusto nam cupiditate natus architecto suscipit error perferendis nobis tempore expedita, voluptatem impedit enim omnis quas dolores quisquam nihil.",
+    })
+  }
+
   return (
     <>
       <Head>
@@ -97,15 +120,15 @@ const CandidatesPage: NextPage = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex w-full flex-col flex-wrap items-center gap-2 rounded-xl bg-white p-7">
+            <div className="flex w-full flex-col items-center gap-2 rounded-xl bg-white p-7">
               {!candidates && <h1>No candidates found.</h1>}
               {candidates?.map((candidate) => (
-                <>
-                  <div
-                    key={candidate.id}
-                    className="m-auto flex w-full flex-wrap items-center justify-between gap-8"
-                  >
-                    <div>
+                <div
+                  key={candidate.id}
+                  className="flex w-full flex-wrap items-center justify-between gap-8"
+                >
+                  <div className="inline-flex items-center gap-4">
+                    <div className="flex w-[25%] flex-col items-start">
                       <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight">
                         Anonymous Frontend Developer
                       </h1>
@@ -125,17 +148,16 @@ const CandidatesPage: NextPage = () => {
                         </button>
                       </Link>
                       <button
-                        onClick={() =>
-                          toast.success("Request to share contact sent.")
-                        }
-                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed"
+                        onClick={() => request(candidate.id)}
+                        disabled={session?.user.id === candidate.id}
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-opacity-50"
                       >
                         <BiSolidContact /> Request contact
                       </button>
                     </div>
                   </div>
                   <hr className="flex h-4 w-full rounded-full bg-black px-2" />
-                </>
+                </div>
               ))}
             </div>
           </main>
