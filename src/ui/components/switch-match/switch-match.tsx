@@ -8,13 +8,13 @@ import {
   type ReactNode,
 } from "react"
 
-type MatchProps = PropsWithChildren<{
+type MatchProps = PropsWithChildren & {
   when: boolean
-}>
+}
 
-type SwitchProps = PropsWithChildren<{
+type SwitchProps = PropsWithChildren & {
   fallback: ReactNode
-}>
+}
 
 const IsMatchInSwitchCtx = createContext<boolean>(false)
 const useIsMatchInSwitch = () => useContext(IsMatchInSwitchCtx)

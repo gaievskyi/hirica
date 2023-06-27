@@ -1,10 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
 
-export const Footer: React.FC = () => (
+export const Footer = () => (
   <footer
     aria-label="Hirica footer"
-    className="bg-white lg:grid lg:grid-cols-5"
+    className="bg-white lg:grid lg:grid-cols-5 lg:py-14"
   >
     <div className="relative block h-32 lg:col-span-2 lg:h-full">
       <Image
@@ -155,10 +155,7 @@ export const Footer: React.FC = () => (
           <div>
             <p className="font-medium text-gray-900">Services</p>
 
-            <nav
-              aria-label="Footer Navigation - Services"
-              className="mt-6"
-            >
+            <nav aria-label="Footer Navigation - Services" className="mt-6">
               <ul className="space-y-4 text-sm">
                 <li>
                   <Link
@@ -202,10 +199,7 @@ export const Footer: React.FC = () => (
           <div>
             <p className="font-medium text-gray-900">Company</p>
 
-            <nav
-              aria-label="Footer Navigation - Company"
-              className="mt-6"
-            >
+            <nav aria-label="Footer Navigation - Company" className="mt-6">
               <ul className="space-y-4 text-sm">
                 <li>
                   <a

@@ -12,10 +12,7 @@ const HomePage: NextPage = () => (
         name="description"
         content="Hirica is a pretty job search platform."
       />
-      <link
-        rel="icon"
-        href="/favicon.ico"
-      />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
       <Hero />

@@ -1,4 +1,4 @@
-export const NotificationSettings: React.FC = () => (
+export const NotificationSettings = () => (
   <div className="mt-10 sm:mt-0">
     <div className="md:grid md:grid-cols-3 md:gap-6">
       <div className="md:col-span-1">
@@ -12,10 +12,7 @@ export const NotificationSettings: React.FC = () => (
         </div>
       </div>
       <div className="mt-5 md:col-span-2 md:mt-0">
-        <form
-          action="#"
-          method="POST"
-        >
+        <form action="#" method="POST">
           <div className="overflow-hidden shadow sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
               <fieldset>

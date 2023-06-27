@@ -3,7 +3,7 @@ import { z } from "zod"
 
 const fullNameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
 
-export const fullNameSchema = z.string().regex(fullNameRegex)
+export const fullNameSchema = z.string().min(1).regex(fullNameRegex)
 
 type FullName = z.infer<typeof fullNameSchema>
 

@@ -1,28 +1,27 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { type MouseEventHandler } from "react"
 
 import { RiArrowUpFill } from "react-icons/ri"
 import { cn } from "~/utils/helpers"
 
-type NavigationLogoProps = {
-  minimized?: boolean
+type LogoProps = {
+  showArrow?: boolean
 }
 
-export const NavigationLogo: React.FC<NavigationLogoProps> = ({
-  minimized,
-}) => {
+export const Logo = ({ showArrow }: LogoProps) => {
   const { pathname } = useRouter()
   const isHome = pathname === "/"
+
+  const scrollTop: MouseEventHandler<HTMLAnchorElement> = (event) => {
+    event.preventDefault()
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
     <Link
       data-testid="navigation-logo"
-      onClick={(event) => {
-        if (minimized) {
-          event.preventDefault()
-          window.scrollTo({ top: 0, behavior: "smooth" })
-        }
-      }}
+      onClick={showArrow ? scrollTop : undefined}
       href="/"
       className={cn(
         "flex",
@@ -46,7 +45,7 @@ export const NavigationLogo: React.FC<NavigationLogoProps> = ({
       )}
     >
       Hirica
-      {minimized && <RiArrowUpFill />}
+      {showArrow && <RiArrowUpFill />}
     </Link>
   )
 }

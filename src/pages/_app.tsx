@@ -1,6 +1,7 @@
 import { type AppType } from "next/app"
 import { type Session } from "next-auth"
 import { SessionProvider } from "next-auth/react"
+import { Toaster } from "react-hot-toast"
 
 import { api } from "~/utils/api"
 
@@ -16,6 +17,12 @@ const Hirica: AppType<AppProps> = ({
 }) => (
   <SessionProvider session={session}>
     <Component {...pageProps} />
+    <Toaster
+      position="bottom-right"
+      toastOptions={{
+        duration: 5000,
+      }}
+    />
   </SessionProvider>
 )
 

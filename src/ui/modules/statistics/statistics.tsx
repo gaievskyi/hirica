@@ -1,6 +1,6 @@
 import { HiricaLogo } from "~/ui/components"
 
-export const Statistics: React.FC = () => (
+export const Statistics = () => (
   <div className="flex gap-3 px-12">
     <div className="flex flex-col gap-5 rounded-xl bg-white p-24 lg:container">
       <h1 className="text-xl">Explore statistics</h1>

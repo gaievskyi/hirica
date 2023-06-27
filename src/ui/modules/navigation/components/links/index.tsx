@@ -2,14 +2,12 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { cn } from "~/utils/helpers"
 
-export const NavigationLinks: React.FC = () => {
+const routes = ["/candidates", "/jobs", "/statistics"]
+
+export const Links = () => {
   const { pathname } = useRouter()
 
-  const isActive =
-    pathname === "/candidates" ||
-    pathname === "/jobs" ||
-    pathname === "/statistics"
-
+  const isAnySelected = routes.includes(pathname)
   const isCandidates = pathname === "/candidates"
   const isJobs = pathname === "/jobs"
   const isStatistics = pathname === "/statistics"
@@ -34,26 +32,18 @@ export const NavigationLinks: React.FC = () => {
         "ease-in-out",
         "hover:mx-2",
         "hover:scale-105",
-        isActive && "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
+        isAnySelected &&
+          "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
       )}
     >
-      <div className="flex gap-16 text-xs uppercase">
-        <Link
-          href="/candidates"
-          className={cn(isCandidates && "text-black")}
-        >
+      <div className={cn("flex", "gap-16", "text-xs", "uppercase")}>
+        <Link href="/candidates" className={cn(isCandidates && "text-black")}>
           Candidates
         </Link>
-        <Link
-          href="/jobs"
-          className={cn(isJobs && "text-black")}
-        >
+        <Link href="/jobs" className={cn(isJobs && "text-black")}>
           Jobs
         </Link>
-        <Link
-          href="/statistics"
-          className={cn(isStatistics && "text-black")}
-        >
+        <Link href="/statistics" className={cn(isStatistics && "text-black")}>
           Statistics
         </Link>
       </div>

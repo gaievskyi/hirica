@@ -8,7 +8,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 
-import { env } from "~/env.mjs"
+import { env } from "@/env/server.mjs"
 import { prisma } from "~/server/db"
 
 /**

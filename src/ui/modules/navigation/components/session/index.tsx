@@ -1,15 +1,23 @@
 import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { type MouseEventHandler } from "react"
 
 import { BiAward, BiCertification, BiNotification } from "react-icons/bi"
 import { cn } from "~/utils/helpers"
 
-export const NavigationSession: React.FC = () => {
+export const Session = () => {
   const { data: session } = useSession()
-  const { pathname } = useRouter()
 
-  const isProfile = pathname === "/profile"
+  const router = useRouter()
+
+  const isProfile = router.pathname === "/profile"
+
+  const logout: MouseEventHandler<HTMLButtonElement> = () => {
+    signOut({
+      callbackUrl: "/sign-out",
+    }).catch((e) => console.error(e))
+  }
 
   return (
     <>
@@ -34,29 +42,34 @@ export const NavigationSession: React.FC = () => {
           "hover:mx-2",
           "hover:scale-105",
           isProfile &&
-            "bg-gradient-to-r from-blue-300 via-rose-200 to-orange-500"
+            cn(
+              "bg-gradient-to-r",
+              "from-blue-300",
+              "via-rose-200",
+              "to-orange-500"
+            )
         )}
       >
         {session?.user?.name && (
-          <p className="text-xs uppercase">{session.user.name}</p>
+          <p className={cn("text-xs", "uppercase")}>{session.user.name}</p>
         )}
         <button
-          className=" text-white underline-offset-4 hover:underline"
-          onClick={() => void signOut()}
+          className={cn("text-white", "underline-offset-4", "hover:underline")}
+          onClick={logout}
         >
           Sign out
         </button>
       </Link>
-      <div
+      <Link
+        href="/notifications"
         className={cn(
           "flex",
-          "cursor-not-allowed",
           "items-center",
           "justify-between",
           "gap-4",
           "rounded-full",
           "border-white",
-          "bg-black/20",
+          "bg-black",
           "px-5",
           "py-2",
           "text-xs",
@@ -71,7 +84,7 @@ export const NavigationSession: React.FC = () => {
         <BiNotification />
         <BiAward />
         <BiCertification />
-      </div>
+      </Link>
     </>
   )
 }

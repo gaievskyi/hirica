@@ -2,7 +2,8 @@ import { type NextPage } from "next"
 
 import Head from "next/head"
 
-import { JobFilters, Layout } from "~/ui"
+import { Layout } from "~/ui"
+import { JobFilters } from "~/ui/modules/hero/components"
 
 const JobsPage: NextPage = () => (
   <>
@@ -12,10 +13,7 @@ const JobsPage: NextPage = () => (
         name="description"
         content="Hirica is a pretty job search platform."
       />
-      <link
-        rel="icon"
-        href="/favicon.ico"
-      />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
       <JobFilters />

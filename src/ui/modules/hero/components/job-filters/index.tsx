@@ -1,8 +1,7 @@
 import { Fragment, useState } from "react"
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react"
 import { HiOutlineChevronDown, HiSortDescending } from "react-icons/hi"
-
-const classNames = (...classes: string[]) => classes.filter(Boolean).join(" ")
+import { cn } from "~/utils/helpers"
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -67,17 +66,13 @@ const filters = [
   },
 ]
 
-export const JobFilters: React.FC = () => {
+export const JobFilters = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
     <div className="bg-[#FDFBF5]">
       <div>
-        {/* Mobile filter dialog */}
-        <Transition.Root
-          show={mobileFiltersOpen}
-          as={Fragment}
-        >
+        <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog
             as="div"
             className="relative z-40 lg:hidden"
@@ -130,10 +125,7 @@ export const JobFilters: React.FC = () => {
                     >
                       {subCategories.map((category) => (
                         <li key={category.name}>
-                          <a
-                            href={category.href}
-                            className="block px-2 py-3"
-                          >
+                          <a href={category.href} className="block px-2 py-3">
                             {category.name}
                           </a>
                         </li>
@@ -201,10 +193,7 @@ export const JobFilters: React.FC = () => {
             </h1>
 
             <div className="flex items-center">
-              <Menu
-                as="div"
-                className="relative inline-block text-left"
-              >
+              <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
@@ -231,12 +220,12 @@ export const JobFilters: React.FC = () => {
                           {({ active }) => (
                             <a
                               href={option.href}
-                              className={classNames(
+                              className={cn(
+                                "block px-4 py-2 text-sm",
                                 option.current
                                   ? "font-medium text-gray-900"
                                   : "text-gray-500",
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm"
+                                active && "bg-gray-100"
                               )}
                             >
                               {option.name}
@@ -263,22 +252,13 @@ export const JobFilters: React.FC = () => {
               >
                 <span className="sr-only">Filters</span>
                 {/* <FunnelIcon className="h-5 w-5" aria-hidden="true" /> */}
-                <HiSortDescending
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                />
+                <HiSortDescending className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>
 
-          <section
-            aria-labelledby="products-heading"
-            className="pb-24 pt-6"
-          >
-            <h2
-              id="products-heading"
-              className="sr-only"
-            >
+          <section aria-labelledby="products-heading" className="pb-24 pt-6">
+            <h2 id="products-heading" className="sr-only">
               Products
             </h2>
 

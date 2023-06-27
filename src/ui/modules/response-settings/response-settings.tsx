@@ -1,15 +1,39 @@
+import { zodResolver } from "@hookform/resolvers/zod"
+import { type SubmitHandler, useForm } from "react-hook-form"
+import { z } from "zod"
 import { useNameAdapter } from "~/utils/hooks"
 
 type ResponseSettingsProps = {
-  name: string | null | undefined
-  email: string | null | undefined
-  image?: string | null | undefined
+  fullName: string
+  email: string
+  image?: string
 }
 
-export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
-  ...data
-}) => {
-  const { name, surname } = useNameAdapter(data.name ?? "")
+const ResponseSettingsSchema = z.object({
+  firstName: z.string().min(2).max(30),
+  surname: z.string().min(2).max(30),
+  email: z.string().email(),
+  phone: z.coerce.number(),
+  country: z.string().min(2).max(50),
+  city: z.string().min(2).max(50),
+  responseMessage: z.string().min(0),
+})
+type ResponseSettingsType = z.infer<typeof ResponseSettingsSchema>
+
+export const ResponseSettings = ({
+  fullName,
+  email,
+}: ResponseSettingsProps) => {
+  const { name, surname } = useNameAdapter(fullName)
+
+  const form = useForm<ResponseSettingsType>({
+    resolver: zodResolver(ResponseSettingsSchema),
+    reValidateMode: "onChange",
+  })
+
+  const submit: SubmitHandler<ResponseSettingsType> = (formData) => {
+    console.log({ formData })
+  }
 
   return (
     <div className="mt-10 sm:mt-0">
@@ -26,10 +50,7 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
           </div>
         </div>
         <div className="mt-5 md:col-span-2 md:mt-0">
-          <form
-            action="#"
-            method="POST"
-          >
+          <form onSubmit={form.handleSubmit(submit)}>
             <div className="overflow-hidden shadow sm:rounded-md">
               <div className="bg-white px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
@@ -43,10 +64,10 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                     <input
                       defaultValue={name}
                       type="text"
-                      name="name"
-                      id="name"
+                      id="firstName"
                       autoComplete="given-name"
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                      {...form.register("firstName")}
                     />
                   </div>
 
@@ -55,48 +76,49 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                       htmlFor="surname"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Last name
+                      Surname
                     </label>
                     <input
                       defaultValue={surname}
                       type="text"
-                      name="surname"
                       id="surname"
                       autoComplete="family-name"
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                      {...form.register("surname")}
                     />
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
                     <label
-                      htmlFor="email-address"
+                      htmlFor="email"
                       className="block text-sm font-medium text-gray-700"
                     >
                       Email address
                     </label>
                     <input
-                      defaultValue={data?.email ?? ""}
+                      defaultValue={email}
                       type="text"
-                      name="email-address"
-                      id="email-address"
+                      id="email"
                       autoComplete="email"
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                      {...form.register("email")}
                     />
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
                     <label
-                      htmlFor="phone-number"
+                      htmlFor="phone"
                       className="block text-sm font-medium text-gray-700"
                     >
                       Phone number
                     </label>
                     <input
                       type="number"
-                      name="phone-number"
-                      id="phone-number"
+                      id="phone"
+                      min="1"
                       autoComplete="phone"
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                      {...form.register("phone")}
                     />
                   </div>
 
@@ -109,9 +131,9 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                     </label>
                     <select
                       id="country"
-                      name="country"
                       autoComplete="country-name"
                       className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
+                      {...form.register("country")}
                     >
                       <option>European Union</option>
                       <option>United States</option>
@@ -127,11 +149,14 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                     </label>
                     <input
                       type="text"
-                      name="city"
                       id="city"
                       autoComplete="address-level2"
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
+                      {...form.register("city")}
                     />
+                    <small className="mt-2 text-xs italic text-red-500">
+                      {form.formState.errors.city?.message}
+                    </small>
                   </div>
                 </div>
                 <div className="pt-5">
@@ -140,12 +165,15 @@ export const ResponseSettings: React.FC<ResponseSettingsProps> = ({
                   </label>
                   <div className="mt-1">
                     <textarea
-                      id="response-message"
-                      name="response-message"
+                      id="responseMessage"
                       rows={3}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black sm:text-sm"
                       defaultValue=""
+                      {...form.register("responseMessage")}
                     />
+                    <small className="mt-2 text-xs italic text-red-500">
+                      {form.formState.errors.responseMessage?.message}
+                    </small>
                   </div>
                 </div>
                 <div className="pt-6">

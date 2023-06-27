@@ -6,45 +6,43 @@ import { useSession } from "next-auth/react"
 import {
   Layout,
   Divider,
-  ProfileContainer,
-  ProfileHead,
+  Profile,
   NotificationSettings,
-  ProfilePublic,
+  PublicData,
   ResponseSettings,
+  AuthGate,
 } from "~/ui"
+
+import { cn } from "~/utils/helpers"
 
 const ProfilePage: NextPage = () => {
   const { data: session } = useSession()
 
+  const userName = session?.user.name ?? ""
+  const email = session?.user.email ?? ""
+  const title = `Hirica | ${userName} profile`
+
+  if (!session) return <AuthGate />
+
   return (
     <>
       <Head>
-        <title>
-          {session
-            ? `Hirica ${session?.user?.name ?? ""} profile`
-            : "Hirica profile"}
-        </title>
+        <title>{title}</title>
         <meta
           name="description"
           content="Hirica is a pretty job search platform."
         />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <ProfileContainer>
-          <ProfileHead />
-          <ProfilePublic />
+        <div className={cn("px-[5vw]", "py-10", "lg:px-[20vw]")}>
+          <Profile />
+          <PublicData />
           <Divider />
-          <ResponseSettings
-            name={session?.user.name}
-            email={session?.user.email}
-          />
+          <ResponseSettings fullName={userName} email={email} />
           <Divider />
           <NotificationSettings />
-        </ProfileContainer>
+        </div>
       </Layout>
     </>
   )
